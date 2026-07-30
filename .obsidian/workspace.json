@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ServiceEnumeration/Tomcat.md",
+                "file": "Enumeration/Services/Tomcat.md",
                 "mode": "source",
                 "source": false
               },
@@ -200,17 +200,20 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "6277a686e4091484",
   "lastOpenFiles": [
+    "Checklist/New-Subnet.md",
+    "Enumeration/Services/Tomcat.md",
+    "Enumeration/Services",
     "CommonPayload/Shells.md",
-    "ServiceEnumeration/Tomcat.md",
-    "Checklist/AD-Enumeration-Checklist.md",
-    "ServiceEnumeration",
-    "CommonPayload",
     "Checklist/LinuxLLPE-Checklist.md",
+    "Checklist/AD-Enumeration-Checklist.md",
+    "Enumeration",
+    "CommonPayload",
     "VulnearableCheatSheet/ActiveDirectory/Untitled.md",
     "CommandCheatSheet",
     "ComponentNotes/Untitled.md",
