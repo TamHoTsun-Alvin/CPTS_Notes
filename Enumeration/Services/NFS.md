@@ -25,3 +25,5 @@ ls -l mnt/nfs/
 ```
 ls -n mnt/nfs/
 ```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1068

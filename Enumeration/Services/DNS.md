@@ -20,7 +20,27 @@ dig soa www.inlanefreight.com
 ```
 dig ns inlanefreight.htb @<dns-server-ip>
 ```
--Obtaining version (chaos style)
+-Obtaining version (chaos style):
 ```
-dig CH TXT version.bind 10.129.120.85
+dig CH TXT version.bind <dns-server-ip>
 ```
+-Obtaining all query:
+```
+dig any inlanefreight.htb @<dns-server-ip>
+```
+-Attempt to Zone Transfer (AXFR):
+```
+dig axfr inlanefreight.htb @<dns-server-ip>
+```
+-Subdomain Brute Forcing:
+```
+for sub in $(cat /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt);do dig $sub.inlanefreight.htb @<dns-server-ip> | grep -v ';\|SOA' | sed -r '/^\s*$/d' | grep $sub | tee -a subdomains.txt;done
+```
+
+Automated Tools:
+-DNSenum
+```
+dnsenum --dnsserver <dns-server-ip> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
+```
+
+Ref:https://academy.hackthebox.com/app/module/112/section/1069
