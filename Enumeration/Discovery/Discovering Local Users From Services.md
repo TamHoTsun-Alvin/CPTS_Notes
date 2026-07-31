@@ -17,3 +17,14 @@ samrdump.py <ip>
 or
 impacket-samrdump <ip>
 ```
+
+-NFS (Requirement: NFS Mounted to local system)
+
+Listing Content of NFS with user / group names
+```
+ls -l mnt/nfs/
+```
+Listing Content of NFS with UID and GUID
+```
+ls -n mnt/nfs/
+```

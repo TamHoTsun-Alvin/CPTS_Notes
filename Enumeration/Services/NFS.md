@@ -17,3 +17,11 @@ showmount -e 10.129.14.128
 mkdir target-NFS #Making folder for mounting
 sudo mount -t nfs <ip>:/ ./target-NFS/ -o nolock
 ```
+-Listing Content with Username and Group Names
+```
+ls -l mnt/nfs/
+```
+-Listing Content with UIDs and GUIDs
+```
+ls -n mnt/nfs/
+```
