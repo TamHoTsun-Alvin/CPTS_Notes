@@ -13,3 +13,4 @@ Connecting to a FTP Server:
 ftp <ip> <port>
 ```
 
+Ref: https://academy.hackthebox.com/app/module/112/section/1067
