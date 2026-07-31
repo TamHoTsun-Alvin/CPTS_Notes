@@ -30,3 +30,13 @@ enum4linux:
 ```
 enum4linux <ip> -A
 ```
+SMBmap:
+```
+smbmap -H <ip>
+```
+NetExec(nxc)
+```
+nxc smb <ip> --shares -u '<user>' -p '<pw>'
+```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1067
