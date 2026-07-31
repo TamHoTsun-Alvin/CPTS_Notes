@@ -8,7 +8,7 @@ Common Action:
 -Connecting to smtp server via telnet
 ```
 telnet <smtpserver-ip> <port>
-HELO mail1.inlanefreight.htb #init session with mail1.inlanefreight.htb
+HELO mail1.inlanefreight.htb #init session as mail1.inlanefreight.htb
 EHLO mail1
 ```
 -Verify if a user exist (chance that the server blindly reply 252 for all )
