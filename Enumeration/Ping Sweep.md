@@ -2,12 +2,17 @@ A ping sweep can be performed to confirm the number of available host in the sub
 
 via nmap:
 ```
-sudo nmap <ip/subnet> -sn -oA tnet | grep for | cut -d" " -f5
+sudo nmap <ip/subnet> -sn -oA sweepres | grep for | cut -d" " -f5
 ```
 
 via nmap (with file containing required ip):
 ```
-sudo nmap -sn -oA tnet -iL <filename.ext> | grep for | cut -d" " -f5
+sudo nmap -sn -oA sweepres -iL <filename.ext> | grep for | cut -d" " -f5
+```
+
+Converting Results to html from nmap xml:
+```
+xsltproc sweepres.xml -o target.html
 ```
 
 via native linux:
