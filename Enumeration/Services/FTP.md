@@ -10,6 +10,6 @@ Common action:
 
 Connecting to a FTP Server:
 ```
-ftp <ip
+ftp <ip> <port>
 ```
 
