@@ -6,7 +6,7 @@ Enabling Anonymous Login
 Remarks:
 A list of denied user can be found at /etc/ftpusers
 
-Common action:
+Common Action:
 
 Connecting to a FTP Server:
 ```
