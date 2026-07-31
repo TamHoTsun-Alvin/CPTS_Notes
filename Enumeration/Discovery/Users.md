@@ -13,7 +13,7 @@ for i in $(seq 500 1100);do rpcclient -N -U "" <ip> -c "queryuser 0x$(printf '%x
 ```
 Enumerating Users via Impacket-Samrdump
 ```
-samrdump.py <ip?
+samrdump.py <ip>
 or
-impacket-samur
+impacket-samrdump <ip>
 ```

@@ -15,3 +15,18 @@ With rpcclient:
 ```
 rpcclient -U "" <ip>
 ```
+With impacket-smbclient(default, only option when pth is required)
+```
+python3 smbclient.py domain/username:password@target_ip
+#or 
+impacket-smbclient domain/username:password@target_ip
+#When PTH is required
+impacket-smbclient -hashes LMHASH:NTHASH domain/username@target_ip
+```
+
+-Automated Tools for General Enumeration:
+
+enum4linux:
+```
+enum4linux <ip> -A
+```
