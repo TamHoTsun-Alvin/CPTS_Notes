@@ -1,8 +1,8 @@
 Usual Port: 25, 587, 465
 
 Vulnerable Setting: 
+mynetworks = 0.0.0.0/0 -- Allowing everyone to authenticate and use the relay
 
-mynetworks = 0.0.0.0/0 # 
 Common Action:
 
 -Connecting to smtp server via telnet
@@ -16,3 +16,16 @@ EHLO mail1
 #After connected
 VRFY <username>
 ```
+
+Automated Tools: 
+
+-Nmap (List all available commands)
+```
+sudo nmap 10.129.14.128 -sC -sV -p25
+```
+
+-Nmap (identify if relay is open)
+```
+sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
+```
+
