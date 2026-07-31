@@ -8,7 +8,7 @@ A list of denied user can be found at /etc/ftpusers
 
 Common Action:
 
-Connecting to a FTP Server:
+-Connecting to a FTP Server:
 ```
 ftp <ip> <port>
 ```
