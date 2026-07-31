@@ -13,7 +13,5 @@ Common Action:
 
 With rpcclient:
 ```
-```
-rpcclient -U "" 10.129.14.128
-```
+rpcclient -U "" <ip>
 ```
