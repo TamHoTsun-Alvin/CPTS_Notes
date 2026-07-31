@@ -1,5 +1,8 @@
 Usual Port: 25, 587, 465
 
+Vulnerable Setting: 
+
+mynetworks = 0.0.0.0/0 # 
 Common Action:
 
 -Connecting to smtp server via telnet
