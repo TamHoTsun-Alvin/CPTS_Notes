@@ -3,3 +3,4 @@ Usual Port: 21 / 2121
 Enabling Anonymous Login
 
 #### Remarks:
+A list of denied user can be found at /etc/ftpusers

@@ -1,0 +1,3 @@
+Usual Port:
+SMBv1: 137,138,139
+CIFS: 445
