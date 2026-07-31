@@ -11,3 +11,16 @@ Record Type:
 |`SOA`|Provides information about the corresponding DNS zone and email address of the administrative contact.|
 
 Common Action:
+
+-Obtaining SOA Record:
+```
+dig soa www.inlanefreight.com
+```
+-Obtaining ns record:
+```
+dig ns inlanefreight.htb @<dns-server-ip>
+```
+-Obtaining version (chaos style)
+```
+dig CH TXT version.bind 10.129.120.85
+```
