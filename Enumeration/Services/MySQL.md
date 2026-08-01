@@ -18,4 +18,22 @@ mysql -u <username> -h <ip>
 mysql -u <username> -p<password> -h <ip> #Insecure, as pw is available at history
 ```
 
-Common Comm
+Common Commands:
+
+| **Command**                                          | **Description**                                                                                       |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `mysql -u <user> -p<password> -h <IP address>`       | Connect to the MySQL server. There should **not** be a space between the '-p' flag, and the password. |
+| `show databases;`                                    | Show all databases.                                                                                   |
+| `use <database>;`                                    | Select one of the existing databases.                                                                 |
+| `show tables;`                                       | Show all available tables in the selected database.                                                   |
+| `show columns from <table>;`                         | Show all columns in the selected table.                                                               |
+| `select * from <table>;`                             | Show everything in the desired table.                                                                 |
+| `select * from <table> where <column> = "<string>";` | Search for needed `string` in the desired table.                                                      |
+| `describe <table>`                                   | Show the schema for the specified table                                                               |
+
+Automated Tools:
+
+--Using nmap to perform automated brute:
+```
+sudo nmap <ip> -sV -sC -p3306 --script mysql*
+```
