@@ -10,3 +10,12 @@ Vulnerable Settings:
 | `debug`            | This variable indicates the current debugging settings                                                       |
 | `sql_warnings`     | This variable controls whether single-row INSERT statements produce an information string if warnings occur. |
 | `secure_file_priv` | This variable is used to limit the effect of data import and export operations.                              |
+Common Actions:
+Accessing server via mysql
+```
+mysql -u <username> -h <ip>
+#or
+mysql -u <username> -p<password> -h <ip> #Insecure, as pw is available at history
+```
+
+Common Comm
