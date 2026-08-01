@@ -7,3 +7,5 @@ Vulnerable Setting:
 | ----------------------------------------------- | -------------------------------------------------------- |
 | rwuser noauth                                   | Allow access to OID Tree without authentication          |
 | rwcommunity <community_string> <ipv4/6_address> | Allowing access to OID Tree regardless origin of request |
+
+Usage 
