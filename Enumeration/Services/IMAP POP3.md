@@ -1,0 +1,1 @@
+Usual Port: 143, Encrypted: 143, 993
