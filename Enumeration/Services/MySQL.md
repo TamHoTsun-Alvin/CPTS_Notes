@@ -37,3 +37,5 @@ Automated Tools:
 ```
 sudo nmap <ip> -sV -sC -p3306 --script mysql*
 ```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1238
