@@ -1,6 +1,9 @@
 Usual Port: 53
 
 Record Type:
+
+|**DNS Record**|**Description**|
+|---|---|
 |`A`|Returns an IPv4 address of the requested domain as a result.|
 |`AAAA`|Returns an IPv6 address of the requested domain.|
 |`MX`|Returns the responsible mail servers as a result.|
@@ -38,9 +41,10 @@ for sub in $(cat /opt/useful/seclists/Discovery/DNS/subdomains-top1million-11000
 ```
 
 Automated Tools:
--DNSenum
+-Using DNSenum for subdomain bruteforcing
 ```
+dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r
+#or
 dnsenum --dnsserver <dns-server-ip> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
 ```
-
-Ref:https://academy.hackthebox.com/app/module/112/section/1069
+Ref:https://academy.hackthebox.com/app/module/112/section/1069 / https://academy.hackthebox.com/app/module/144/section/1253
