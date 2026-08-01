@@ -18,3 +18,10 @@ htb-student     10.0.17.5
 ```
 
 Common Action: 
+
+-Logging in with rlogin:
+```
+rlogin <ip> -l <username>
+```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1240
