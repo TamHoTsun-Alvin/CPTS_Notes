@@ -34,3 +34,10 @@ Common Actions:
 ```
 curl -k 'imaps://<ip>' --user <username>:<password>
 ```
+
+-Connecting to IMAPS or POP3 over SSL via openssl
+```
+openssl s_client -connect <ip>:<imaps/pop3S>
+```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1073
