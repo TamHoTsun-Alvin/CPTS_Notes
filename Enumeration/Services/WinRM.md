@@ -13,3 +13,5 @@ Common Action:
 ```
 evil-winrm -i <ip> -u <username> -p <password>
 ```
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1242
