@@ -1,3 +1,9 @@
 For different kind of protocols, we can use different Tools to perform password bruteforcing / spraying attack
 
-Using NetExec()
+Using NetExec(SMB, SSH, LDAP, FTP, WMI, WinRM, RDP, VNC, MSSQL, and NFS):
+
+
+-NetExec Basic syntax:
+```
+netexec <protocol> <target-IP> -u <user or userlist> -p <password or passwordlist>
+```
