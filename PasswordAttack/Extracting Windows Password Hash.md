@@ -21,4 +21,12 @@ After that, we can use impacket-secretsdump to extract the hashes
 impacket-secretsdump -sam <samfile> -security <securityfile> -system <systemfile> -outputfile <fname> LOCAL
 ```
 
-After that, 
+After that, for NTLM hash isolate the 4th column, then you can use hashcat with mode 1000 to crack all at once
+```
+awk -F: '{print $4}' <inputfile> | grep -v '^$' > <outputfile>
+```
+
+For domain hashes, we can extract DCC2 hashes, for DCC2 hashes we can crack with hashcat in mode 2100, no extra processing is needed and we can directly supply whole hash, notice that cracking DCC2 hashes is significantly more difficult then NTLM and results in increased time
+
+LSA Secrets:
+
