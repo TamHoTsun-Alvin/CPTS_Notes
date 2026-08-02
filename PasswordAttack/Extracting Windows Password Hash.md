@@ -43,3 +43,5 @@ lsadump::secrets
 ```
 netexec smb <ip> --local-auth -u <username> -p <password> --lsa
 ```
+
+LSASS Dump:
