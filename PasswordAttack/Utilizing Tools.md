@@ -23,3 +23,8 @@ john --wordlist=<wordlist_file> <hash_file>
 ```
 john --incremental <hash_file>
 ```
+-Converting different files to hash crackable by john:
+```
+locate *2john* #locate helper tools for conversion
+<toolname> <file_to_crack> > file.hash
+```
