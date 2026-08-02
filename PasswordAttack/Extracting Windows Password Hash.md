@@ -30,3 +30,4 @@ For domain hashes, we can extract DCC2 hashes, for DCC2 hashes we can crack with
 
 LSA Secrets:
 
+We can sometimes dump LSA secrets by using tools, which will result in revealing some credentials in plaintext:
