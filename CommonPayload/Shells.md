@@ -25,7 +25,7 @@ Note2: One of the easy win in windows with msfvenom is to check if AlwaysInstall
 
 General:
 
--Setting a listener for reverse shell in msfconsole
+-Setting a listener for reverse shell in msfconsole(Default, Generate Session)
 ```
 use exploit/multi/handler
 set LHOST <ip>
@@ -33,4 +33,7 @@ set LPORT <port>
 exploit
 #Run Session
 ```
-
+-Setting a generic listner via nc
+```
+nc -lvnp <port>
+```
