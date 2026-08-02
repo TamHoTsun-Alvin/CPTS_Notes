@@ -28,3 +28,5 @@ john --incremental <hash_file>
 locate *2john* #locate helper tools for conversion
 <toolname> <file_to_crack> > file.hash
 ```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1985 / https://academy.hackthebox.com/app/module/147/section/3713
