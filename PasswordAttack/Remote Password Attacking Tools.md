@@ -1,1 +1,3 @@
 For different kind of protocols, we can use different Tools to perform password bruteforcing / spraying attack
+
+Using NetExec()
