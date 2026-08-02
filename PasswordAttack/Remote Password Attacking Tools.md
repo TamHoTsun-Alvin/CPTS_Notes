@@ -11,3 +11,5 @@ netexec <protocol> <target-IP> -u <user or userlist> -p <password or passwordlis
 ```
 nxc ldap <target> -u <username> -p '' --no-smb
 ```
+
+Using hydra(ssh, )
