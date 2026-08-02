@@ -15,4 +15,11 @@ JohnTheRipper:
 ```
 hashid -j '<hash> or <path_to_hashfile>'
 ```
--
+-Cracking a hash in wordlist mode:
+```
+john --wordlist=<wordlist_file> <hash_file>
+```
+-Cracking a hash in incremental mode:
+```
+john --incremental <hash_file>
+```
