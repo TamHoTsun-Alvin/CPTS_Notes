@@ -64,7 +64,7 @@ $ fg
 # In reverse shell
 $ reset
 $ export SHELL=bash
-$ export TERM=xterm-256color
+$ export TERM=<TERM>
 $ stty rows <num> columns <cols>
 ```
 
