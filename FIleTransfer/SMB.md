@@ -9,7 +9,7 @@ sudo impacket-smbserver share -smb2support <directory_to_share>
 sudo impacket-smbserver share -smb2support -username <username> -password '<password>' <directory_to_share> 
 ```
 
-Alternative -- Startign a WebDav server instead
+Alternative -- Starting a WebDav server instead
 ```
 sudo wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous 
 ```
