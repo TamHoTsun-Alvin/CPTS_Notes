@@ -1,1 +1,1 @@
-After we prepared a list of possible usernames and password list, we can use different tools to attempt to bruteforce into account, Refer to [[Generating Possible Usernames]] for
+After we prepared a list of possible usernames and password list, we can use different tools to attempt to bruteforce into account, Refer to [[Generating Possible Usernames]] 
