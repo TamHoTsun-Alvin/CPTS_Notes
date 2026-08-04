@@ -8,3 +8,5 @@ In times, we may obtain some information regarding names of individual that work
 ```
 
 In result, we can acquire a list of possible username that we can use in NetExec / Kerbrute or other tools for cracking possible user
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1326

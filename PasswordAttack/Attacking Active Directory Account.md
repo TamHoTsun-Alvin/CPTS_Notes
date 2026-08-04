@@ -38,3 +38,5 @@ netexec smb <dcip> -u <username> -p <password> -M ntdsutil
 ```
 impacket-secretsdump -ntds <ntdsfile> -system <systemfile> LOCAL
 ```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1326
