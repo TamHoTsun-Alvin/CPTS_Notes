@@ -17,3 +17,7 @@ start LaZagne.exe all
 ```
 
 Ref: https://academy.hackthebox.com/app/module/147/section/1318
+
+Linux: 
+
+-
