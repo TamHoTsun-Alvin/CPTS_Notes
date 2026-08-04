@@ -4,5 +4,7 @@ In times, we may obtain some information regarding names of individual that work
 
 ```
 #First, log down possible names in a txt file, one entry per line
-./username-anarchy -i <
+./username-anarchy -i <abspath_to_text>
 ```
+
+In result, we can acquire a list of possible username that we can use in NetExec / Kerbrute or other tools for cracking possible user
