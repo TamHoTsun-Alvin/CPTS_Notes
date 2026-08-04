@@ -1,1 +1,1 @@
-After we prepared a list of possible usernames and password list, we can use different tools to attempt to automatically flow
+After we prepared a list of possible usernames and password list, we can use different tools to attempt to bruteforce into account
