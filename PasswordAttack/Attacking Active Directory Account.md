@@ -3,5 +3,7 @@ After we prepared a list of possible usernames and password list, we can use dif
 -Using Kerbrute to Enumerate valid usernames
 
 ```
-kerbrute_
+./kerbrute_linux_amd64 userenum --dc <dcip> --domain <domain> <username_candidate>
 ```
+
+-
