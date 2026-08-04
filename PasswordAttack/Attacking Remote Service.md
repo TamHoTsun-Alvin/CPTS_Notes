@@ -28,3 +28,4 @@ set pass_file <passwordlist>
 set rhosts <ip>
 exploit
 ```
+
