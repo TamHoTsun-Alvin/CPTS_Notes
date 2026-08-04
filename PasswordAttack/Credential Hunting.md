@@ -16,7 +16,19 @@ findstr /SIM /C:"<keyword>" *.txt *.ini *.cfg *.config *.xml *.git *.ps1 *.yml
 start LaZagne.exe all
 ```
 
-Ref: https://academy.hackthebox.com/app/module/147/section/1318
+-Hunting Credentials with PowerHuntShares:
+```
+#Requirement: PowerHuntShares need to be transffered to target
+[PS]
+C:\Users\Public\PowerHuntShares> Invoke-HuntSMBShares -Threads <ThreadCount> -OutputDirectory c:\Users\Public
+```
+
+-Hunting Credentials with Snaffler:
+```
+Snaffler.exe -s
+```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1318 / https://academy.hackthebox.com/app/module/147/section/1334
 
 Linux: 
 
