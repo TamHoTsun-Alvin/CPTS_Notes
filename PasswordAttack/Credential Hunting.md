@@ -43,5 +43,5 @@ sudo python3 minipenguin.py
 
 -Using LaZagne (require transfer to victim and admin privilege):
 ```
-
+sudo python2.7 laZagne.py all
 ```
