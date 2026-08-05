@@ -10,4 +10,4 @@ exit
 ```
 
 -Passing the hash with PowerShell Invoke-TheHash:
-We can 
+We can load up 
