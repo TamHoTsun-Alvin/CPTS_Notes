@@ -96,4 +96,5 @@ ls -la /tmp #check for ccache files in /tmp
 After finding a suitable keytab file, we can view its information and try to use it:
 ```
 klist -k -t <abspath_keytabfile>
+
 ```
