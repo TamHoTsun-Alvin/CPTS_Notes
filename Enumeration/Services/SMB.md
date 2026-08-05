@@ -39,4 +39,18 @@ NetExec(nxc)
 nxc smb <ip> --shares -u '<user>' -p '<pw>'
 ```
 
+Common Attack / Exploit: 
+
+SMB Enumeration:
+
+-Using smbclient to enumerate available share:
+```
+smbclient -N -L //<ip>
+```
+
+-Using smbmap to enumerate available share:
+```
+smbmap -H <ip>
+```
+
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
