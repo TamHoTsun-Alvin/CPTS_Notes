@@ -103,5 +103,7 @@ We can extract keytab file's info and attempt a pass the hash attack or crack it
 
 Extracting hashes with KeyTabExtract:
 ```
-python3 keytabextract.py
+python3 keytabextract.py <abspathtokeytabfile>
 ```
+
+We can use ccache files 
