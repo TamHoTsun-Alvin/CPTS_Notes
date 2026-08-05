@@ -95,6 +95,13 @@ ls -la /tmp #check for ccache files in /tmp
 
 After finding a suitable keytab file, we can view its information and try to use it:
 ```
-klist -k -t <abspath_keytabfile>
+klist -k -t <abspath_keytabfile> #inspect keytab info
+kinit <accname@domain> -k -t <keytabfileabspath>
+```
 
+We can extract keytab file's info and attempt a pass the hash attack or crack its password
+
+Extracting hashes with KeyTabExtract:
+```
+python3 keytabextract.py
 ```
