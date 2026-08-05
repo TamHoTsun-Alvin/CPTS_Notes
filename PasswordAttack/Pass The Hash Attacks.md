@@ -31,3 +31,8 @@ impacket-psexec <accountname>@<ip> -hashes:<ip>
 #impacket-smbexec
 ```
 
+-Passing the Hash with NetExec:
+By using NetExec, we can perform Pass The Hash attack and execute our desired command:
+```
+
+```
