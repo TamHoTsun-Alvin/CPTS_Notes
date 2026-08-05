@@ -53,3 +53,5 @@ Note: Sometimes, we may need to first enable restricted admin mode before we can
 ```
 reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
 ```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1638

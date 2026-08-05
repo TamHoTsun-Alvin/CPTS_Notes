@@ -106,4 +106,11 @@ Extracting hashes with KeyTabExtract:
 python3 keytabextract.py <abspathtokeytabfile>
 ```
 
-We can use ccache files 
+We can use ccache files to gain access to other user as well
+
+importing ccache file into current sessionL
+```
+export KRB5CCNAME=<ccachefileabspath>
+```
+
+Ref: https://academy.hackthebox.com/app/module/147/section/1657 / https://academy.hackthebox.com/app/module/147/section/1639
