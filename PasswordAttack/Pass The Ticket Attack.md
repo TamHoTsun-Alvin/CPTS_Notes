@@ -80,3 +80,15 @@ Check if a linux machine is domain-joined:
 realm list #if realm is installed
 ps -ef | grep -i "winbind\|sssd" #when realm is not installed
 ```
+
+Check for keytab file in the system:
+```
+find / -name *keytab* -ls 2>/dev/null #find in file
+crontab -l #find in crontab jobs
+```
+
+Check for ccache files:
+```
+env | grep -i krb5 #check for ccache file in environment
+ls -la /tmp #check for ccache files in /tmp
+```
