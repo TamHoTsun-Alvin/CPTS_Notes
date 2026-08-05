@@ -72,3 +72,11 @@ exit
 powershell
 Enter-PSSession -ComputerName <Name>
 ```
+
+Linux:
+
+Check if a linux machine is domain-joined:
+```
+realm list #if realm is installed
+ps -ef | grep -i "winbind\|sssd" #when realm is not installed
+```
