@@ -53,4 +53,14 @@ smbclient -N -L //<ip>
 smbmap -H <ip>
 ```
 
+-Using smbmap to recursively browse directory:
+```
+smbmap -H <ip> -r <share>
+```
+
+-Using smbmap to read / upload file:
+```
+smbmap -H <ip> --download <share\filename>
+smbmap -H <ip> --upload <localfname> <share\filename>
+```
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
