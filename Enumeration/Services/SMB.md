@@ -63,4 +63,6 @@ smbmap -H <ip> -r <share>
 smbmap -H <ip> --download <share\filename>
 smbmap -H <ip> --upload <localfname> <share\filename>
 ```
+
+
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
