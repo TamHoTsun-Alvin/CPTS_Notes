@@ -33,5 +33,7 @@ rdesktop -u <username> -p <password> <ip>
 ```
 Refer to [[Attacking Remote Service]] for methods to perform Password attack / spraying
 
+Post Access:
 
+After we are logged in, if we have SYSTEM privilege, it is possible 
 Ref: https://academy.hackthebox.com/app/module/112/section/1242
