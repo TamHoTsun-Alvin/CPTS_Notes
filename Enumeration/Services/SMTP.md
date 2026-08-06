@@ -2,7 +2,7 @@ Usual Port: 25, 587, 465
 
 Vulnerable Setting: 
 mynetworks = 0.0.0.0/0 -- Allowing everyone to authenticate and use the relay
-Enable of EXPN and VRFY --P
+Enable of EXPN and VRFY --Possible disclosure of usernames
 
 Common Action:
 
@@ -31,5 +31,13 @@ sudo nmap 10.129.14.128 -sC -sV -p25
 sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
 ```
 
+-Using smtp-user-enum to enumerate valid user:
+```
+smtp-user-enum -M RCPT -U <path_to_userlist> -D <domain> -t <ip>
+```
 
+-Using o365spray to target Microsoft Office 365:
+```
+python3 o365spray.py --validate --domain <domain>
+```
 Ref: https://academy.hackthebox.com/app/module/112/section/1072
