@@ -41,8 +41,12 @@ If it is not enabled, we can also enable it:
 #In msssqlclient:
 enable xp_cmdshell
 #Native:
-
+EXECUTE sp_configure 'show advanced options', 1
+RECONFIGURE
+EXECUTE sp_configure'xp_cmdshell', 1
+RECONFIGURE
 ```
+
 
 
 
