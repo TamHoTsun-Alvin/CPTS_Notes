@@ -1,1 +1,1 @@
-Attacking Common Service: 7/19 - Attacking SMB, till smbmap upload/download
+Attacking Common Service: 13/19 - Attacking DNS
