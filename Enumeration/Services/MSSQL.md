@@ -91,5 +91,6 @@ With Permission, we can read local files with MSSQL:
 2> GO
 ```
 
+If we have access to sysadm account or privileged account
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1246
