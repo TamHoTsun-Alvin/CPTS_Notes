@@ -119,8 +119,24 @@ Impersonating as other user:
 #If user we are impersonating don't have access to current DB we are in, error will be presented, in such case we can move to master db first by typing USE master
 ```
 
+Using Linked Servers:
 
+In MSSQL, one can configure linked server so that the database engine can execute statement in another server instance or db products, sometimes we can use this as lateral movement / horizontal movement:
 
+Confirming existence of linked server:
+```
+1> SELECT srvname, isremote FROM sysservers
+2> GO
+#If isremote == 0, it means it is a linked server
+```
+
+Next, we can try to execute command at the remote server:
+```
+EXECUTE()
+#Example
+1> EXECUTE('select @@servername, @@version, system_user, is_srvrolemember(''sysadmin'')') AT [10.0.0.12\SQLEXPRESS]
+2> GO
+```
 
 
 
