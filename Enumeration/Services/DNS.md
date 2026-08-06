@@ -47,4 +47,7 @@ dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains
 #or
 dnsenum --dnsserver <dns-server-ip> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
 ```
+
+-Using fierce to enumerate DNS servers for 
+
 Ref:https://academy.hackthebox.com/app/module/112/section/1069 / https://academy.hackthebox.com/app/module/144/section/1253
