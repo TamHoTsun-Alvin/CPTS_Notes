@@ -15,7 +15,22 @@ git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-che
 
 Common Action:
 
+Initiating Session with Remmina (Preferred):
+```
+remmina
+#Opens up GUI, continue with GUI
+```
 
+Initiating Session with xfreerdp:
+```
+xfreerdp /v:<ip> /u:<username> /p:<password> /dynamic-resolution /timeout:10000
+#Using hash to login is also possible
+```
+
+Initiating Session with rdesktop:
+```
+rdesktop -u <username> -p <password> <ip>
+```
 Refer to [[Attacking Remote Service]] for methods to perform Password attack / spraying
 
 
