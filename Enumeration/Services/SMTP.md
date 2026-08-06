@@ -50,4 +50,9 @@ python3 o365spray.py --enum -U <path_to_userlist> --domain <domain>
 ```
 python3 o365spray.py --spray -U <path_to_userlist> -p '<password>' --count 1 --lockout 1 --domain msplaintext.xyz
 ```
-Ref: https://academy.hackthebox.com/app/module/112/section/1072
+
+It is possible to use hydra and other common tools to perform password attack, refer to [[Attacking Remote Service]] for details
+
+If Open Relay attack is needed, refer https://academy.hackthebox.com/app/module/116/section/1173
+
+Ref: https://academy.hackthebox.com/app/module/112/section/1072 / https://academy.hackthebox.com/app/module/116/section/1173
