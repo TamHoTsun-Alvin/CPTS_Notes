@@ -2,6 +2,7 @@ Usual Port: 25, 587, 465
 
 Vulnerable Setting: 
 mynetworks = 0.0.0.0/0 -- Allowing everyone to authenticate and use the relay
+Enable of EXPN and VRFY --P
 
 Common Action:
 
@@ -14,6 +15,7 @@ EHLO mail1
 -Verify if a user exist (chance that the server blindly reply 252 for all )
 ```
 #After connected
+EXPN <username>
 VRFY <username>
 ```
 

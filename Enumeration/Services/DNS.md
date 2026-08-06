@@ -48,6 +48,17 @@ dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains
 dnsenum --dnsserver <dns-server-ip> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
 ```
 
--Using fierce to enumerate DNS servers for 
+-Using subfinder to perform subdomain bruteforcing:
+```
+./subfinder -d <domain_name> -v       
+```
 
-Ref:https://academy.hackthebox.com/app/module/112/section/1069 / https://academy.hackthebox.com/app/module/144/section/1253
+
+-Using fierce to enumerate DNS servers for a domain and scan for DNS zone Transfer:
+```
+fierce --domain <domain>
+```
+
+Ref:https://academy.hackthebox.com/app/module/112/section/1069 / https://academy.hackthebox.com/app/module/144/section/1253 / https://academy.hackthebox.com/app/module/116/section/1512
+
+Refer to https://academy.hackthebox.com/app/module/116/section/1512 if subdomain takeover / spoofing is needed
