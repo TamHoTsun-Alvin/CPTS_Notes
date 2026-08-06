@@ -27,5 +27,8 @@ set rhosts <ip>
 exploit
 ```
 
+Post Entry:
+
+
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1246
