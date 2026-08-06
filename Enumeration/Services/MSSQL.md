@@ -8,7 +8,10 @@ impacket-mssqlclient <username>@<ip> -windows-auth
 #or
 python3 mssqlclient.py <username>@<ip> -windows-auth
 ```
-
+Alternative - Use sqsh:
+```
+sqsh -S <ip>
+```
 Automated Tools:
 
 -Using nmap for script scan:
