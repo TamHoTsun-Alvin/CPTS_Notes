@@ -35,7 +35,11 @@ Refer to [[Attacking Remote Service]] for methods to perform Password attack / s
 
 Post Access:
 
+After we are logged in, if we have SYSTEM privilege, it is possible to impersonate as other user that has already logged in with rdp with tscon:
 
+```
+tscon #{TARGET_SESSION_ID} /dest:#{OUR_SESSION_NAME}
+```
 
-After we are logged in, if we have SYSTEM privilege, it is possible 
+If we are logged in with Administrator privilege, we can use the below method 
 Ref: https://academy.hackthebox.com/app/module/112/section/1242
