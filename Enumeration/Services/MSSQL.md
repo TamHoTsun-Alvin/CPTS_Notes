@@ -92,14 +92,25 @@ With Permission, we can read local files with MSSQL:
 ```
 
 If we have access to sysadm account or privileged account, we can impersonate other users to do lateral / horizontal movement:
+
+Confirming our Current User and Role:
+```
+1> SELECT SYSTEM_USER
+2> SELECT IS_SRVROLEMEMBER('sysadmin')
+3> go
+```
+
+Identify users we can impersonate:
 ```
 1> SELECT distinct b.name
 2> FROM sys.server_permissions a
 3> INNER JOIN sys.server_principals b
 4> ON a.grantor_principal_id = b.principal_id
 5> WHERE a.permission_name = 'IMPERSONATE'
-6> GO #Identify users we can impersonate
+6> GO
 ```
+
+
 
 
 
