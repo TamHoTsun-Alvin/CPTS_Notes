@@ -83,4 +83,6 @@ nxc smb <ip> --pass-policy #Query / double confirm password policy
 nxc smb <ip> -u <path_to_usernamelist> -p <path_to_wordlist> 
 nxc smb <ip> -u <path_to_usernamelist> -p '<password>' --continue-on-success #password spraying
 ```
+
+A
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
