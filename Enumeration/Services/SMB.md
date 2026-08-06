@@ -72,4 +72,8 @@ enumdomuusers #Ref: https://www.samba.org/samba/docs/current/man-html/rpcclient.
 
 Automated Tooling:
 
+Enum4linux-ng:
+```
+./enum4linux-ng.py <ip> -A -C
+```
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
