@@ -72,8 +72,14 @@ enumdomuusers #Ref: https://www.samba.org/samba/docs/current/man-html/rpcclient.
 
 Automated Tooling:
 
-Enum4linux-ng:
+Enum4linux-ng (info enumeration):
 ```
 ./enum4linux-ng.py <ip> -A -C
+```
+
+NetExec (Password Spraying / Bruteforce attack):
+```
+nxc smb <ip> --pass-policy #Query / double confirm password policy
+nxc smb <ip> -u <path_to_usernamelist> -p <
 ```
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
