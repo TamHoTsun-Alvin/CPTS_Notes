@@ -13,4 +13,10 @@ git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-che
 ./rdp-sec-check.pl <ip>
 ```
 
+Common Action:
+
+
+Refer to [[Attacking Remote Service]] for methods to perform Password attack / spraying
+
+
 Ref: https://academy.hackthebox.com/app/module/112/section/1242

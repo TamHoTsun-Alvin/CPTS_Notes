@@ -132,7 +132,7 @@ Confirming existence of linked server:
 
 Next, we can try to execute command at the remote server:
 ```
-EXECUTE()
+EXECUTE('<cmd>') AT [<linked_servername]
 #Example
 1> EXECUTE('select @@servername, @@version, system_user, is_srvrolemember(''sysadmin'')') AT [10.0.0.12\SQLEXPRESS]
 2> GO
@@ -140,4 +140,4 @@ EXECUTE()
 
 
 
-Ref: https://academy.hackthebox.com/app/module/112/section/1246
+Ref: https://academy.hackthebox.com/app/module/112/section/1246 / https://academy.hackthebox.com/app/module/116/section/1169
