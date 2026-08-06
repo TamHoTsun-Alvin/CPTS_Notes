@@ -64,5 +64,12 @@ smbmap -H <ip> --download <share\filename>
 smbmap -H <ip> --upload <localfname> <share\filename>
 ```
 
+-Using rpcclient to enumerate workstation or DC:
+```
+rpcclient -U'%' <ip>
+enumdomuusers #Ref: https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html
+```
+
+Automated Tooling:
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
