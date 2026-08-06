@@ -84,5 +84,12 @@ nxc smb <ip> -u <path_to_usernamelist> -p <path_to_wordlist>
 nxc smb <ip> -u <path_to_usernamelist> -p '<password>' --continue-on-success #password spraying
 ```
 
-A
+Post Exploit / Credential Gathering:
+
+After we have gained valid credentials, we can archive RCE by using impacket-PsExec, impacket-SMBExec, Impacket-atexec or netexec:
+
+Impacket-series:
+```
+impacket-psexec <username>:'<password>'@<ip>
+```
 Ref: https://academy.hackthebox.com/app/module/112/section/1067
