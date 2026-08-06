@@ -10,7 +10,7 @@ python3 mssqlclient.py <username>@<ip> -windows-auth
 ```
 Alternative - Use sqsh:
 ```
-sqsh -S <ip>
+sqsh -S <ip> -U <username> -P '<password>' -h
 ```
 Automated Tools:
 
@@ -26,5 +26,6 @@ use scanner/mssql/mssql_ping
 set rhosts <ip>
 exploit
 ```
+
 
 Ref: https://academy.hackthebox.com/app/module/112/section/1246
