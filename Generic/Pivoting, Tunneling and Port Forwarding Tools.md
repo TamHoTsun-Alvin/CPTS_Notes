@@ -16,3 +16,8 @@ session
 autoroute #if previously the proxy is not opened with sudo, this stage will fail as autoroute creates new network interface, which requires sudo privilege
 ```
 
+In some cases, the host we are reaching may simply not have a route to our attacker machine, e.g. : DC01 that is connected via Exchange01 (where ligolo-ng agent is deployed), In this case we can reach DC01 actively but DC01 can't reach us back, in this case we can issue listener_add at our proxy to do port forwarding:
+
+```
+listener_add -addr <agent_interface_ip_or_0.0.0.0>:>
+```
