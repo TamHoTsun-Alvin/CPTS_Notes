@@ -1,4 +1,4 @@
-In time, due to network segmentation and routing tables, we might have a need to perform Pivoting, mainly ligolo-ng would be used at it is currently the most convenient and best tools available for our purpose, however SSH Port Forwarding and Chisel would also be included as backup shall ligolo-ng fail
+In time, due to network segmentation and routing tables, we might have a need to perform Pivoting, mainly ligolo-ng would be used at it is currently the most convenient and best tools available for our purpose, however Chisel would also be included as backup shall ligolo-ng fail
 
 -Using ligolo-ng for pivoting
 
@@ -30,3 +30,33 @@ This allows us to deploy services (like smb server or http server), when accessi
 net use G: \\10.125.10.1\netdata /user:apple #smbserver
 (On browser) https://10.125.10.1:4444 #goshs https server
 ```
+
+Alternatives: 
+
+-Using Chisel:
+
+-Starting Chisel server:
+```
+./chisel server -v -p <port> --socks5
+```
+
+-Starting Chisel client on victim:
+```
+./chisel client -v <ip>:<port> socks
+```
+
+-Next, modify proxychains.conf to add a new entry for the new socks5 tunnel we created:
+```
+<snip>
+[ProxyList]
+<snip>
+#Add the following to the end
+socks5 127.0.0.1 <port>
+```
+
+-Then, when we use services, simply add proxychains at the beginning
+```
+proxychains xfreerdp /v:<ip> /u:<user> /p:<password>
+```
+
+Note: Ligolo-ng rarely fails and Chisel is the most modern and used one amongst the taught tools, if sadly any other tools is needed, refer to 
