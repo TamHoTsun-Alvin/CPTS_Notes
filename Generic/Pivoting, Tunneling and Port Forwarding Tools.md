@@ -16,8 +16,17 @@ session
 autoroute #if previously the proxy is not opened with sudo, this stage will fail as autoroute creates new network interface, which requires sudo privilege
 ```
 
-In some cases, the host we are reaching may simply not have a route to our attacker machine, e.g. : DC01 that is connected via Exchange01 (where ligolo-ng agent is deployed), In this case we can reach DC01 actively but DC01 can't reach us back, in this case we can issue listener_add at our proxy to do port forwarding:
+In some cases, the host we are reaching may simply not have a route to our attacker machine(10.10.16.27), e.g. : DC01(10.125.10.25) that is connected via Exchange01(10.125.10.1 / 10.10.16.25) (where ligolo-ng agent is deployed), In this case we can reach DC01 actively but DC01 can't reach us back, in this case we can issue listener_add at our proxy to do port forwarding:
 
 ```
-listener_add -addr <agent_interface_ip_or_0.0.0.0>:>
+listener_add -addr <agent_interface_ip_or_0.0.0.0>:<port> --to <kaliip>:<port> --tcp
+Example: listener_add -addr 10.125.10.1:4444 --to 10.10.16.27:4444 --tcp
+```
+
+This allows us to deploy services (like smb server or http server), when accessing resources, we can now use Exchange01's ip with designated forwarding port
+
+```
+#On DC01 (Assume proper port forward is set):
+net use G: \\10.125.10.1\netdata /user:apple #smbserver
+(On browser) https://10.125.10.1:4444 #goshs https server
 ```
