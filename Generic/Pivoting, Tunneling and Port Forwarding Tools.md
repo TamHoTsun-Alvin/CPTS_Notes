@@ -59,4 +59,4 @@ socks5 127.0.0.1 <port>
 proxychains xfreerdp /v:<ip> /u:<user> /p:<password>
 ```
 
-Note: Ligolo-ng rarely fails and Chisel is the most modern and used one amongst the taught tools, if sadly any other tools is needed, refer to 
+Note: Ligolo-ng rarely fails and Chisel is the most modern and used one amongst the taught tools, if sadly any other tools is needed, refer to https://academy.hackthebox.com/app/module/158
