@@ -13,5 +13,5 @@ Next, we need to transfer agent to our victim, then we run:
 Then we select session in proxy, then use autoroute to configure:
 ```
 session
-autoroute #if previously the proxy is not opened with sudo, this stage will fail as autoroute creates new network interface, which requires sudo privil
+autoroute #if previously the proxy is not opened with sudo, this stage will fail as autoroute creates new network interface, which requires sudo privilege
 ```
