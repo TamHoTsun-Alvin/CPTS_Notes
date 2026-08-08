@@ -21,3 +21,5 @@ We can also first enumerate list of possible username before actually mingling w
 ```
 kerbrute userenum -d <domain> --dc <dcip> <usernamelist> -o valid_ad_users
 ```
+
+Ref: https://academy.hackthebox.com/app/module/143/section/1265
