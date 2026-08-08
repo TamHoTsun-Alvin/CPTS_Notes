@@ -28,3 +28,5 @@ Lastly, if we are able to get a foothold onto a windows machine, we can start tr
 import-module .\PowerView.ps1
 Get-DomainPolicy
 ```
+
+After that, we can start attempting to actually perform password spray
