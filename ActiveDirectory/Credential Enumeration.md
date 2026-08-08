@@ -54,4 +54,17 @@ If we for some reason are unable to load our tools on it and as a last resort, w
 -Utilizing ActiveDirectory PS Module:
 ```
 Import-Module ActiveDirectory
+Get-ADDomain #Get Domain Info
+
+Get-ADUser -Identity "<name>" -Properties * #Get info for specific user
+
+Get-ADUser -Filter * #Get all AD User
+
+Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName #Get all AD User with SPN
+
+Get-ADTrust -Filter * #Get AD Trust Relationships
+
+Get-ADGroup -Filter * | select name #Get all AD Group and show name
+
+Get-ADGroup -Identity "<groupname>" #Get 
 ```
