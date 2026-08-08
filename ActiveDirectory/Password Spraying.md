@@ -1,0 +1,1 @@
+Password Spraying is a technique that we use 1 password to authenticate for a list of valid account that we are know of, one can h
