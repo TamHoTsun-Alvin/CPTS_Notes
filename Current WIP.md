@@ -1,1 +1,1 @@
-Active Directory Enumeration and Attack: 0/36
+Active Directory Enumeration and Attack: 14/36
