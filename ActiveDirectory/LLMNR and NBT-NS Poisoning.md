@@ -1,1 +1,6 @@
 Essentially, The LLMNR and NBT-NS are MS component that serves as an alternative when DNS fails itself, when LLMNR/NBT-NS is in use, any host can reply to them, thus enabling the LLMNR/NBT-NS Poisoning trick, we can do this as long as we have access to a network and if we are lucky, we can gain some credential pairs (given that we can crack the NTLMv2 hash slipped along with the username)
+
+-Using responder for poisoning:
+```
+sudo responder -I -wf <interface> 
+```
