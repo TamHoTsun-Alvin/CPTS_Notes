@@ -44,3 +44,14 @@ zip -r <filename>.zip *.json
 ```
 
 Then we can upload the zip file to BloodHound.
+
+If we have means to access windows, we then can utilize different Tools to enumerate domain users.
+
+-Using the ActiveDirectory PowerShell Module
+
+If we for some reason are unable to load our tools on it and as a last resort, we can simply use PS ActiveDirectory Module to perform manual enumeration, if other tools are available it is recommended that we use them instead
+
+-Utilizing ActiveDirectory PS Module:
+```
+Import-Module ActiveDirectory
+```
