@@ -2,9 +2,12 @@ Password Spraying is a technique that we use 1 password to authenticate for a li
 
 If possible, we would want to obtain the password policy first to avoid account lockout
 
--Obtaining password policy with nxc (Default):
+-Obtaining password policy with nxc (Default, with credential):
 ```
 nxc smb 172.16.5.5 -u <username> -p <password> --pass-pol
 ```
 
--Obtaining password policy wi
+-Obtaining password policy with enum4linux-ng (Default, without credential):
+```
+enum4linux-ng -P <dcip> -oA <outputfile_name>
+```
