@@ -6,3 +6,15 @@ sudo -E wireshark
 ```
 
 -Using tcpdump
+```
+sudo tcpdump -i <interface_that_connects_to_victim>
+```
+
+-Using Responder:
+```
+sudo responder -I <interface_that_connects_to_victim> -A 
+```
+
+We can also first enumerate list of possible username before actually mingling with the environment by using kerbrute with precompiled username list like jsmith / jsmith2
+
+-
