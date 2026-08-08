@@ -23,3 +23,5 @@ sudo nxc smb <dcip> -u <username> -p <password> --shares
 sudo nxc smb <dcip> -u <username> -p <password> -M spider_plus --share '<sharename>'
 ```
 We can also enumerate SMB with different kind of tools, refer to [[Enumeration/Services/SMB]] for more detail
+
+If we are able to get a rpcclient null session, without the need of valid credential we can enumerate
