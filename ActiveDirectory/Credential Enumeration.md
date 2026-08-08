@@ -36,4 +36,11 @@ python3 windapsearch.py --dc-ip <dcip> -u <username>@<domainname> -p <password>
 #We can supply -PU or -DA to search for privileged users and domain admins respectively
 ```
 
-Last but not least, we can do a search 
+Last but not least, we can do a bloodhound enumeration from Linux with the help of bloodhound-python, this act exactly like running sharphound at a window host, we can zip the resulting files and use it at BloodHound:
+
+```
+sudo bloodhound-python -u '<username>' -p '<password>' -ns <dcip> -d <domainname> -c all 
+zip -r <filename>.zip *.json
+```
+
+Then we can upload the zip file to BloodHound.
