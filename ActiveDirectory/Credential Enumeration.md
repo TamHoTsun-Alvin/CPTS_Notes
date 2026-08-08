@@ -35,3 +35,5 @@ Another tool we can use is Windapsearch, which utilize ldap queries to enumerate
 python3 windapsearch.py --dc-ip <dcip> -u <username>@<domainname> -p <password>
 #We can supply -PU or -DA to search for privileged users and domain admins respectively
 ```
+
+Last but not least, we can do a search 
