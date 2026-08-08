@@ -1,0 +1,1 @@
+PowerView.ps1 -- A ps script that enables us to gain insight about network situation and info regarding AD
