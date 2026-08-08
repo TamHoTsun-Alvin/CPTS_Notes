@@ -143,3 +143,6 @@ Finally, we can use SharpHound, which is the data collector for bloodhound, to e
 .\SharpHound.exe -c All --zipfilename <outputfilename>
 ```
 
+Ref: https://academy.hackthebox.com/app/module/143/section/1269 / https://academy.hackthebox.com/app/module/143/section/1269
+
+Note: SharpView has been skipped due to similarity but not being outdated, it is worth checking out at https://academy.hackthebox.com/app/module/143/section/1421 if other tools comes to a difficulty
