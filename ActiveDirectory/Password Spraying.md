@@ -1,1 +1,1 @@
-Password Spraying is a technique that we use 1 password to authenticate for a list of valid account that we are know of, one can h
+Password Spraying is a technique that we use 1 password to authenticate for a list of valid account that we are know of, one can use a commonly used weak password as the last resort to gain valid credentials, their is also a common situation where one would own more then one account in the company (Example cjack, cjack_ixadm, cjack_dev etc.), if we gained the password for cjack, it is highly 
