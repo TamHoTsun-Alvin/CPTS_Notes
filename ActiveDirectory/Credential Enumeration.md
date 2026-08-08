@@ -115,5 +115,16 @@ Below is some examples to use these commands in action:
 
 -Enumerate a user's information in a detailed manner:
 ```
-Get-DomainUser -Identity <userbn -Domain inlanefreight.local | Select-Object -Property name,samaccountname,description,memberof,whencreated,pwdlastset,lastlogontimestamp,accountexpires,admincount,userprincipalname,serviceprincipalname,useraccountcontrol
+Get-DomainUser -Identity <username> -Domain <domainname> | Select-Object -Property name,samaccountname,description,memberof,whencreated,pwdlastset,lastlogontimestamp,accountexpires,admincount,userprincipalname,serviceprincipalname,useraccountcontrol
 ```
+
+-Get Members of a certain group:
+```
+Get-DomainGroupMember -Identity "<groupname>" -Recurse
+```
+
+-Testing Local Admin Access:
+```
+Test-AdminAccess -ComputerName <computername>
+```
+
