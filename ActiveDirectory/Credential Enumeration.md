@@ -29,3 +29,9 @@ If we are able to get a rpcclient null session, without the need of valid creden
 rpcclient -U "" -N <dcip> #Start a null session
 enumdomusers
 ```
+
+Another tool we can use is Windapsearch, which utilize ldap queries to enumerate domain users, a valid credentials is required to run this tool:
+```
+python3 windapsearch.py --dc-ip <dcip> -u <username>@<domainname> -p <password>
+#We can supply -PU or -DA to search for privileged users and domain admins respectively
+```
