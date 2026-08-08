@@ -3,7 +3,7 @@ Essentially, The LLMNR and NBT-NS are MS component that serves as an alternative
 -Using responder for poisoning:
 ```
 sudo responder -I -wf <interface> 
-#Not
+#Note: We should start this at the beginning over a tmux session while we perform other enumeration, this technique takes some time
 ```
 
 Next, for all the obtained hash, we could simply have them cracked using hashcat with mode 5600, note that NTLMv2 hash cannot be used for PTH Attacks
