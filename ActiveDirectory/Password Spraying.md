@@ -18,4 +18,13 @@ We are also able to get password policy with ldapsearch, this is a good method i
 ```
 ldapserach -h <dcip> -x -b "<domainname>" -s sub "*"
 Example: ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "*" | grep -m 1 -B 10 pwdHistoryLength
+#Note: newer version of ldapsearch use -H instead of -h
+```
+
+Lastly, if we are able to get a foothold onto a windows machine, we can start transferring Tools over it and gather password policy:
+
+-Obtaining Password Policy with PowerView (Requires window foothold and tool transfer):
+```
+import-module .\PowerView.ps1
+Get-DomainPolicy
 ```
