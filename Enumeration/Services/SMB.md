@@ -15,6 +15,10 @@ With rpcclient:
 ```
 rpcclient -U "" <ip>
 ```
+With rpcclient(null session):
+```
+rpcclient -U "" -N <ip>
+```
 With impacket-smbclient(default, only option when pth is required)
 ```
 python3 smbclient.py domain/username:password@target_ip

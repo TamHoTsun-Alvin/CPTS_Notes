@@ -17,3 +17,9 @@ sudo nxc smb <dcip> -u <username> -p <password> --groups
 ```
 sudo nxc smb <dcip> -u <username> -p <password> --shares
 ```
+
+-Using nxc to crawl through shares we have read access to:
+```
+sudo nxc smb <dcip> -u <username> -p <password> -M spider_plus --share '<sharename>'
+```
+We can also enumerate SMB with different kind of tools, refer to [[Enumeration/Services/SMB]] for more detail

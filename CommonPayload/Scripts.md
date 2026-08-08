@@ -1,1 +1,0 @@
-Allow Powershell Upload: https://github.com/juliourena/plaintext/blob/master/Powershell/PSUpload.ps1
