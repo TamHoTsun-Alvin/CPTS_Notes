@@ -135,3 +135,11 @@ We can enumerate credentials / sensitive data by using Snaffler, it iterates thr
 Snaffler.exe -s -d <domainname> -o <outputfile> -v data
 #Note: Priority of using Snaffler is low, as it is very noisy and produce result in a way that is walltexting you and it would take significant amount of time to find the "hidden gems"
 ```
+
+Finally, we can use SharpHound, which is the data collector for bloodhound, to enumerate through the AD within the domain and have a detailed insight regarding the domain itself:
+
+-Using SharpHound to collect data for BloodHound:
+```
+.\SharpHound.exe -c All --zipfilename <outputfilename>
+```
+
