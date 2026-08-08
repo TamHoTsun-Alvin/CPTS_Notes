@@ -128,3 +128,10 @@ Get-DomainGroupMember -Identity "<groupname>" -Recurse
 Test-AdminAccess -ComputerName <computername>
 ```
 
+We can enumerate credentials / sensitive data by using Snaffler, it iterates through files we can touch to pick up any interesting things for us to use:
+
+-Using Snaffler:
+```
+Snaffler.exe -s -d inlanefreight.local -o snaffler.log -v data
+#Note: Priority of using Snaffler is low, as it is very noisy and produce result in a way that is walltexting you and it would take significant amount of time to find the "hidden gems"
+```
