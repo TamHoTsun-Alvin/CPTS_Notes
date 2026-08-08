@@ -11,3 +11,11 @@ nxc smb 172.16.5.5 -u <username> -p <password> --pass-pol
 ```
 enum4linux-ng -P <dcip> -oA <outputfile_name>
 ```
+
+We are also able to get password policy with ldapsearch, this is a good method if we also want to check if LDAP anonymous bind is enabled as if it is not, this method won't work:
+
+-Obtaining password policy with ldapsearch:
+```
+ldapserach -h <dcip> -x -b "<domainname>" -s sub "*"
+Example: ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "*" | grep -m 1 -B 10 pwdHistoryLength
+```
