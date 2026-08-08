@@ -1,0 +1,1 @@
+After gaining a foothold, next we should perform credential enumeration, aside from the 
