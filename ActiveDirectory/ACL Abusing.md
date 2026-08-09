@@ -1,0 +1,1 @@
+In an AD Environment, to facilitate business practice some personal naturally requires higher privilege and administrative action against other accounts (I.E. HelpDesk Member having the necessary permission to set other user's password), 
