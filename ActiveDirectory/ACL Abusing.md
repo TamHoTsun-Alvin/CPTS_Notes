@@ -20,3 +20,5 @@ Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $si
 ```
 Get-DomainGroup -Identity "<groupname>" | select memberof
 ```
+
+-Investigate
