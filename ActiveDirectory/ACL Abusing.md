@@ -26,3 +26,5 @@ Get-DomainGroup -Identity "<groupname>" | select memberof #Mark down CN, which w
 $groupsid = Convert-NameToSid "<group"
 Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $groupsid} -Verbose
 ```
+
+An Example of Abuse path can be found at https://academy.hackthebox.com/app/module/143/section/1486
