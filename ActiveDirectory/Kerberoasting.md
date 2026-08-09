@@ -1,0 +1,1 @@
+When we acquired valid credentials for user in the AD, we then can attempt to perform Kerberoasting, since all users in a domain can request Kerboros ticket for any service account in the domain, as service account are often configured to have high privilege, the ticket itself won't do you good, however the ticke
