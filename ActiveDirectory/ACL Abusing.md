@@ -18,7 +18,11 @@ Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $si
 
 -Investigate Specific Domain Groups with PowerView:
 ```
-Get-DomainGroup -Identity "<groupname>" | select memberof
+Get-DomainGroup -Identity "<groupname>" | select memberof #Mark down CN, which will be used to query for more information
 ```
 
--Investigate
+-Investigate information of specific Domain Groups with Powerview:
+```
+$groupsid = Convert-NameToSid "<group"
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $groupsid} -Verbose
+```
