@@ -7,4 +7,10 @@ Below is some common abuse taken from HTB Website:
 - [AddSelf](https://bloodhound.specterops.io/resources/edges/add-self#addself) - shows security groups that a user can add themselves to.
 - [GenericAll](https://bloodhound.specterops.io/resources/edges/generic-all#genericall) - this grants us full control over a target object. Again, depending on if this is granted over a user or group, we could modify group membership, force change a password, or perform a targeted Kerberoasting attack. If we have this access over a computer object and the [Local Administrator Password Solution (LAPS)](https://www.microsoft.com/en-us/download/details.aspx?id=46899) is in use in the environment, we can read the LAPS password and gain local admin access to the machine which may aid us in lateral movement or privilege escalation in the domain if we can obtain privileged controls or gain some sort of privileged access.
 
-To abuse ACL, we first need to perform enumeration to see what kind of ACL
+To abuse ACL, we first need to perform enumeration to see what kind of ACL entries a user have
+
+--Enumerating ACL with PowerView
+```
+Import-Module .\PowerView.ps1
+$sid = Convert-NameToSid wley
+```
