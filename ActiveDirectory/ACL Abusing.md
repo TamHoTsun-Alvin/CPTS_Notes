@@ -28,3 +28,4 @@ Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $gr
 ```
 
 An Example of Abuse path can be found at https://academy.hackthebox.com/app/module/143/section/1486 
+
