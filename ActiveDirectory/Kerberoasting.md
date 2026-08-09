@@ -17,4 +17,5 @@ impacket-getuserspns -dc-ip <dcip> <domainname>/<username> -request -outputfile 
 Depending on what type of ticket we get, we use:
 
 etype23 - RC4 | hashcat mode 13100
-etype17 - AES
+etype17 - AES128 | hashcat mode 19600
+etype18 - AES256 | hashcat mode 19700
