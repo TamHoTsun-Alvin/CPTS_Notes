@@ -1,1 +1,1 @@
-Active Directory Enumeration and Attack: 20/36 --Enumerating with PowerView
+Active Directory Enumeration and Attack: 23/36 -- Privileged Access
