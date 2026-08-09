@@ -9,8 +9,14 @@ Below is some common abuse taken from HTB Website:
 
 To abuse ACL, we first need to perform enumeration to see what kind of ACL entries a user have
 
---Enumerating ACL with PowerView
+-Enumerating ACL with PowerView
 ```
 Import-Module .\PowerView.ps1
-$sid = Convert-NameToSid wley
+$sid = Convert-NameToSid <username>
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
+```
+
+-Investigate Specific Domain Groups with PowerView:
+```
+Get-DomainGroup -Identity "<groupname>" | select memberof
 ```
