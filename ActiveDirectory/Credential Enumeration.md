@@ -146,3 +146,5 @@ Finally, we can use SharpHound, which is the data collector for bloodhound, to e
 Ref: https://academy.hackthebox.com/app/module/143/section/1269 / https://academy.hackthebox.com/app/module/143/section/1269
 
 Note: SharpView has been skipped due to similarity but not being outdated, it is worth checking out at https://academy.hackthebox.com/app/module/143/section/1421 if other tools comes to a difficulty
+
+Note2: Although not likely, but if we find ourself in a case where we cannot deploy any tools, it would be worth checking https://academy.hackthebox.com/app/module/143/section/1360, which is skipped due to complexity but contains method to do things in a LOL way
