@@ -19,3 +19,5 @@ Depending on what type of ticket we get, we use:
 etype23 - RC4 | hashcat mode 13100
 etype17 - AES128 | hashcat mode 19600
 etype18 - AES256 | hashcat mode 19700
+
+If, however, the credentials gave us access allows us to have an rdp session, we might want to perform this process on 
