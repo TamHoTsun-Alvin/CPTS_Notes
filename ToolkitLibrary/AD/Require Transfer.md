@@ -2,3 +2,4 @@ PowerView.ps1 -- A ps script that enables us to gain insight about network situa
 SharpView.exe -- A tool that help enumerate AD
 Snaffler.exe -- A tool that help us enumerate files for interesting credentials
 SharpHound.exe -- Data Collector for BloodHound
+PowerUpSQL -- Used to locate SQL Server
