@@ -61,6 +61,10 @@ ASREPROASTING:
 
 ASREPRoasting refers to a technique that we obtain session key for accounts that is marked "DONT_REQ_PREAUTH" in its AD Attribute, when queried that result in the KDC returns a AS-REP message containing a session key encrypted with that user's password hash
 
-ASREPRoasting by impacket-getus
+ASREPRoasting by impacket-getuserspn:
+```
+impacket-getuserspns -dc-ip <dcip> <domainname>/<username> -request -outputfile <outputfilename>
+```
+
 
 Ref: https://academy.hackthebox.com/app/module/143/section/1423 / https://academy.hackthebox.com/app/module/143/section/1274
