@@ -28,4 +28,13 @@ Convert-SidToName S-1-5-21-3842939050-3880317879-2865463114-500
 
 ```
 
-SID History Abuse can also be conducted cross forest, refer to [[]]
+SID History Abuse can also be conducted cross forest, refer to [[Domain Trust Attack]] and https://academy.hackthebox.com/app/module/143/section/1487
+
+The above can also be conducted in a linux host:
+
+Cross-Forest kerberoasting with GetUserSPNs.py:
+```
+GetUserSPNs.py -request -target-domain <foreigndomain> <localdomain>/wley
+```
+
+We can also run bloodhound-python to gather information for a foreign domain if we have our 
