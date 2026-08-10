@@ -63,6 +63,7 @@ We can also perform this attack from linux perspective:
 
 Obtaining Domain SID via SID Bruteforcing by lookupsid.py:
 ```
-lookupsid.py <domainname>/<username>@<dcip>
+lookupsid.py <domainname>/<username>@<dcipforchild>
 ```
-aaaaaa
+
+Next, we obtain Enterprise Admin SID:
