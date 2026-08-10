@@ -12,3 +12,4 @@ The following is needed to carryon this attack:
 - The FQDN of the child domain.
 - The SID of the Enterprise Admins group of the root domain.
 - With this data collected, the attack can be performed with Mimikatz.
+(Note: This requires a compromise of the child domain, do not attempt if you did not compromise the domain as you would be stuck )
