@@ -65,3 +65,4 @@ Obtaining Domain SID via SID Bruteforcing by lookupsid.py:
 ```
 lookupsid.py <domainname>/<username>@<dcip>
 ```
+aaaaaa
