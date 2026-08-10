@@ -26,4 +26,26 @@ Get-DomainTrust
 Get-DomainTrustMapping
 ```
 
--Check Domain User in the child domain
+-Using netdom to query domain Trust:
+```
+netdom query /domain:<domainname> trust
+```
+
+-Using netdom to query DC:
+```
+netdom query /domain:<domainname> dc
+```
+
+-Using netdom to query server and workstation:
+```
+netdom query /domain:<domainname> workstation
+```
+
+-Check Domain User in the child domain:
+```
+ Get-DomainUser -Domain <domain> | select SamAccountName
+ #Example: 
+ Get-DomainUser -Domain LOGISTICS.INLANEFREIGHT.LOCAL | select SamAccountName
+```
+
+Another easier option is to use Map Domain Trust in BloodHound
