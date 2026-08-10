@@ -26,7 +26,12 @@ Enter-PSSession -ComputerName ACADEMY-AEN-DEV01.INLANEFREIGHT.LOCAL -Credential 
 
 Then, we register with our credential:
 ```
-Register-PSSessionConfiguration -Name backupadmsess -RunAsCredential inlanefreight\backupadm
+Register-PSSessionConfiguration -Name <sessionname> -RunAsCredential <domain
+>\<username>
 #Example
 Register-PSSessionConfiguration -Name backupadmsess -RunAsCredential inlanefreight\backupadm
+```
+Then, we type Restart-Service WinRM (Which would cause us to be kicked out, its normal), then restart a new PS-Session using the sessionname we specified:
+```
+Enter-PSSession -ComputerName <computername> -Credential <domain>\<username> -ConfigurationName  <sessionname>
 ```
