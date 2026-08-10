@@ -57,4 +57,10 @@ Note: For the last 2 technique, we can also add /tgtdelag if the DC is below Mic
 
 Note2: If for any reason, we require to do manual kerberoasting via setspn, refer to https://academy.hackthebox.com/app/module/143/section/1423
 
+ASREPROASTING:
+
+ASREPRoasting refers to a technique that we obtain session key for accounts that is marked "DONT_REQ_PREAUTH" in its AD Attribute, when queried that result in the KDC returns a AS-REP message containing a session key encrypted with that user's password hash
+
+ASREPRoasting by impacket-getus
+
 Ref: https://academy.hackthebox.com/app/module/143/section/1423 / https://academy.hackthebox.com/app/module/143/section/1274
