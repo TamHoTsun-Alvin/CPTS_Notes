@@ -49,3 +49,4 @@ netdom query /domain:<domainname> workstation
 ```
 
 Another easier option is to use Map Domain Trust in BloodHound
+
