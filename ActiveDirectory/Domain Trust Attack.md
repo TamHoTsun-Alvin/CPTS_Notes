@@ -1,1 +1,4 @@
 Their are different Cross Domain attack we can perform, below are some Domain Trust attack that utilize child -> parent path and cross forest trust abuse
+
+ExtraSids Attack:
+
