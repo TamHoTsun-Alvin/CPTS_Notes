@@ -14,3 +14,16 @@ Trusts can be set up in two directions: one-way or two-way (bidirectional).
 
 First, we can use tools to enumerate Domain Trust Relationships:
 
+-Using Powershell Get-ADTrust cmdlet:
+```
+Import-Module activedirectory
+Get-ADTrust -Filter *
+```
+
+-Using PowerView to enumerate:
+```
+Get-DomainTrust
+Get-DomainTrustMapping
+```
+
+-Check Domain User in the child domain
