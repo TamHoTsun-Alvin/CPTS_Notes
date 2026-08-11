@@ -26,4 +26,8 @@ Burp also have a Fuzzer called Burp intruder, however due to we using limited CE
 
 We first select our base from the HTTP History and send the request we wish to the intruder (like how we sending request to repeater)
 
-Af
+After we are done, we need to choose positions to fuzz, an example would be:
+
+https://watermelonhamigua/secure/api/v2/getUserDetails/id=`fuzzpos'
+
+We can choose Payload Type and Position, then, after that, we can start fuzzing and see what kind of response the webserver gave us
