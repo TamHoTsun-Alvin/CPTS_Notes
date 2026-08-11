@@ -25,7 +25,7 @@ Recursive Fuzzing:
 
 Enabling recursive fuzzing allows ffuf to automatically look for files and directory when a new directory is discovered, it can be utilized in the following way:
 ```
-ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/FUZZ -recursion -recursion-depth <depth> -e <extentions> -v
+ffuf -w <pathtowordlist> -u http://SERVER:PORT/FUZZ -recursion -recursion-depth <depth> -e <extentions> -v
 ```
 
 
@@ -42,6 +42,18 @@ ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ 
 
 Vhost fuzzing:
 
-If we suspect that different pages are served with vhost instead of subdomain, then we need to perform Vhost Fuzzing instead, 
+If we suspect that different pages are served with vhost instead of subdomain, then we need to perform Vhost Fuzzing instead, without actually adding the wordlist to our host, we can fuzz the Host header instead in the following way, we can do this with the subdomain-top1million wordlist to perform this task:
 
+```
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://SERVER:PORT/ -H 'Host: FUZZ.<server>'
+#Example:
+ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb'
+```
 
+Response filtering:
+
+We can filter our response if we know what is actually useful to us, below is ways to filter:
+
+Filtering with response size:
+
+Let's say we know that the response size when we request a non-existent page, 
