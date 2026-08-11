@@ -14,4 +14,4 @@ We can repeat a single request / modify based on a request by sending a specific
 
 -Decoding:
 
-At 
+At the Decoder page, we can freely encode or decode strings into different format
