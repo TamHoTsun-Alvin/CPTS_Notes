@@ -40,3 +40,8 @@ We can use the subdomains-top1million wordlist to do it:
 ffuf -w /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.inlanefreight.com/
 ```
 
+Vhost fuzzing:
+
+If we suspect that different pages are served with vhost instead of subdomain, then we need to perform Vhost Fuzzing instead, 
+
+
