@@ -25,4 +25,8 @@ SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something
 
 The 1=1 AND password = something would evaluate to false, but the username = admin or false will evaluate to true, at this case we can login as long as the username we provide is valid
 
-However, if we do not know any user and we just want to 
+However, if we do not know any user and we just want to get ourselves into the system, what we want to do is do further subvert the query by adding or at the password side as well, so that the query becomes:
+```
+SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something' or '1'= '1';
+```
+Usually, when inserting query, usually we would do something like a '1' = '1, notice that the final singlequote is not present as most likely 
