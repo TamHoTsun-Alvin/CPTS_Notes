@@ -27,3 +27,6 @@ Enabling recursive fuzzing allows ffuf to automatically look for files and direc
 ```
 ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/FUZZ -recursion -recursion-depth <depth> -e <extentions> -v
 ```
+
+
+Sub-Domain Fuzzing:
