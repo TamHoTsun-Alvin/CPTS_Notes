@@ -70,4 +70,24 @@ If instead, we are uncertain what code is gold but know what code is garbage, we
 
 Parameter Fuzzing:
 
-Sometimes, it would be essential for us to fuzz the parameter before we can continue, we can 
+Sometimes, it would be essential for us to fuzz the parameter before we can continue, we can utilize the burp-parameter-names.txt wordlist to archive such
+
+```
+ffuf -w <pathtowordlist> -u <urltofuss> -fs xxx
+#Example:
+ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx
+```
+
+We can also fuzz it with POST as the method like the following example:
+```
+ffuf -w /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+
+Value Fuzzing:
+
+Finally, for post value fuzzing, we can refer to this example:
+
+```
+ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+#Note: for parameter / value fuzzing, it would be more convenient if we are doing it in burp, therefore even though CE Version of burp suite only support 1req/s, it is worth considering
