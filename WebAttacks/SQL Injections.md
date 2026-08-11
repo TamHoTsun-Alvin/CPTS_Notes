@@ -17,4 +17,12 @@ A common case to use or in subverting queue logic is to perform auth bypass, con
 SELECT * FROM logins WHERE username='<username>' AND password = '<pw>';
 ```
 
-if we happen to know a valid username, then what we need to do is to have the password part always evaluate to true
+if we happen to know a valid username, then what we need to do is to have the query always evaluate to true, we can then subvert the logic by adding a 1=1:
+
+```
+SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something';
+```
+
+The 1=1 AND password = something would evaluate to false, but the username = admin or false will evaluate to true, at this case we can login as long as the username we provide is valid
+
+However, if we do not know any user and we just want to 
