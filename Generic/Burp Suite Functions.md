@@ -31,3 +31,5 @@ After we are done, we need to choose positions to fuzz, an example would be:
 https://watermelonhamigua/secure/api/v2/getUserDetails/id=`fuzzpos'
 
 We can choose Payload Type and Position, then, after that, we can start fuzzing and see what kind of response the webserver gave us
+
+Note: Burp do have an active scanner but, not available at the CE Edition, therefore if need an active scanner, 
