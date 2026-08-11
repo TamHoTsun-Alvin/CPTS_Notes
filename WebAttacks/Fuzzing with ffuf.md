@@ -56,4 +56,18 @@ We can filter our response if we know what is actually useful to us, below is wa
 
 Filtering with response size:
 
-Let's say we know that the response size when we request a non-existent page, 
+Let's say we know that the response size when we request a non-existent page, assuming it to be 1043, then we can filter out all response with this size by specifying the option -fs 1043
+
+Filtering with status code:
+
+Let's say we are know that we are looking for a specific code, 200, any other code is garbage, then we can specify such using the option -mc 200, if we are looking for more then 1 code, then comma separate it like the following:
+
+-mc 200, 301, 401
+
+If instead, we are uncertain what code is gold but know what code is garbage, we can have them filtered out by specifying the option -fc instead, like -mc, we can use comma separate for filtering multiple code:
+
+-fc 403, 404
+
+Parameter Fuzzing:
+
+Sometimes, it would be essential for us to fuzz the parameter before we can continue, we can 

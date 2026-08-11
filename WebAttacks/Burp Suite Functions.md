@@ -28,7 +28,7 @@ We first select our base from the HTTP History and send the request we wish to t
 
 After we are done, we need to choose positions to fuzz, an example would be:
 
-https://watermelonhamigua/secure/api/v2/getUserDetails/id=`fuzzpos'
+https://watermelonhamigua/secure/api/v2/getUserDetails/get.php?id=`fuzz`
 
 We can choose Payload Type and Position, then, after that, we can start fuzzing and see what kind of response the webserver gave us
 
