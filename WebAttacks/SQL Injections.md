@@ -11,4 +11,10 @@ We need to first input ' to terminate the term %input first, then we can input s
 
 -Using or to subvert the queue logic:
 
+A common case to use or in subverting queue logic is to perform auth bypass, consider the following statement:
 
+```
+SELECT * FROM logins WHERE username='<username>' AND password = '<pw>';
+```
+
+if we happen to know a valid username, then what we need to do is to have the password part always evaluate to true
