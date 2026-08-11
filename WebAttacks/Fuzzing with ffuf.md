@@ -19,3 +19,11 @@ After confirming, we can then fuzz for actual pages, we can use the directory-li
 ```
 ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/blog/FUZZ.php
 ```
+
+
+Recursive Fuzzing:
+
+Enabling recursive fuzzing allows ffuf to automatically look for files and directory when a new directory is discovered, it can be utilized in the following way:
+```
+ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/FUZZ -recursion -recursion-depth <depth> -e <extentions> -v
+```
