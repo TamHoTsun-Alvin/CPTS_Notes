@@ -32,4 +32,6 @@ https://watermelonhamigua/secure/api/v2/getUserDetails/id=`fuzzpos'
 
 We can choose Payload Type and Position, then, after that, we can start fuzzing and see what kind of response the webserver gave us
 
-Note: Burp do have an active scanner but, not available at the CE Edition, therefore if need an active scanner, 
+Note: Burp do have an active scanner but, not available at the CE Edition, therefore if need an active scanner, Ref to https://academy.hackthebox.com/app/module/110/section/1086 for using ZAP Scanner
+
+Ref: https://academy.hackthebox.com/app/module/110
