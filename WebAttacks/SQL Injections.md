@@ -29,4 +29,4 @@ However, if we do not know any user and we just want to get ourselves into the s
 ```
 SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something' or '1'= '1';
 ```
-Usually, when inserting query, usually we would do something like a '1' = '1, notice that the final singlequote is not present as most likely 
+Usually, when inserting query, usually we would do something like a '1' = '1, notice that the final singlequote is not present as most likely we would be finishing that with the singlequote the one that comes from the prepared query.
