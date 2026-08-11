@@ -1,0 +1,1 @@
+Using ffuf, we can fuzz a lot of things, below is some examples on how to perform fuzzing on different items
