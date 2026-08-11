@@ -18,4 +18,12 @@ At the Decoder page, we can freely encode or decode strings into different forma
 
 -Proxy:
 
-Aside from booting the built in browser, burp also provides a proxy that would allow us to intercept request and modify them with other br
+Aside from booting the built in browser, burp also provides a proxy that would allow us to intercept request and modify them with other browser we wish, by default the proxy is open at 127.0.0.1:8080
+
+-Burp Fuzzer (Intruder):
+
+Burp also have a Fuzzer called Burp intruder, however due to we using limited CE Edition, this Fuzzer should be considered last resort as it only support 1 request per second, prioritize other options like ffuf, gobuster before considering the use of Burp Fuzzer
+
+We first select our base from the HTTP History and send the request we wish to the intruder (like how we sending request to repeater)
+
+Af
