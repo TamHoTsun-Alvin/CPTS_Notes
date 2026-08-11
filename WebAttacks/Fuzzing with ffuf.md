@@ -6,3 +6,16 @@ We can use ffuf to fuzz for directory by utilizing ffuf like the following Examp
 ```
 ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/FUZZ
 ```
+
+Page Fuzzing:
+
+Aside from directory, we can also fuzz for pages that we can visit, before fuzzing for other page we need to determine what kind of extension the pages are, therefore we fuzz for index page extension first, we can do so by using the web-extensions.txt wordlist:
+
+```
+ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/blog/indexFUZZ
+```
+
+After confirming, we can then fuzz for actual pages, we can use the directory-list-2.3 wordlist
+```
+ffuf -w <pathtowordlist> -u http://SERVER_IP:PORT/blog/FUZZ.php
+```
