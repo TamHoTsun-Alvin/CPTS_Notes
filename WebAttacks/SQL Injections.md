@@ -72,3 +72,13 @@ select * from ports where portcode = '<searchterm>'
 select * from ports where portcode = cn' UNION select 1,2-- -
 ```
 We keep adding 1,2,3,4... until something actually returns for our query, this method has 1 advantage, we get to know which column actually is displayed since we labelled them using numbers.
+
+-Database Enumeration
+
+Below is a list of payload we can use to identify what SQL we are dealing:
+
+|Payload|When to Use|Expected Output|Wrong Output|
+|---|---|---|---|
+|`SELECT @@version`|When we have full query output|MySQL Version 'i.e. `10.3.22-MariaDB-1ubuntu1`'|In MSSQL it returns MSSQL version. Error with other DBMS.|
+|`SELECT POW(1,1)`|When we only have numeric output|`1`|Error with other DBMS|
+|`SELECT SLEEP(5)`|Blind/No Output|Delays page response for 5 seconds and returns `0`.|Will not delay response with other DBMS|
