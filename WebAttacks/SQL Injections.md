@@ -59,5 +59,7 @@ The following queries combine the select result from ports and ships and output 
 
 To perform union injection, we need to ensure that the 2 queries that we are unioning have the same number of column when returning, therefore, we first need to check how many columns the original query is going to return, one of them is using order by, we can check how many column original query have by terminating and add order by x, then comment out, like the following
 ```
-select * from
+select * from ports where portcode = '<searchterm>'
+select * from ports where portcode = cn' order by 1 -- 
 ```
+Then, we increment the integer inputted in order by by 1 each time the command executed successfully, then until the query failed, the parameter used for the last time the command is successfully executed is the number of columns outputted.
