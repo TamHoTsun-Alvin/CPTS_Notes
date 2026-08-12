@@ -55,4 +55,6 @@ SELECT * FROM ports UNION SELECT * FROM ships;
 
 The following queries combine the select result from ports and ships and output them into the same columns, by using union and other techniques, we can perform union injection and enumerate some properties regarding current database
 
--Columns Enumeration by 
+-Columns Enumeration using ORDER BY:
+
+To perform union injection, we need to ensure that the 2 queries that we are unioning have the same number of column when returning, therefore, we first need to check whethe
