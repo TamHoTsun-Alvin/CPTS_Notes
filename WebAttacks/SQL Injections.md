@@ -30,3 +30,13 @@ However, if we do not know any user and we just want to get ourselves into the s
 SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something' or '1'= '1';
 ```
 Usually, when inserting query, usually we would do something like a '1' = '1, notice that the final singlequote is not present as most likely we would be finishing that with the singlequote the one that comes from the prepared query.
+
+-Using Comments to terminate query early
+
+Somtimes, the query itself may perform different checks aside from checking if the information provided is correct, with the use of comments, we can possibly terminate the query early, allowing us to perform auth bypass, below is an example:
+
+```
+SELECT * FROM logins WHERE (username='<input1>' AND ........) AND password = '<hashofinput2>'
+```
+
+We can see that input2 is hashed, so we can't really inject it in there, also there is additional check after input 1, however, if we are able to guess the queue structure, use comments to terminate the conditions early and pro
