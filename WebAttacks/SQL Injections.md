@@ -48,3 +48,4 @@ Notice that we actually gave back 1 ' and 1 ) before terminating with -- , also 
 
 -Union Injection:
 
+Union is a function that allows us to "combine" queries into same output, 
