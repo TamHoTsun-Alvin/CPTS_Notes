@@ -57,4 +57,7 @@ The following queries combine the select result from ports and ships and output 
 
 -Columns Enumeration using ORDER BY:
 
-To perform union injection, we need to ensure that the 2 queries that we are unioning have the same number of column when returning, therefore, we first need to check whethe
+To perform union injection, we need to ensure that the 2 queries that we are unioning have the same number of column when returning, therefore, we first need to check how many columns the original query is going to return, one of them is using order by, we can check how many column original query have by terminating and add order by x, then comment out, like the following
+```
+select * from
+```
