@@ -45,3 +45,6 @@ We can see that input2 is hashed, so we can't really inject it in there, also th
 admin') -- -
 ```
 Notice that we actually gave back 1 ' and 1 ) before terminating with -- , also notice that the correct symbol for terminating with comment is -- , where it is composed by 2 - and 1 space, the - after the comment symbol is only for demo purpose
+
+-Union Injection:
+
