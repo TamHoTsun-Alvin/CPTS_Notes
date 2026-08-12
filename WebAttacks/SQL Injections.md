@@ -39,4 +39,9 @@ Somtimes, the query itself may perform different checks aside from checking if t
 SELECT * FROM logins WHERE (username='<input1>' AND ........) AND password = '<hashofinput2>'
 ```
 
-We can see that input2 is hashed, so we can't really inject it in there, also there is additional check after input 1, however, if we are able to guess the queue structure, use comments to terminate the conditions early and pro
+We can see that input2 is hashed, so we can't really inject it in there, also there is additional check after input 1, however, if we are able to guess the queue structure, use comments to terminate the conditions early and provide back all essential symbols, we can auth bypass, below is the correct payload on input1:
+
+```
+admin') -- -
+```
+Notice that we actually gave back 1 ' and 1 ) before terminating with -- , also notice that the correct symbol for terminating with comment is -- , where it is composed by 2 - and 1 space, the - after the comment symbol is only for demo purpose
