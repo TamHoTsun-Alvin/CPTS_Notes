@@ -65,3 +65,10 @@ select * from ports where portcode = cn' order by 1 --
 Then, we increment the integer inputted in order by by 1 each time the command executed successfully, then until the query failed, the parameter used for the last time the command is successfully executed is the number of columns outputted. 
 
 -Columns Enumeration using UNION
+
+As mentioned before, union queries require a same amount of columns in order to succeed, therefore we can keep editing our union query and increment with numbers until we successfully got a result:
+```
+select * from ports where portcode = '<searchterm>'
+select * from ports where portcode = cn' UNION select 1,2-- -
+```
+We keep adding 1,2,3,4... until something actually returns for our query, this method has 1 advantage, we get to know which column actually is displayed since we labelled them using numbers.
