@@ -53,4 +53,6 @@ Union select is a function that allows us to "combine" queries into same output,
 SELECT * FROM ports UNION SELECT * FROM ships;
 ```
 
-The following queries combine the select result from ports and ships and output them into the same columns, by using union and other technique
+The following queries combine the select result from ports and ships and output them into the same columns, by using union and other techniques, we can perform union injection and enumerate some properties regarding current database
+
+-Columns Enumeration by 
