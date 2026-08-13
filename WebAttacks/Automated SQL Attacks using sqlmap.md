@@ -22,4 +22,18 @@ Refer to https://academy.hackthebox.com/app/module/58/section/696 to see output 
 
 -Ways to use SQLMap:
 
-The best way to use sqlmap is to identify the request that we are interested using burp or firefox, then we right click and select copy as curl, paste it to terminal and change curl to sqlmap. Notice that there needs to be a parameter value for SQLMap to investigate (e.g. https://example.com)
+The best way to use sqlmap is to identify the request that we are interested using burp or firefox, then we right click and select copy as curl, paste it to terminal and change curl to sqlmap. Notice that there needs to be a parameter value for SQLMap to investigate (e.g. https://example.com/?id=1)  or else we need to specify options for automatic parameter finding
+
+For POST Request, simply follows the above or input it in the following way:
+```
+sqlmap 'http://www.example.com/' --data 'uid=1&name=test'
+```
+If we only wish to test some of the provided parameter, mark a * at the end like the following:
+```
+sqlmap 'http://www.example.com/' --data 'uid=1*&name=test'
+```
+
+It also support we provide a HTTP request from a file, to do so, we use burp suite and copy the entire HTTP Request, then save it to a file, then we use the following syntax to fire SQLMap:
+```
+sqlmap -r rep.txt
+```
