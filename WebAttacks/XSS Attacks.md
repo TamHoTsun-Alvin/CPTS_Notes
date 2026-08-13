@@ -16,4 +16,19 @@ The parameter 'hamigua' is not valid.
 ```
 Then, we can try stick in XSS payload in where we would enter hamigua, as apparently it got returned to us when error is occured
 
-This could be used to target other user if 
+This could be used to target other user if, let's say, the parameter is sent via the use of URL, like in the following:
+
+http://example.com/index.php?params=hamigua
+
+we can see that the parameter is passed by params =, if we sent someone the following link:
+```
+http://example.com/index.php?params=<script>alert(window.origin)</script>
+```
+
+Then whenever other user clicks it, they would be attacked
+
+DOM XSS:
+
+DOM XSS occurs when the webpage itself use a js function to change the view of the webpage, for sink functions (js function that writes user input to DOM objects on the page) that does not properly sanitize user input and write user input as is to change DOM Object, DOM XSS occurs
+
+Refer to https://academy.hackthebox.com/app/module/103/section/974 for more info
