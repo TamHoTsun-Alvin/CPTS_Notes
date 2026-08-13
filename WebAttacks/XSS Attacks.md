@@ -32,3 +32,17 @@ DOM XSS:
 DOM XSS occurs when the webpage itself use a js function to change the view of the webpage, for sink functions (js function that writes user input to DOM objects on the page) that does not properly sanitize user input and write user input as is to change DOM Object, DOM XSS occurs
 
 Refer to https://academy.hackthebox.com/app/module/103/section/974 for more info
+
+Automated Discovery Tools:
+
+To automate discovery of XSS, we can use a variety of tools to aid us in the process, aside from automated scanner like nessus and ZAP, we can use XSStrike to auto discover the presence of XSS Vulnerability.
+
+```
+python xsstrike.py -u "<url>" 
+```
+
+*Due to scope of CPTS, defacing and phishing will be intentionally skipped*
+
+Session Hijacking:
+
+Modern webapp usually utilize cookies to maintain a user's session with the server, with cookie, user can only login once and keep the logged-in status alive for some amount of time by presenting cookies to the webserver instead of simply having to login again. With XSS vulnerability, that means we get to execute some js cod
