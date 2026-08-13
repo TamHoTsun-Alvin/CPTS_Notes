@@ -10,3 +10,10 @@ SQLMap is a powerful pentesting tools that specialize in detecting and exploitin
 |`Cubrid`|`InterSystems Cache`|`IRIS`|`eXtremeDB`|
 |`FrontBase`||||
 
+SQLMap support different SQL Injection type, including:
+-Boolean-based Blind
+-Error-based
+-Union query-based (fastest)
+-Stacked queries
+-Time-based blind
+-Inline Queries
