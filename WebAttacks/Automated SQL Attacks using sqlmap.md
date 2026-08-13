@@ -58,3 +58,6 @@ Attack Tuning:
 We can fine tune our attacks with the following parameters:
 
 --prefix and --suffix:
+
+use it when our payload need to be have some prefix and suffix to be considered valid
+
