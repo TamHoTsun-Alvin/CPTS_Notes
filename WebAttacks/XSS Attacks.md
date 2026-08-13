@@ -1,0 +1,1 @@
+XSS Attacks are attacks that takes advantage of poor 
