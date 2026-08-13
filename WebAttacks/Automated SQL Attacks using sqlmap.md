@@ -19,3 +19,7 @@ SQLMap support different SQL Injection type, including:
 -Inline Queries
 
 Refer to https://academy.hackthebox.com/app/module/58/section/696 to see output description
+
+-Ways to use SQLMap:
+
+The best way to use sqlmap is to identify the request that we are interested using burp or firefox, then we right click and select copy as curl, paste it to terminal and change curl to sqlmap. Notice that there needs to be a parameter value for SQLMap to investigate (e.g. https://example.com)
