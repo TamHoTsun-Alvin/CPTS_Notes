@@ -61,3 +61,10 @@ We can fine tune our attacks with the following parameters:
 
 use it when our payload need to be have some prefix and suffix to be considered valid
 
+--level and --risk
+
+by default, only techniques with level 1 and risk 1 is used, however they can be extended till level 5 and risk 3, notice that when level goes higher, method that is less likely to succeed will be used and as risk goes higher, chances of db entry loss and or DNS
+
+Customized detection of TRUE response:
+
+We can fixate the detection of true responses by using status code (--code=xxx), 
