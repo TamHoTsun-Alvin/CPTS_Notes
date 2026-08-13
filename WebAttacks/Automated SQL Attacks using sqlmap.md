@@ -75,3 +75,7 @@ After successful detection of SQLi vulnerability, we may start enumerating by de
 ```
 sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba
 ```
+
+Table Enumeration:
+
+After knowing what current DB we are inm 
