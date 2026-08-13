@@ -37,3 +37,14 @@ It also support we provide a HTTP request from a file, to do so, we use burp sui
 ```
 sqlmap -r rep.txt
 ```
+
+we can include specific cookie at our request by specifying:
+```
+--cookie='<name>=<value>' 
+```
+at the end of our request or utilize header -H, below are example:
+```
+sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
+#or
+sqlmap ... -H='Cookie:PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
+```
