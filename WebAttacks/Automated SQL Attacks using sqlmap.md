@@ -67,4 +67,11 @@ by default, only techniques with level 1 and risk 1 is used, however they can be
 
 Customized detection of TRUE response:
 
-We can fixate the detection of true responses by using status code (--code=xxx), 
+We can fixate the detection of true responses by using status code (--code=xxx), titles (--title) or string (--string=xxx)
+
+Database enumeration:
+
+After successful detection of SQLi vulnerability, we may start enumerating by detecting db version, current user, current db name and whether current user is DBA, we can do it by following the example:
+```
+sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba
+```
