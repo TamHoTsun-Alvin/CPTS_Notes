@@ -17,3 +17,5 @@ SQLMap support different SQL Injection type, including:
 -Stacked queries
 -Time-based blind
 -Inline Queries
+
+Refer to https://academy.hackthebox.com/app/module/58/section/696 to see output description
