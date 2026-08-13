@@ -78,4 +78,4 @@ sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --
 
 Table Enumeration:
 
-After knowing what current DB we are inm 
+After knowing what current DB we are in, we can enumerate tables we have by using 
