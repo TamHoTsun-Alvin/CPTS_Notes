@@ -45,4 +45,8 @@ python xsstrike.py -u "<url>"
 
 Session Hijacking:
 
-Modern webapp usually utilize cookies to maintain a user's session with the server, with cookie, user can only login once and keep the logged-in status alive for some amount of time by presenting cookies to the webserver instead of simply having to login again. With XSS vulnerability, that means we get to execute some js cod
+Modern webapp usually utilize cookies to maintain a user's session with the server, with cookie, user can only login once and keep the logged-in status alive for some amount of time by presenting cookies to the webserver instead of simply having to login again. With XSS vulnerability, that means we get to execute some js code on victim's browser, we might be able to perform session hijacking.
+
+Blind XSS vulnerability:
+
+Blind XSS Vulnerability refers to a xss vulnerability that is triggered on a page we dont have access to, usually this can be exploited if we are able to pass along some data to interact with that certain page we do not have access toi (example: a registration approval page that populate registration details for admin to approval, notice that the details are entered by us)
