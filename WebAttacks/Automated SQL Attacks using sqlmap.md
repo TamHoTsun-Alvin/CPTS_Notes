@@ -95,3 +95,4 @@ We can only enumerate a specific range of rows by specifying --start and --stop:
 ```
 sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3
 ```
+We can enumerate rows 
