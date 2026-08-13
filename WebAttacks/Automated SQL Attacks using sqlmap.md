@@ -51,4 +51,10 @@ sqlmap ... -H='Cookie:PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 
 Remember to also add --random-agent at the end, as many website drop sqlmap default user agent nowadays, alternative methods 
 
-When encountering errors, we can do the 
+When encountering errors, we can do the verbose output by specifying -v, enable error parsing by specifying --parse-errors, output traffic to a file by specifying -t followed by file path, or we can use a proxy such as burp to review all the request made.
+
+Attack Tuning:
+
+We can fine tune our attacks with the following parameters:
+
+--prefix and --suffix:
