@@ -48,3 +48,5 @@ sqlmap ... --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 #or
 sqlmap ... -H='Cookie:PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 ```
+
+Remember to also add --random-agent at the end, as many website drop sqlmap default user agent nowadays, alternative methods 
