@@ -77,3 +77,5 @@ http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-en
 ```
 
 Using PHP Wrappers:
+
+Aside from using the php filter, we can also use other php wrappers to perform a variety of action from data enumeration to RCE
