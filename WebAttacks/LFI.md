@@ -123,4 +123,6 @@ curl -s "http://<SERVER_IP>:<PORT>/index.php?language=expect://id"
 
 Remote File Inclusion and RCE:
 
-Sometimes, we maybe able to include a file remotely if the vulnerable function allows such. We can use this to enumerate other local only ports or web 
+Sometimes, we maybe able to include a file remotely if the vulnerable function allows such. We can use this to enumerate other local only ports or web apps, and potentially gain RCE, as we can use it to include a file under our control (which of course contains malicious code), refer to the table at beginning to see what function have RFI
+
+First of all, to exploit RFI, allow_url_encode must be enabled as remote URL Inclusion is very dangerous. We can discover it with refer to previous section. Even if this option is enabled, it is not always exploitable, to verify it we can 
