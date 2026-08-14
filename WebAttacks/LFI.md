@@ -45,4 +45,4 @@ In this case, simply entering /etc/passwd have no use as it simply got appended 
 include("lang_" . $_GET['language']);
 ```
 
-In the above case, what we need to do is simply 
+In the above case, the payload required is /../../../../../../../../../etc/passwd. the first / is used to bypass filename prefix and the ../'s is used to reset the directory to root
