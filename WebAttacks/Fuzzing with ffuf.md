@@ -91,3 +91,14 @@ Finally, for post value fuzzing, we can refer to this example:
 ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
 ```
 #Note: for parameter / value fuzzing, it would be more convenient if we are doing it in burp, therefore even though CE Version of burp suite only support 1req/s, it is worth considering
+
+LFI Fuzzing:
+
+We can fuzz for payloads that works against a certain website that can archive LFI instead of crafting manually, to do so, we can use the LFI-Jhaddix.txt wordlist https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt and perform it in a manner similar to our example:
+```
+ffuf -w <pathtowordlist> -u 'http://<SERVER_IP>:<PORT>/index.php?language=FUZZ' 
+```
+
+Webroot Fuzzing:
+
+We can fuzz for webroots in case we dont know where the file we uploaded are placed or we simply wish to know where the webroot is located, we can use https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt for linux and https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt for windows, we can perform the fuzz in the following manner and remember to target index page, which is almost present on all website:
