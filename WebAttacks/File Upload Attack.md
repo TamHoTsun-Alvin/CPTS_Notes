@@ -14,4 +14,4 @@ Client-Side Verification equals to no verification, as we can simply edit the co
 
 Bypassing Blacklist Filter:
 
-To bypass a blacklist filter, we first need to know what is actually blocked, but instead of using ffuf
+To bypass a blacklist filter, we first need to know what is actually blocked, but instead of using ffuf, we are needed to use burp intruder instead, as we are interested in the blacklist filter, we first select a valid files, then without modifying the file content, we specify the extension as our fuzzing position, then we use
