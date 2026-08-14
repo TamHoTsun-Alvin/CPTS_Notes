@@ -99,3 +99,21 @@ Refer to https://academy.hackthebox.com/app/module/109/section/1037 for more det
 Bypassing command filter:
 
 There exist a few characters in linux and windows that the command interpreter will simply ignore even if they appeared in our command, we can use them to bypass command filter:
+
+
+Linux and Windows:
+
+We can add even amount of singlequote or double-quotes between our commands to obfuscate it, for example:
+```
+wh'o'ami
+w'h'o'a'mi
+w"h"oami
+whoa"m"i
+```
+
+Notice that we cannot mix 2 types of quote, and number of quote must be even
+
+Linux Only:
+
+We can add $@ or backslash to our command and it will be ignored, example:
+
