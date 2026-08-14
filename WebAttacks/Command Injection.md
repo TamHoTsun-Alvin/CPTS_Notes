@@ -96,7 +96,7 @@ Avalon112@htb[/htb]$ echo $(tr '!-}' '"-~'<<<[)
 
 Refer to https://academy.hackthebox.com/app/module/109/section/1037 for more detail
 
-Bypassing command filter:
+Bypassing command filter (OS):
 
 There exist a few characters in linux and windows that the command interpreter will simply ignore even if they appeared in our command, we can use them to bypass command filter:
 
@@ -116,4 +116,30 @@ Notice that we cannot mix 2 types of quote, and number of quote must be even
 Linux Only:
 
 We can add $@ or backslash to our command and it will be ignored, example:
+```
+who$@ami
+who\am\i
+```
 
+Windows Only:
+
+We can add a carat character in the middle of our command to obfuscate it, we can use multiple carat but none of the carat should appear continously, Example:
+```
+wh^oami
+w^h^oam^i
+w^^hoami #This one will fail
+```
+
+
+Bypassing Command Filters (Advanced / WAF):
+
+We can use some advanced techniques in attempt to bypass WAFs and other extra filtering solutions:
+
+
+Case Manipulation (Window Only):
+
+CMD and PowerShell does not care about the case when a command is inputted, therefore we can manipulate case to bypass command filters, Example:
+```
+WhOaMI
+whOAMi
+```
