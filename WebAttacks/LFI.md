@@ -19,3 +19,11 @@ LFI vulnerability refers to that we use some ways to trick the templating engine
 |`@Html.RemotePartial()`|✅|❌|✅|
 |`Response.WriteFile()`|✅|❌|❌|
 |`include`|✅|✅|✅|
+
+Parameter tempering:
+
+The most basic form of LFI is parameter tempering, imagine we are in a news website where we can choose different language:
+
+```
+https://flashnews.com/article/1633582/display.php?language=en
+```
