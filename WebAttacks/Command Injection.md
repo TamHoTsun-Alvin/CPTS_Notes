@@ -98,12 +98,12 @@ Refer to https://academy.hackthebox.com/app/module/109/section/1037 for more det
 
 Bypassing command filter (OS):
 
-There exist a few characters in linux and windows that the command interpreter will simply ignore even if they appeared in our command, we can use them to bypass command filter:
+There exist a few characters in linux and windows that the command interpreter will simply ignore even if they appeared in our command, we can use them to bypass command filter, pay attention to properly bypass blacklisted character when using such:
 
 
 Linux and Windows:
 
-We can add even amount of singlequote or double-quotes between our commands to obfuscate it, for example:
+We can add even amount of single quote or double-quotes between our commands to obfuscate it, for example:
 ```
 wh'o'ami
 w'h'o'a'mi
@@ -123,7 +123,7 @@ who\am\i
 
 Windows Only:
 
-We can add a carat character in the middle of our command to obfuscate it, we can use multiple carat but none of the carat should appear continously, Example:
+We can add a carat character in the middle of our command to obfuscate it, we can use multiple carat but none of the carat should appear continuously, Example:
 ```
 wh^oami
 w^h^oam^i
@@ -133,13 +133,30 @@ w^^hoami #This one will fail
 
 Bypassing Command Filters (Advanced / WAF):
 
-We can use some advanced techniques in attempt to bypass WAFs and other extra filtering solutions:
+We can use some advanced techniques in attempt to bypass WAFs and other extra filtering solutions, pay attention to properly bypass blacklisted character when using such:
 
 
-Case Manipulation (Window Only):
+Case Manipulation (Window/Linux):
 
 CMD and PowerShell does not care about the case when a command is inputted, therefore we can manipulate case to bypass command filters, Example:
 ```
 WhOaMI
 whOAMi
 ```
+
+For Linux, commands are interpreted in a case sensitive manner, however, the following payload allow us to convert the manipulated command into all-lowercase words:
+```
+$(tr "[A-Z]" "[a-z]"<<<"<command")
+```
+
+Reversed Command (Linux Only):
+
+We can replace our blacklisted command with the following payload to bypass filter in a reversed command manner:
+
+```
+original command | payload
+whoami | $(rev<<<'imaohw')
+Syntax: $(rev<<<'<reversedcommand>')
+```
+
+Encoded Command:
