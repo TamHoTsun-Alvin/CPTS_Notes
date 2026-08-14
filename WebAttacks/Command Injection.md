@@ -79,10 +79,23 @@ Bypassing Blacklisted Characters:
 Their are multiple method to bypass different blacklisted characters, depending on what character got blacklisted we have different methods for bypassing:
 
 
-| Character | Bypassing Method (Linux)    | Description                                                                                                                               |
-| --------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| /         | `${PATH:0:1}`               | Path variable in linux contains directory, therefore it's first character it's usually /                                                  |
-|           | `${HOME:0:1}`               | same method as first                                                                                                                      |
-|           | `${PWD:0:1}`                | same method as first                                                                                                                      |
-| ;         | <br>`${LS_COLORS:10:1}`<br> | same method as first                                                                                                                      |
-| Generic   | `$(tr '!-}' '"-~'<<<[)`     | This method is called character shifting, the example will produce us with `\`, however we can also use it to shift other characters ,jus |
+| Character | Bypassing Method (Linux)    | Description                                                                                                                                                                                                                                    |
+| --------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /         | `${PATH:0:1}`               | Path variable in linux contains directory, therefore it's first character it's usually /                                                                                                                                                       |
+|           | `${HOME:0:1}`               | same method as first                                                                                                                                                                                                                           |
+|           | `${PWD:0:1}`                | same method as first                                                                                                                                                                                                                           |
+| ;         | <br>`${LS_COLORS:10:1}`<br> | same method as first                                                                                                                                                                                                                           |
+| Generic   | `$(tr '!-}' '"-~'<<<[)`     | This method is called character shifting, the example will produce us with `\`, however we can also use it to shift other characters, just replace `[` with the character that's before it at ascii table of the character we wish to replace  |
+Character Shifting Example:
+```
+Avalon112@htb[/htb]$ man ascii     # \ is on 92, before it is [ on 91
+Avalon112@htb[/htb]$ echo $(tr '!-}' '"-~'<<<[)
+
+\
+```
+
+Refer to https://academy.hackthebox.com/app/module/109/section/1037 for more detail
+
+Bypassing command filter:
+
+There exist a few characters in linux and windows that the command interpreter will simply ignore even if they appeared in our command, we can use them to bypass command filter:
