@@ -43,3 +43,9 @@ Overall speaking, we can combine a few types of bypass in action, we maybe able 
 `Allowed MIME type with a disallowed Content-Type`
 `Allowed MIME/Content-Type with a disallowed extension`
 `Disallowed MIME/Content-Type with an allowed extension`
+
+Bypassing limited file uploading:
+
+So far, the kind of upload we are dealing are unlimited upload but limited with extra filter, however sometimes we would need to deal with limited upload forms, below is some ways to bypass them, even with limited file upload, certain specific types would lead to security issues like XXS or XXE, refer to https://academy.hackthebox.com/app/module/136/section/1291 for more detail
+
+Ref: https://academy.hackthebox.com/app/module/136
