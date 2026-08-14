@@ -14,4 +14,13 @@ Client-Side Verification equals to no verification, as we can simply edit the co
 
 Bypassing Blacklist Filter:
 
-To bypass a blacklist filter, we first need to know what is actually blocked, but instead of using ffuf, we are needed to use burp intruder instead, as we are interested in the blacklist filter, we first select a valid files, then without modifying the file content, we specify the extension as our fuzzing position, then we use wordlist like https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt seclist web extension list or https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst this php list to fuzz
+To bypass a blacklist filter, we first need to know what is actually blocked, but instead of using ffuf, we are needed to use burp intruder instead, as we are interested in the blacklist filter, we first select a valid files, then without modifying the file content, we specify the extension as our fuzzing position, then we use wordlist like https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt seclist web extension list or https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst this php list to fuzz, in this way we can get a list of allowed extension that we can upload.
+
+Bypassing White Filter:
+
+Bypassing a White Filter is more troublesome then a blacklist filter, as depending on how the filter is written, we might be finding ourselves to be blocked / limited by the filter a lot, below is a table of method that we can try to use:
+
+
+| Method Name       | Example       | Description    |
+| ----------------- | ------------- | -------------- |
+| Double Extensions | apple.jpg.php | Able to bypass |
