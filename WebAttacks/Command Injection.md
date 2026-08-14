@@ -1,1 +1,1 @@
-Command Injections refers to a type of vulnerability that allows us to execute a command in a way that is caused by 
+Command Injections refers to a type of vulnerability that allows us to execute a command in a way that is caused by input controlled by user is mistreated as code to be executed
