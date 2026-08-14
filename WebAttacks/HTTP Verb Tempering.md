@@ -1,0 +1,1 @@
+HTTP Protocols works in a way that it accepts different predefined verb at the beginning of an http request to help developers to develop different procedures to handle request differentiated by verbs, 

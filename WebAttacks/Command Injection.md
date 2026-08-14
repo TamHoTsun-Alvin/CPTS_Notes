@@ -170,5 +170,12 @@ Windows Version:
 ```
 [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
 ResultingString: dwBoAG8AYQBtAGkA
-(Archiving abov)
+(Archiving above on linux) 
+echo -n whoami | iconv -f utf-8 -t utf-16le | base64
+#After getting same resulting string, the following is payload:
+iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"
 ```
+
+Automated Obfuscation tool:
+
+We can use Bashfuscator to obfuscate command in linux and DOSfuscation for windows, refer to https://academy.hackthebox.com/app/module/109/section/1040 if they are actually needed
