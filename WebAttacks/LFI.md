@@ -38,5 +38,11 @@ Path Traversal:
 
 A common practice when setting up webservers to pull a file to be displayed is to use prepared statement, the server maybe instructed to pull a file from the following directory:
 ```
-directory = /
+directory = "/var/www/html/flashnews/articles/1633582/" + "<languageinput>"
 ```
+In this case, simply entering /etc/passwd have no use as it simply got appended to the prepared directory, instead we need to use ../ to reset our directory back to the root, also append a / before if we suspect a filename prefix is in place, like the following:
+```
+include("lang_" . $_GET['language']);
+```
+
+In the above case, what we need to do is simply 
