@@ -38,3 +38,8 @@ First, we need to fuzz out what Content-Type Header is allowed, we can use burp 
 Bypassing File Content (MIME Type) Check:
 
 For MINE Type Check, first again, we need to know what type is accepted, instead of fuzzing it might be quicker to refer to error message (Example: Only photo is allowed), after knowing accepted type, we need to modify our file first few byte, for example we can add GIF8 to a php shell payload to bypass this type of check
+
+Overall speaking, we can combine a few types of bypass in action, we maybe able to use the following combination to bypass more robust filters:
+`Allowed MIME type with a disallowed Content-Type`
+`Allowed MIME/Content-Type with a disallowed extension`
+`Disallowed MIME/Content-Type with an allowed extension`
