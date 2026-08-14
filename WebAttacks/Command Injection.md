@@ -39,6 +39,22 @@ ping -c 1 <userinput> #Example: ping -c 1 10.10.16.172
 ping -c 1 10.10.16.172; pwd
 ```
 
-We can 
+We can check if our payload is valid by typing command in our terminal
 
-Usually, for user convenience, modern website will have front-end verification to assist user in using the website correctly, however in the eyes of us that equals to no verification, as with the help of burp repeater or zap, such can be easily intercepted and changed
+Usually, for user convenience, modern website will have front-end verification to assist user in using the website correctly, however in the eyes of us that equals to no verification, as with the help of burp repeater or zap, such can be easily intercepted and changed.
+
+Depending on different type of injection, we can use different operators:
+
+|**Injection Type**|**Operators**|
+|---|---|
+|SQL Injection|`'` `,` `;` `--` `/* */`|
+|Command Injection|`;` `&&`|
+|LDAP Injection|`*` `(` `)` `&` `\|`|
+|XPath Injection|`'` `or` `and` `not` `substring` `concat` `count`|
+|OS Command Injection|`;` `&` `\|`|
+|Code Injection|`'` `;` `--` `/* */` `$()` `${}` `#{}` `%{}` `^`|
+|Directory Traversal/File Path Traversal|`../` `..\\` `%00`|
+|Object Injection|`;` `&` `\|`|
+|XQuery Injection|`'` `;` `--` `/* */`|
+|Shellcode Injection|`\x` `\u` `%u` `%n`|
+|Header Injection|`\n` `\r\n` `\t` `%0d` `%0a` `%09`|
