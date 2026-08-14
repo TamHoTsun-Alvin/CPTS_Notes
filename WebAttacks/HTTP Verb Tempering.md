@@ -15,4 +15,16 @@ A total of 9 verb is available and is listed below:
 |[`CONNECT`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/CONNECT)|No|No|No|
 Yet, due to the amount of verb available, if a page is designed with intention to serve get and post request, even though proper security mechanism or filter is in place, their is a chance that such mechanism does not apply when we change the verb to something like PUT or CONNECT
 
-Finding out wh
+Enumerating methods accepted by a server:
+
+To see what kind of request a server is accepting, we can send an OPTION request to it and see what kind of methods is allowed:
+```
+curl -i -X OPTIONS http://SERVER_IP:PORT/
+```
+
+After that, we can start testing out if sending a request in any of the accepted method will result in security bypassing
+
+Bypassing Basic Auth and Security Filters:
+
+If some pages of the server are protected by basic auths, there is a chance that we can bypass it if we change our request methods, this vulnerability is caused by Insecure Web Server Configurations
+
