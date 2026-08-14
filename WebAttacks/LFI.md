@@ -52,8 +52,8 @@ Basic LFI Bypass:
 Below is a list of payload that we can combine / use to bypass different LFI Protections
 
 
-| Payload   | Alternative        | Description                                                                 | Usage                                               |
-| --------- | ------------------ | --------------------------------------------------------------------------- | --------------------------------------------------- |
-| ....//    | ..././ or `....\/` | Replace all ../ with ....//                                                 | Bypass filter that does not recursively remove ../  |
-| %2e%2e%2f | -                  | URL Encoding of ../ (Note: To use this bypass we must encode all character) | Bypass filter that simply remove or detects . and / |
-|           |                    |                                                                             |                                                     |
+| Payload                 | Alternative        | Description                                                                                                                                                 | Usage                                               |
+| ----------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| ....//                  | ..././ or `....\/` | Replace all ../ with ....//                                                                                                                                 | Bypass filter that does not recursively remove ../  |
+| %2e%2e%2f               | -                  | URL Encoding of ../ (Note: To use this bypass we must encode all character, including the /etc/passwd part )                                                | Bypass filter that simply remove or detects . and / |
+| approved path + payload |                    | Sometimes, the webserver have a predefined approved paths that for example it may only accept paths from /languages/, in that case we can see normal reques |                                                     |
