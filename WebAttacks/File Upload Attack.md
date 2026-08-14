@@ -21,6 +21,7 @@ Bypassing White Filter:
 Bypassing a White Filter is more troublesome then a blacklist filter, as depending on how the filter is written, we might be finding ourselves to be blocked / limited by the filter a lot, below is a table of method that we can try to use:
 
 
-| Method Name       | Example       | Description                                                                       |
-| ----------------- | ------------- | --------------------------------------------------------------------------------- |
-| Double Extensions | apple.jpg.php | Able to bypass simple filter that doesn't care if file end in permitted extension |
+| Method Name              | Example        | Description                                                                                                                                                                                                                   |
+| ------------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Double Extensions        | apple.jpg.php  | Able to bypass simple filter that doesn't care if file end in permitted extension                                                                                                                                             |
+| Reverse double Extension | apple.php.jpeg | Able to bypass filter case that care file actually ends in whitelisted extension but internal config treat all file containing a certain extension to be executable (example: only check if contain .php but not end in .php) |
