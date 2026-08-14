@@ -1,1 +1,1 @@
-Command Injections refers to a type of vulnerability that
+Command Injections refers to a type of vulnerability that allows us to execute 
