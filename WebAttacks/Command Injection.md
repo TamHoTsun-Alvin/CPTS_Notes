@@ -31,4 +31,8 @@ We need to know how each of them will perform command injection as some of them 
 
 Injecting Commands:
 
-The basic of Command Injection is to use
+The basic of Command Injection is to use the operators above to terminate the current commands and input our commands back, for example:
+
+```
+ping -c 1 <userinput> #Example: ping 
+```
