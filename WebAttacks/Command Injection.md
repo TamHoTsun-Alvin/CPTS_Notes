@@ -17,16 +17,16 @@ Command Injection Methods:
 
 Below is a table of operators that can be used for command injection:
 
-|**Injection Operator**|**Injection Character**|**URL-Encoded Character**|**Executed Command**|
-|---|---|---|---|
-|Semicolon|`;`|`%3b`|Both|
-|New Line|`\n`|`%0a`|Both|
-|Background|`&`|`%26`|Both (second output generally shown first)|
-|Pipe|`\|`|`%7c`|Both (only second output is shown)|
-|AND|`&&`|`%26%26`|Both (only if first succeeds)|
-|OR|`\|`|`%7c%7c`|Second (only if first fails)|
-|Sub-Shell|` `` `|`%60%60`|Both **(Linux-only)**|
-|Sub-Shell|`$()`|`%24%28%29`|Both **(Linux-only)**|
+| **Injection Operator** | **Injection Character** | **URL-Encoded Character** | **Executed Command**                       |
+| ---------------------- | ----------------------- | ------------------------- | ------------------------------------------ |
+| Semicolon              | `;`                     | `%3b`                     | Both                                       |
+| New Line               | `\n`                    | `%0a`                     | Both                                       |
+| Background             | `&`                     | `%26`                     | Both (second output generally shown first) |
+| Pipe                   | `\|`                    | `%7c`                     | Both (only second output is shown)         |
+| AND                    | `&&`                    | `%26%26`                  | Both (only if first succeeds)              |
+| OR                     | `\|`                    | `%7c%7c`                  | Second (only if first fails)               |
+| Sub-Shell              | ` `` `                  | `%60%60`                  | Both **(Linux-only)**                      |
+| Sub-Shell              | `$()`                   | `%24%28%29`               | Both **(Linux-only)**                      |
 We need to know how each of them will perform command injection as some of them might get blocked or filtered out, more often is not up to our choice that what can be used.
 
 Injecting Commands:
@@ -66,5 +66,14 @@ Bypassing Space Filters:
 
 Their are a few way to bypass Space Filters - 
 
--Using tabs
--
+-Using tabs(%09)
+-Using ${IFS}, default to a space and tab at linux environment, simply replace where a space should be
+-Using Bash Brace Expansion, spaces are automatically added between arguments
+
+```
+Example for Bash Brace Expansion: 127.0.0.1%0a{ls,-la}
+```
+
+Bypassing Blacklisted Characters:
+
+Their are multiple method to bypass different blacklisted characters, 
