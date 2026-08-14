@@ -27,4 +27,8 @@ Below is a table of operators that can be used for command injection:
 |OR|`\|`|`%7c%7c`|Second (only if first fails)|
 |Sub-Shell|` `` `|`%60%60`|Both **(Linux-only)**|
 |Sub-Shell|`$()`|`%24%28%29`|Both **(Linux-only)**|
-We need to know how each of them will perform command injection as some of them might get 
+We need to know how each of them will perform command injection as some of them might get blocked or filtered out, more often is not up to our choice that what can be used.
+
+Injecting Commands:
+
+The basic of Command Injection is to use
