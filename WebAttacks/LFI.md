@@ -79,3 +79,12 @@ http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-en
 Using PHP Wrappers:
 
 Aside from using the php filter, we can also use other php wrappers to perform a variety of action from data enumeration to RCE
+
+Data Wrapper:
+
+Data Wrapper can be used to include external data, including php code, however this is only doable if the allow_url_include setting is enabled, we can enumerate such setting by reading the php configuration file at `/etc/php/X.Y/apache2/php.ini` for apache or `/etc/php/X.Y/fpm/php.ini` for nginx, we can use the method introduced in Using PHP Filters to extract the files, below is example:
+```
+curl "http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini"
+```
+
+After that, we can decode it and pipe it to grep to grep for allow_url_include, if it
