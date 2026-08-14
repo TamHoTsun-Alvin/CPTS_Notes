@@ -102,3 +102,14 @@ ffuf -w <pathtowordlist> -u 'http://<SERVER_IP>:<PORT>/index.php?language=FUZZ'
 Webroot Fuzzing:
 
 We can fuzz for webroots in case we dont know where the file we uploaded are placed or we simply wish to know where the webroot is located, we can use https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt for linux and https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt for windows, we can perform the fuzz in the following manner and remember to target index page, which is almost present on all website:
+```
+ffuf -w <pathtowordlist> -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ/index.php' 
+```
+
+Logs and Config Fuzzing:
+
+We can fuzz for logs and configs directory by using the LFI-Jhaddix wordlist https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt or the following wordlist for linux https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux and windows https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Windows to get the logs or config directory similar to the example:
+```
+ffuf -w <pathtowordlist> -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ' -fs 2287
+```
+

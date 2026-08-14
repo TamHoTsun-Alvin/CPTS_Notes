@@ -182,3 +182,13 @@ for attempting to use phar upload attack, refer to https://academy.hackthebox.co
 Log Poisoning: 
 
 We can attempt to poison Server logs (located at `/var/log/apache2/`, `C:\xampp\apache\logs\` for apache or `/var/log/nginx/`, `C:\nginx\log\` for nginx), if the log is readable to us and we are able to control the content of the log in some manner, we can write a payload to it and have the webserver include it to archive RCE, the same applies to php session log, which should appears in `/var/lib/php/sessions/` or  `C:\Windows\Temp\` with the naming convention of sess_cookievalue
+
+Automated Fuzzing:
+
+Refer to [[Fuzzing with ffuf]] for more details
+
+Automated Tooling:
+
+Refer to https://github.com/mzfr/liffy for liffy v2.0, note that this tools has never been used before so proceed with caution
+
+Ref: https://academy.hackthebox.com/app/module/23
