@@ -114,4 +114,13 @@ curl -s -X POST --data '<?php system($_GET["cmd"]); ?>' "http://<SERVER_IP>:<POR
 
 Using Expect Wrapper for RCE:
 
-The Expect wrappers allows us to run commands through the URL Streams, however, this wrapper is external, and requires manual installation and be enabled on the backend server, it'
+The Expect wrappers allows us to run commands through the URL Streams, however, this wrapper is external, and requires manual installation and be enabled on the backend server, to discover its presence, we use the same way to discover whether allow url encode is enabled, but this time we check for the string expect, if we see extension=expect, it means it's available
+
+Even if the presence of it is discovered, it does not guarantee us that it can be used by us, to use it, we simply access the variable in the following syntax:
+```
+curl -s "http://<SERVER_IP>:<PORT>/index.php?language=expect://id" 
+```
+
+Remote File Inclusion and RCE:
+
+Sometimes, we maybe able to include a file remotely if the vulnerable function allows such. We can use this to enumerate other local only ports or web 
