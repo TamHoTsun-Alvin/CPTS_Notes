@@ -59,3 +59,7 @@ Below is a list of payload that we can combine / use to bypass different LFI Pro
 | approved path + payload | -                  | Sometimes, the webserver have a predefined approved paths that for example it may only accept paths from /languages/, in that case we can see normal request by intercepting with burp, then append our payload behind approved path | Bypassing filter that only accepts paths under a certain pre approved path |
 | ../../etc/passwd%00.php | -                  | Prior to php version5.5, a nullbyte (%00) would terminate the string and have anything after the nullbyte discarded, we can use it to bypass file extension filter                                                                   | Bypassing file extension limit prior to php 5.5                            |
 For php before 5.4, Path Truncation is also possible to be used to bypass file extension limit, refer to https://academy.hackthebox.com/app/module/23/section/1491 for extra details, but the recommendation is to use nullbyte termination as if a php version below 5.4 is discovered, nullbyte termination also can be used.
+
+Using PHP Filters:
+
+Sometimes 
