@@ -13,3 +13,5 @@ Client-Side Verification:
 Client-Side Verification equals to no verification, as we can simply edit the code or intercept the response before it hit our browser, refer to https://academy.hackthebox.com/app/module/136/section/1280 to look back at technique to bypass
 
 Bypassing Blacklist Filter:
+
+To bypass a blacklist filter, we first need to know what is actually blocked, but instead of using ffuf
