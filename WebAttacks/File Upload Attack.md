@@ -32,3 +32,9 @@ Bypassing Type Filters:
 All the above filters focuses on the file name only, modern web app can also actually test the file content to ensure it matches the specified type, there are 2 method in validating the file format - Content-Type Header or File Content
 
 Bypassing Content-Type Header:
+
+First, we need to fuzz out what Content-Type Header is allowed, we can use burp like described in the Blacklist filter, except this time we are fuzzing for Content-Type Header, we can use this list https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt, after fuzzed Content-Type Accepted, we simply modify our Content-Type to one of the accepted header then we are good to go.
+
+Bypassing File Content (MIME Type) Check:
+
+For MINE Type Check, first again, we need to know what type is accepted, instead of fuzzing it might be quicker to refer to error message (Example: Only photo is allowed), after knowing accepted type, we need to modify our file first few byte, for example we can add GIF8 to a php shell payload to bypass this type of check
