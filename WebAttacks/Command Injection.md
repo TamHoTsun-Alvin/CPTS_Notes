@@ -34,5 +34,11 @@ Injecting Commands:
 The basic of Command Injection is to use the operators above to terminate the current commands and input our commands back, for example:
 
 ```
-ping -c 1 <userinput> #Example: ping 
+ping -c 1 <userinput> #Example: ping -c 1 10.10.16.172
+#However if the userinput is 10.10.16.172; pwd
+ping -c 1 10.10.16.172; pwd
 ```
+
+We can 
+
+Usually, for user convenience, modern website will have front-end verification to assist user in using the website correctly, however in the eyes of us that equals to no verification, as with the help of burp repeater or zap, such can be easily intercepted and changed
