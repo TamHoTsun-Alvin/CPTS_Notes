@@ -58,3 +58,13 @@ Depending on different type of injection, we can use different operators:
 |XQuery Injection|`'` `;` `--` `/* */`|
 |Shellcode Injection|`\x` `\u` `%u` `%n`|
 |Header Injection|`\n` `\r\n` `\t` `%0d` `%0a` `%09`|
+Bypassing filters:
+
+Aside from getting blocked by a waf solution, our payload for command injection contains 3 part, space character, operator and a command, whenever our payload get blocked, we need to identify which part of it actually get blocked. Below will discuss how to bypass different filter.
+
+Bypassing Space Filters:
+
+Their are a few way to bypass Space Filters - 
+
+-Using tabs
+-
