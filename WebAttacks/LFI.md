@@ -27,3 +27,8 @@ The most basic form of LFI is parameter tempering, imagine we are in a news webs
 ```
 https://flashnews.com/article/1633582/display.php?language=en
 ```
+
+Of course, one could change the parameters to see news in different language, like es, ru, but this may also be abused if it is not properly guarded to display other files, like:
+```
+https://flashnews.com/article/1633582/display.php?language=/etc/passwd
+```
