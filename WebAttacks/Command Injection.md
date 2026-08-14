@@ -79,9 +79,10 @@ Bypassing Blacklisted Characters:
 Their are multiple method to bypass different blacklisted characters, depending on what character got blacklisted we have different methods for bypassing:
 
 
-| Character | Bypassing Method           | Description                                                                              |
-| --------- | -------------------------- | ---------------------------------------------------------------------------------------- |
-| /         | `${PATH:0:1}`              | Path variable in linux contains directory, therefore it's first character it's usually / |
-|           | `${HOME:0:1}`              |                                                                                          |
-|           | `${PWD:0:1}`               |                                                                                          |
-|           | `<br>${LS_COLORS:10:1}<br> |                                                                                          |
+| Character | Bypassing Method (Linux)    | Description                                                                                                                               |
+| --------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| /         | `${PATH:0:1}`               | Path variable in linux contains directory, therefore it's first character it's usually /                                                  |
+|           | `${HOME:0:1}`               | same method as first                                                                                                                      |
+|           | `${PWD:0:1}`                | same method as first                                                                                                                      |
+| ;         | <br>`${LS_COLORS:10:1}`<br> | same method as first                                                                                                                      |
+| Generic   | `$(tr '!-}' '"-~'<<<[)`     | This method is called character shifting, the example will produce us with `\`, however we can also use it to shift other characters ,jus |
