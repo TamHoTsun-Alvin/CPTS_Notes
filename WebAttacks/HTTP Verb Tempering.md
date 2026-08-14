@@ -28,3 +28,4 @@ Bypassing Basic Auth and Security Filters:
 
 If some pages of the server are protected by basic auths, there is a chance that we can bypass it if we change our request methods, this vulnerability is caused by Insecure Web Server Configurations
 
+During the development of webpage, frequently it would be deemed necessary to have some security mechanism deployed (like a filter to block malicious request), however sometimes if such filters does not cover all HTTP methods supported in certain functionalities, then we would be able to bypass security filters using HTTP Verb Tempering
