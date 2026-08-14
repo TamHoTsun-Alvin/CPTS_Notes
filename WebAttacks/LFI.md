@@ -32,3 +32,11 @@ Of course, one could change the parameters to see news in different language, li
 ```
 https://flashnews.com/article/1633582/display.php?language=/etc/passwd
 ```
+
+
+Path Traversal:
+
+A common practice when setting up webservers to pull a file to be displayed is to use prepared statement, the server maybe instructed to pull a file from the following directory:
+```
+directory = /
+```
