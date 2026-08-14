@@ -27,3 +27,8 @@ Bypassing a White Filter is more troublesome then a blacklist filter, as dependi
 | Reverse double Extension | apple.php.jpeg | Able to bypass filter case that care file actually ends in whitelisted extension but internal config treat all file containing a certain extension to be executable (example: only check if contain .php but not end in .php)                                          |
 | Character Injection      | apple.php%00   | We can attempt to inject specific characters before or after the final extension to cause the webapp to misinterpret the uploaded file as a php script, below is the list:<br>- `%20`<br>- `%0a`<br>- `%00`<br>- `%0d0a`<br>- `/`<br>- `.\`<br>- `.`<br>- `…`<br>- `:` |
 |                          |                |                                                                                                                                                                                                                                                                        |
+Bypassing Type Filters:
+
+All the above filters focuses on the file name only, modern web app can also actually test the file content to ensure it matches the specified type, there are 2 method in validating the file format - Content-Type Header or File Content
+
+Bypassing Content-Type Header:
