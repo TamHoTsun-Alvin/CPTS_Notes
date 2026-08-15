@@ -1,0 +1,1 @@
+osTicket is skipped, if really in bad luck and need reference, https://academy.hackthebox.com/app/module/113/section/1214
