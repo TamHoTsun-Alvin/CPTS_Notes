@@ -18,4 +18,9 @@ curl -s http://dev.inlanefreight.local/administrator/manifests/files/joomla.xml 
 
 Automatic Enumeration:
 
-We 
+We can use droopescan for our purpose:
+```
+droopescan scan <cms> -u <url>
+#Example
+droopescan scan joomla --url http://dev.inlanefreight.local/
+```
