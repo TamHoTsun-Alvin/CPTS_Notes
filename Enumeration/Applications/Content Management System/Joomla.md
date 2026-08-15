@@ -24,3 +24,8 @@ droopescan scan <cms> -u <url>
 #Example
 droopescan scan joomla --url http://dev.inlanefreight.local/
 ```
+
+Exploiting Joomla:
+
+Similar to how we can upload a shell to WordPress, we can upload a shell to Joomla as well if we can have administrator access, refer to https://academy.hackthebox.com/app/module/113/section/1210 for more details
+
