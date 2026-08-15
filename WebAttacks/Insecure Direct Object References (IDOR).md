@@ -30,4 +30,6 @@ Bypassing Encoded References:
 
 We can attempt to bypass encoded reference if we are able to know what scheme is used in encoding, although we can't know the original content, but we can hash different values into the used scheme and see if we can attempt for mass enumeration
 
-Function Disclosure
+Function Disclosure:
+
+Sometimes, we might have access to source code and see how is the encoded reference being created, for example, if we can reveal how is the encoded reference being created, then we can recreate the reference or even attempt to reveal what was the original value, 
