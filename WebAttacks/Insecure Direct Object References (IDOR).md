@@ -2,4 +2,4 @@ IDOR Vulnerability refers to a type of vulnerability that originates from a lack
 
 Identifying possible IDOR:
 
-The first step in identifying IDOR is to identify Direct Object References, we should look for a specific 
+The first step in identifying IDOR is to identify Direct Object References, we should look for a url parameters within an HTTP Request to for signs of direct object reference (Example: ?uid=1, ?filename=apple.jpg), the most simple test is to changing the names of incrementing id values to see if we can gain access to files that we are not supposed to have access, any sucessful file readmm
