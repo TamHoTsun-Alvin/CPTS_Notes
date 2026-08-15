@@ -51,3 +51,12 @@ sudo wpscan --url <url> --enumerate --api-token <apifrom_https://wpscan.com/prof
 Notes for creator only: A free account has already been registered at WPVulnDB, don't be lazy and grab that api token when in need
 
 This tool would enumerate plugins, themes, users, version etc. and help us check for vulnerability related to installed asset, however the vulnerability checking would only work if we supply a api-token, of course, no api-token won't render the tool useless, we can still perform basic enumeration with it.
+
+Attacking WordPress:
+
+-Login Bruteforcing:
+
+We can use WPScan for login bruteforcing in the following syntax:
+```
+sudo wpscan --password-attack <xmlrpc/wp-login> -t <threadcount> -U <username> -P <pathtowordlist> --url http://blog.inlanefreight.local
+```
