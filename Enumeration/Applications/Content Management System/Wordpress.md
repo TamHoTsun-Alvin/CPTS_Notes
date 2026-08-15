@@ -63,4 +63,9 @@ sudo wpscan --password-attack <xmlrpc/wp-login> -t <threadcount> -U <username/us
 
 -Shell Uploading:
 
-If we obtained admin access to wordpress, we can then use wp_admin_shell_upload module from Metasploit to upload a shell and execute automatically
+If we obtained admin access to wordpress, we can then use wp_admin_shell_upload module from Metasploit to upload a shell and execute automatically:
+```
+msf6 > use exploit/unix/webapp/wp_admin_shell_upload 
+```
+
+There is also way to perform this manually, refer to https://academy.hackthebox.com/app/module/113/section/1208 for more detail.
