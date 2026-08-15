@@ -32,4 +32,17 @@ We can attempt to bypass encoded reference if we are able to know what scheme is
 
 Function Disclosure:
 
-Sometimes, we might have access to source code and see how is the encoded reference being created, for example, if we can reveal how is the encoded reference being created, then we can recreate the reference or even attempt to reveal what was the original value, 
+Sometimes, we might have access to source code and see how is the encoded reference being created, for example, if we can reveal how is the encoded reference being created, then we can recreate the reference or even attempt to reveal what was the original value, Consider the following:
+```
+function downloadContract(uid) {
+    $.redirect("/download.php", {
+        contract: CryptoJS.MD5(btoa(uid)).toString(),
+    }, "POST", "_self");
+}
+```
+
+With the following function, we can know that the original provided parameter is uid, and it got converted into base64 then md5.
+
+IDOR in Insecure API:
+
+We can also attempt to test for IDOR in 
