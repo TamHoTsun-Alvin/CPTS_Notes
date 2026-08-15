@@ -1,0 +1,1 @@
+Note: CGI became obsolete already, the attack introduced in HTB relies on the underlying bash on the target system to remain in an old version. Yet if we suspect we need to perform a CGI Attacks (think carefully) or exploit shellshock, we can ref: https://academy.hackthebox.com/app/module/113/section/2166
