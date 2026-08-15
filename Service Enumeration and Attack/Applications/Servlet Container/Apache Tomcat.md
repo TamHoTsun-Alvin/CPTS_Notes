@@ -10,3 +10,50 @@ curl -s http://app-dev.inlanefreight.local:8080/docs/ | grep Tomcat
 
 <SNIP>
 ```
+
+Enumerating Tomcat:
+
+By default, Tomcat folder structure looks something like this:
+```
+├── bin
+├── conf
+│   ├── catalina.policy
+│   ├── catalina.properties
+│   ├── context.xml
+│   ├── tomcat-users.xml
+│   ├── tomcat-users.xsd
+│   └── web.xml
+├── lib
+├── logs
+├── temp
+├── webapps
+│   ├── manager
+│   │   ├── images
+│   │   ├── META-INF
+│   │   └── WEB-INF
+|   |       └── web.xml
+│   └── ROOT
+│       └── WEB-INF
+└── work
+    └── Catalina
+        └── localhost
+```
+
+Each app in webapps contains something like this:
+
+```
+webapps/customapp
+├── images
+├── index.jsp
+├── META-INF
+│   └── context.xml
+├── status.xsd
+└── WEB-INF
+    ├── jsp
+    |   └── admin.jsp
+    └── web.xml
+    └── lib
+    |    └── jdbc_drivers.jar
+    └── classes
+        └── AdminServlet.class   
+```
