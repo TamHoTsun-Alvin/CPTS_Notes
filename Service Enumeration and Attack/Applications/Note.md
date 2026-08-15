@@ -4,4 +4,4 @@ Attacking Thick Client Application has also been skipped due to it being extreme
 
 Web Mass Assignment Vulnerabilities has also been skipped due to it mainly about auditing source code and reveal hidden parameter that can be set with burp
 
-Attacking Applications Connecting to Services has also been skipped due to it mainly being reverse engineering
+Attacking Applications Connecting to Services has also been skipped due to it mainly being reverse engineering, but the dnSpy session to enumerate dll is kept
