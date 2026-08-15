@@ -58,5 +58,9 @@ Attacking WordPress:
 
 We can use WPScan for login bruteforcing in the following syntax:
 ```
-sudo wpscan --password-attack <xmlrpc/wp-login> -t <threadcount> -U <username> -P <pathtowordlist> --url http://blog.inlanefreight.local
+sudo wpscan --password-attack <xmlrpc/wp-login> -t <threadcount> -U <username/userfile> -P <pathtowordlist> --url <url>
 ```
+
+-Shell Uploading:
+
+If we obtained admin access to wordpress, we can then use wp_admin_shell_upload module from Metasploit to upload a shell and execute automatically
