@@ -84,3 +84,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 Error based XXE:
 
 If the normal page does not have anything we can use, we can attempt to trigger an error and perform error based XXE, but this method is not reliable for exfiltration as often error page have length limit, refer to https://academy.hackthebox.com/app/module/134/section/1206 for more detail
+
+Out of band Exfiltration:
+
+Even if we cannot 
