@@ -73,4 +73,4 @@ msf6 > use auxiliary/scanner/http/tomcat_mgr_login
 
 Uploading a WAR File:
 
-After we gain access to tomcat utilizing 
+After we gain admin access to tomcat, we can usually visit manager-gui (given that the user we have access is not banned from it), we can upload a WAR application on it, which, in this sense of course is going to be a webshell or reverse shell, we are interested in the "WAR file to deploy" section in the photo listed b
