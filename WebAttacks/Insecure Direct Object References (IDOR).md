@@ -25,3 +25,9 @@ https://yolodrive/udoc.php?uid=11100000
 ```
 
 If we are able to see files for user with uid 11100000, then it means we sucessfully exploited the IDOR Vulnerability, for mass enumeration, we can use ffuf or burp suite to fuzz for different UIDs
+
+Bypassing Encoded References:
+
+We can attempt to bypass encoded reference if we are able to know what scheme is used in encoding, although we can't know the original content, but we can hash different values into the used scheme and see if we can attempt for mass enumeration
+
+Function Disclosure
