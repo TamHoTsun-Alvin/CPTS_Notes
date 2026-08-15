@@ -43,4 +43,11 @@ Otherwise, the user exist, just that our password is not correct.
 
 Automated Enumeration:
 
-We can enumerate wps automatically using wpscan
+We can enumerate wps automatically using wpscan like in the following example:
+```
+sudo wpscan --url <url> --enumerate --api-token <apifrom_https://wpscan.com/profile/>
+```
+
+Notes for creator only: A free account has already been registered at WPVulnDB, don't be lazy and grab that api token when in need
+
+This tool would enumerate plugins, themes, users, version etc. and help us check for vulnerability related to installed asset, however the vulnerability checking would only work if we supply a api-token, of course, no api-token won't render the tool useless, we can still perform basic enumeration with it.
