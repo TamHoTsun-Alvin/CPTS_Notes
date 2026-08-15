@@ -1,0 +1,1 @@
+In this session, CVE mentioned in teaching material is ignored as it is not likely that we would encounter them, however if reference is wanted please go visit respective module page, also exploiting known vulnerability is always a way to attack mentioned application
