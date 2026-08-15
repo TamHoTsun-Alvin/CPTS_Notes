@@ -45,4 +45,4 @@ With the following function, we can know that the original provided parameter is
 
 IDOR in Insecure API:
 
-We can also attempt to test for IDOR in 
+We can also attempt to test for IDOR in API's, if IDOR vulnerability exists, we can access other user's information / archive privilege escalation by simply providing a different parameters
