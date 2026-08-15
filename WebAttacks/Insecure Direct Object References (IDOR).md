@@ -6,4 +6,8 @@ The first step in identifying IDOR is to identify Direct Object References, we s
 
 IDOR in ajax call:
 
-Sometimes, even as non admin user, we might be able to locate ajax calls or api to handle admin function in the webpage, if we are able to locate them we can attempt to call it and see what do we have
+Sometimes, even as non admin user, we might be able to locate ajax calls or api to handle admin function in the webpage, if we are able to locate them we can attempt to call it and see if it would still accept our request
+
+Hashed Direct object reference:
+
+Sometimes, the direct object reference maybe hashed / encoded when it is used in the url, sometimes we can guess / use burp decoder to decode the encoded reference, sometimes we would need to see the source code before we are able to know how is it encoded.
