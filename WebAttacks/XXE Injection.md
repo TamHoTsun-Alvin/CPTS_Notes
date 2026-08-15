@@ -80,3 +80,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ]>
 <email>&joined;</email> <!-- reference the &joined; entity to print the file content -->
 ```
+
+Error based XXE:
+
+If the normal page does not have anything we can use 
