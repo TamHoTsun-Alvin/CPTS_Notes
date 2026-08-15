@@ -11,3 +11,15 @@ Sometimes, even as non admin user, we might be able to locate ajax calls or api 
 Hashed Direct object reference:
 
 Sometimes, the direct object reference maybe hashed / encoded when it is used in the url, sometimes we can guess / use burp decoder to decode the encoded reference, sometimes we would need to see the source code before we are able to know how is it encoded.
+
+Insecure Parameters:
+
+Let's assume a website let us access documents that we previously uploaded:
+```
+https://yolodrive/udoc.php?uid=21800000
+```
+
+As we can see, this webpage passed our uid as parameters, if we change our uid to a different value like:
+```
+https://yolodrive/udoc.php?uid=11100000
+```
