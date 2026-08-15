@@ -61,4 +61,8 @@ webapps/customapp
 ```
 The WEB-INF web.xml descriptor contains a lot of sensitive information and would be an important file to check for when having LFI vulnerability
 
-Attacking
+Attacking Tomcat:
+
+BruteForcing Tomcat Manager:
+
+We can use 
