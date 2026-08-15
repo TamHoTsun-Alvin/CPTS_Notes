@@ -6,6 +6,7 @@ There exist multiple way to identify wordpress, the quickest way is to use wappa
 
 -The presence of the string WordPress
 -The presence of a theme from WordPress
+-The presence of wp-xxxx in robots.txt
 -The presence of /wp-admin, /wp-content and wp-login page
 
 Using cURL, we can enumerate the existence of WordPress, themes and plugin in use:
