@@ -23,3 +23,5 @@ As we can see, this webpage passed our uid as parameters, if we change our uid t
 ```
 https://yolodrive/udoc.php?uid=11100000
 ```
+
+If we are able to see files for user with uid 11100000, then it means we sucessfully exploited the IDOR Vulnerability, for mass enumeration, we can use ffuf or burp suite to fuzz for different UIDs
