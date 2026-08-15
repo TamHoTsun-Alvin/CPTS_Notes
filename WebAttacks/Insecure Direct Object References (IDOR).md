@@ -1,0 +1,1 @@
+IDOR Vulnerability refers to a type of vulnerability that originates from a lack / weak access control system, the result of IDOR usually leads to information disclosure as user are able to access pages / information they should not be able to access, in an even worse case IDOR can lead to privilege escalation 
