@@ -1,1 +1,2 @@
-In addition to Tomcat, we can also attack Tomcat CGI
+In addition to Tomcat, we can also attack Tomcat CGI, since it's CVE based and only affects specified version, we can refer to https://academy.hackthebox.com/app/module/113/section/2140 if somehow tomcat version falls into one of the below:
+Versions `9.0.0.M1` to `9.0.17`, `8.5.0` to `8.5.39`, and `7.0.0` to `7.0.93`
