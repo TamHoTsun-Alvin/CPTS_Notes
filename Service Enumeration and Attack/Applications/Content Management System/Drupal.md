@@ -8,3 +8,19 @@ curl -s http://drupal.inlanefreight.local | grep Drupal
       <span>Powered by <a href="https://www.drupal.org">Drupal</a></span>
 ```
 -The appearance of the word node in robots.txt
+-The presence of a CHANGELOG.txt or README.txt
+-The URL structure being .../node/`nodeid`
+
+Enumeration:
+
+If we are not blocked access to, curling changelog.txt can see the version number:
+```
+curl -s http://drupal-acc.inlanefreight.local/CHANGELOG.txt | grep -m2 ""
+
+Drupal 7.57, 2018-02-21
+```
+
+Once we ID the presence of Drupal, we can also use droopescan to automatically discover plugins, themes and other interesting stuff:
+```
+droopescan scan drupal -u http://drupal.inlanefreight.local
+```
