@@ -39,6 +39,8 @@ By default, Tomcat folder structure looks something like this:
         └── localhost
 ```
 
+The tomcat-users.xml contains entry that describe whether a user is allowed or disallowed access to the manager and host-manager admin page, along with their password. This file would be very valuable to us if we able to get our hands on it or equivalent backup file (which sometimes permission is more lax compared to the active config)
+
 Each app in webapps contains something like this:
 
 ```
@@ -57,3 +59,6 @@ webapps/customapp
     └── classes
         └── AdminServlet.class   
 ```
+The WEB-INF web.xml descriptor contains a lot of sensitive information and would be an important file to check for when having LFI vulnerability
+
+Attacking
