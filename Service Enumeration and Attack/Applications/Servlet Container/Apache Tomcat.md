@@ -65,4 +65,12 @@ Attacking Tomcat:
 
 BruteForcing Tomcat Manager:
 
-We can use 
+We can use metasploit tomcat_mgr_login module to brute force login to Tomcat Manager:
+
+```
+msf6 > use auxiliary/scanner/http/tomcat_mgr_login
+```
+
+Uploading a WAR File:
+
+After we gain access to tomcat utilizing 
