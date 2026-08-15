@@ -36,3 +36,11 @@ Avalon112@htb[/htb]$ curl -s http://blog.inlanefreight.local/ | grep plugins
 User Enumeration:
 
 Due to unique response on the wp-login page, it is possible to enumerate username on WordPress, notice that:
+
+-`The username is not registered....` implies user does not exist
+
+Otherwise, the user exist, just that our password is not correct.
+
+Automated Enumeration:
+
+We can enumerate wps automatically using wpscan
