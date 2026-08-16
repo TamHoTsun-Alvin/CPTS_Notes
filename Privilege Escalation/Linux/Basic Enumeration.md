@@ -90,4 +90,4 @@ ls -l /tmp /var/tmp /dev/shm
 
 Internal and Service Enumeration:
 
-We can enumerate several 
+We can enumerate 
