@@ -90,4 +90,4 @@ ls -l /tmp /var/tmp /dev/shm
 
 Internal and Service Enumeration:
 
-We can enumerate 
+We can enumerate who's logged in
