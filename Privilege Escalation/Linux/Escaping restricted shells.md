@@ -29,4 +29,3 @@ Shell Functions:
 
 If we can define shell functions, we might be able to execute command that is restricted by shell by calling the shell function we defined
 
-Skipp
