@@ -41,4 +41,4 @@ Next, we set LD_PRELOAD then execute our command:
 sudo LD_PRELOAD=/tmp/root.so /usr/sbin/apache2 restart
 ```
 
-Notice that if the payload is correct, it doesn't matter whatever we are trying to execute, the `/usr/sbin/apache2 restart` would never have a chance to execute as before it can, a root bash shell will be spawned, even if the command we are executing may cause disruption to production (like restarting apache2 server), we wou
+Notice that if the payload is correct, it doesn't matter whatever we are trying to execute, the `/usr/sbin/apache2 restart` would never have a chance to execute as before it can, a root bash shell will be spawned, even if the command we are executing may cause disruption to production (like restarting apache2 server), it never has the chance to run.
