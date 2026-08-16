@@ -1,0 +1,1 @@
+Sometimes, we might land ourselves on restricted shells, we can attempt to escape 
