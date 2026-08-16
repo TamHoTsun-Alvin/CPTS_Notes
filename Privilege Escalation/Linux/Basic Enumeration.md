@@ -44,3 +44,19 @@ lsblk
 We can enumerate `lpstat` to find printer information, we maybe could find sensitive data in /etc/fstab by performing a simple word search for password, username etc.
 
 If the machine is domain joined, it would be nice to check `/etc/resolv.conf` for internal DNS record to gain a starting point to query AD (Knowing which ip the DC sits on etc.)
+
+We can check for /etc/passwd file to enumerate the following information:
+```
+Avalon112@htb[/htb]$ cat /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+<snip>
+```
+
+If we somehow gained access to /etc/shadow, it is wise for us to copy it locally to perform a offline password attack, the beginning of hash (`$?$...`) hint's what type of hash it is
+
+We can enumerate existing groups to see 
