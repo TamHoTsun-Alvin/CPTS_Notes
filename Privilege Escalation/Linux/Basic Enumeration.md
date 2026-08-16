@@ -8,6 +8,7 @@ The first thing when we land onto a host is to first know what we are dealing wi
 - `ifconfig` or `ip a` - what subnet did we land in, does the host have additional NICs in other subnets? (See if it contains other NIC to visit other networks)
 - `route` or `netstat -rn` - what route does the server have to other networks?
 - `sudo -l` - can our user run anything with sudo (as another user as root) without needing a password? This can sometimes be the easiest win and we can do something like `sudo su` and drop right into a root shell.
+- `df -h` - check for mounted file systems
 
 Aside from the above commands, we also can check what OS we are dealing with by looking at the /etc/os-release file:
 ```
@@ -59,4 +60,29 @@ sync:x:4:65534:sync:/bin:/bin/sync
 
 If we somehow gained access to /etc/shadow, it is wise for us to copy it locally to perform a offline password attack, the beginning of hash (`$?$...`) hint's what type of hash it is
 
-We can enumerate existing groups to see 
+We can enumerate existing groups to see what groups is available:
+```
+cat /etc/group
+```
+
+We can get member of a group by using the following command:
+```
+getent group <groupname>
+```
+
+We can check what group a user is in by using the following:
+```
+groups <username>
+```
+
+We can check for unmounted file systems and attempt to mount it back:
+```
+cat /etc/fstab | grep -v "#" | column -t
+```
+
+We can reveal all hidden files, directory and Temporary Files for attempt to reveal information:
+```
+find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep <username>
+find / -type d -name ".*" -ls 2>/dev/null
+ls -l /tmp /var/tmp /dev/shm
+```
