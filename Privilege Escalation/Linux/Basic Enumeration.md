@@ -6,6 +6,7 @@ The first thing when we land onto a host is to first know what we are dealing wi
 - `id` - what groups does our user belong to?
 - `hostname` - what is the server named, can we gather anything from the naming convention?
 - `ifconfig` or `ip a` - what subnet did we land in, does the host have additional NICs in other subnets? (See if it contains other NIC to visit other networks)
+- `route` or `netstat -rn` - what route does the server have to other networks?
 - `sudo -l` - can our user run anything with sudo (as another user as root) without needing a password? This can sometimes be the easiest win and we can do something like `sudo su` and drop right into a root shell.
 
 Aside from the above commands, we also can check what OS we are dealing with by looking at the /etc/os-release file:
@@ -19,4 +20,25 @@ echo $PATH
 env
 ```
 
-We should also enumerate kernel version, shells and cpu type to see if their is any kernel / 
+We should also enumerate kernel version, shells and cpu type to see if their is any kernel / other exploits we can use for easy win:
+```
+uname -a
+lscpu
+cat /etc/shells
+```
+
+We should look out for the following services, if they exist in the system, it means this system is hardened and we should be more careful in our attempt to enumeration:
+- [Exec Shield](https://en.wikipedia.org/wiki/Exec_Shield)
+- [iptables](https://linux.die.net/man/8/iptables)
+- [AppArmor](https://apparmor.net/)
+- [SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
+- [Fail2ban](https://github.com/fail2ban/fail2ban)
+- [Snort](https://www.snort.org/faq/what-is-snort)
+- [Uncomplicated Firewall (ufw)](https://wiki.ubuntu.com/UncomplicatedFirewall)
+
+We can enumerate drives and shares on the system, maybe we can mount additional drives or share to expose sensitive files:
+```
+lsblk
+```
+
+We can enumerate `lpstat` to find printer information, we maybe could find sensitive data in /etc/fstab by performing a simple word search for password, username etc.
