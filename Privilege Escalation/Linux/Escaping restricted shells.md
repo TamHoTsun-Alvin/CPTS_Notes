@@ -41,4 +41,11 @@ Spawning Normal shell:
 
 We can pass alternative binaries directly during connection, or if the target allows us to use things like python or vim, we can have them spawn a shell for us or escape shell environment with vim then spawn a shell again.
 
-SSH: ``
+SSH: `ssh -t user@target "/bin/sh"`
+python: `python -c 'import pty; pty.spawn("/bin/bash")'`
+vim:
+```
+vim a.txt #Enter vim
+:set shell=/bin/bash
+:shell
+```
