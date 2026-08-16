@@ -92,3 +92,17 @@ Internal and Service Enumeration:
 
 We can enumerate who's logged in alongside us and user's last login time to provide information on who's worth enumeration:
 
+```
+lastlog
+who
+```
+
+We can check the command history for our currently logged in user by command `history`, we maybe able to enumerate for cleartext credentials
+```
+history
+```
+
+We can find history files using the following command:
+```
+find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null
+```
