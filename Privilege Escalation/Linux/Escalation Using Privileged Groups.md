@@ -14,4 +14,4 @@ disk group gives full access to all device contained within /dev, we can use deb
 
 ADM:
 
-ADM group can
+ADM group can read all logs stored at /var/log, while we cant go to root access with this role but it gave us more access for pillaging or gathering sensitive data
