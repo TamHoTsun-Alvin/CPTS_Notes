@@ -39,3 +39,14 @@ Commands like tar or rsync can be abused if such characters is in use, for examp
 mh dom mon dow command
 */01 * * * * cd /home/htb-student && tar -zcf /home/htb-student/backup.tar.gz *
 ```
+
+The since asterisk will match any number of characters in filename, this as result will match everything that's not hidden under the directory /home/htb-student (since the cronjob start by changing working directory to /home/htb-student), however, if we place file with names that start with --, the system will treat these as arguments instead of files, assuming the following is executed:
+
+```
+echo 'echo "htb-student ALL=(root) NOPASSWD: ALL" >> /etc/sudoers' > root.sh
+htb-student@NIX02:~$ echo "" > "--checkpoint-action=exec=sh root.sh"
+htb-student@NIX02:~$ echo "" > --checkpoint=1
+```
+
+When cronjob runs, the system interprets `--checkpoint=1` and `--checkpoint-action=exec=sh root.sh` as command arguments, as a result, the cronjob will execute content of root.sh, which is a payload that add our username to the sudoers list and allow us to run any command as root w/o password.
+
