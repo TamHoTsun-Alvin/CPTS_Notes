@@ -90,3 +90,16 @@ icacls 'C:\Department Shares\Private\IT\cred.txt' /grant htb-student:F
 ```
 
 Below is a list of file of interest to utilize such:
+```
+c:\inetpub\wwwwroot\web.config
+%WINDIR%\repair\sam
+%WINDIR%\repair\system
+%WINDIR%\repair\software, %WINDIR%\repair\security
+%WINDIR%\system32\config\SecEvent.Evt
+%WINDIR%\system32\config\default.sav
+%WINDIR%\system32\config\security.sav
+%WINDIR%\system32\config\software.sav
+%WINDIR%\system32\config\system.sav
+```
+
+Any other notebooks, files such as passwords, pass, creds, .kdbx database file and config, scripts are of our interest
