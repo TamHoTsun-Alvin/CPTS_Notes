@@ -122,3 +122,5 @@ We can search for any config files or scripts to look for interesting informatio
 find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null
 find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
 ```
+
+Aside from above enumeration, it is worth enumerating services and other executables, some services like screen v4.5.0 suffers from vulnerability that allows us easy escalation.
