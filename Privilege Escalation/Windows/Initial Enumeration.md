@@ -11,6 +11,12 @@ There are multiple commands and stuffs we can enumerate after we gain access to 
 | systeminfo                                                               | Show Generic Information                                                    | Security |
 | Get-Hotfix \| ft -AutoSize                                               | Show Patch Information                                                      | Security |
 | wmic qfe                                                                 | Show Patch Installed                                                        | Security |
+| whoami /priv                                                             | Show current user privilege                                                 | Security |
+| whoami /groups                                                           | Show current user groups                                                    | Security |
 | tasklist /svc                                                            | Show processes currently running                                            | Generic  |
 | set                                                                      | Show all path                                                               | Generic  |
 | wmic product get name                                                    | Show installed software                                                     | Generic  |
+| Get-WmiObject -Class Win32_Product \|  select Name, Version              | Show installed software, but PS                                             | Generic  |
+| netstat -ano (PS)                                                        | Show active TCP and UDP connections                                         | Generic  |
+| query user                                                               | Show users logged in to system                                              | Generic  |
+|                                                                          |                                                                             |          |
