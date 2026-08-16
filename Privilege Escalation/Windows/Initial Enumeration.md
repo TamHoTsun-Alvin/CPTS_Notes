@@ -9,7 +9,8 @@ There are multiple commands and stuffs we can enumerate after we gain access to 
 | Get-MpComputerStatus                                                     | Check Window Defender Status                                                | Security |
 | Get-AppLockerPolicy -Effective \| select -ExpandProperty RuleCollections | Check AppLocker Rules                                                       | Security |
 | systeminfo                                                               | Show Generic Information                                                    | Security |
-| Get-Hotfix                                                               | Show Patch Information                                                      | Security |
+| Get-Hotfix \| ft -AutoSize                                               | Show Patch Information                                                      | Security |
 | wmic qfe                                                                 | Show Patch Installed                                                        | Security |
 | tasklist /svc                                                            | Show processes currently running                                            | Generic  |
 | set                                                                      | Show all path                                                               | Generic  |
+| wmic product get name                                                    | Show installed software                                                     | Generic  |
