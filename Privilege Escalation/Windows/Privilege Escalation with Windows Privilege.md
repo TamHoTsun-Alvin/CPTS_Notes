@@ -69,6 +69,17 @@ Opening : 'lsass.dmp' file for minidump...
 
 We can also archive RCE with SeDebugPrivilege, using https://github.com/decoder-it/psgetsystem, we first find process PID which is run as NT AUTHORITY\SYSTEM, then we can input command and args, this would allow us to run command as SYSTEM, we could use it to spawn a cmd (start cmd) or execute other code
 
-Privilege Escalatio with SeTakeOwnershipPrivilege:
+Privilege Escalation with SeTakeOwnershipPrivilege:
 
-SeTakeOwnershipPrivileges allows a user to take ownership of any securable objects, from AD objects, files, folders, regkeys or even service and process, we often won't be encountering standard user account with this privilege, but the service account that's running for backup jobs and VSS snapshots would probably be assigned this privilege, a combination of SeBackupPrivilege, SeRestorePrivilege, and `SeSecurityPrivilege`
+SeTakeOwnershipPrivileges allows a user to take ownership of any securable objects, from AD objects, files, folders, regkeys or even service and process, we often won't be encountering standard user account with this privilege, but the service account that's running for backup jobs and VSS snapshots would probably be assigned this privilege, a combination of SeBackupPrivilege, SeRestorePrivilege and SeSecurityPrivilege may also be seen to avoid giving the account full admin privilege.
+
+We maybe not able to directly archive escalation with this privilege, but we definitely can use it to take ownership of files and allow us to gain more info on the system
+
+Taking ownership of a file (in case GUI is not available):
+```
+takeown <filepath>
+Example:
+takeown /f 'C:\Department Shares\Private\IT\cred.txt'
+```
+
+After taking ownership, we can modify the file ACL, which we can now give oursleves
