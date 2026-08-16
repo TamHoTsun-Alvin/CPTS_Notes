@@ -31,3 +31,7 @@ Below is a list of some User Rights:
 Sometimes, accounts are assigned privileges but comes in disabled state, it means we are indeed assigned such privileges but can't directly use it, we can use the following script https://github.com/fashionproof/EnableAllTokenPrivs to enable all privileges assigned to us
 
 Privilege Escalation with SeImpersonate:
+
+SeImpersonate privileges allows a process to utilize the token of the account that is running the process, often this privilege will be found on SQL service accounts, if we are able to gain RCE on accounts like this, we can obtain a reverse shell and catch it with metasploit, then utilize metesploit getsystem, we can also manually exploit respective potato attack module.
+
+An example that does not require metasploit is also available at https://academy.hackthebox.com/app/module/67/section/607, but it requ
