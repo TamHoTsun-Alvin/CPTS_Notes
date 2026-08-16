@@ -1,2 +1,2 @@
 
-Linux Privilege Escalation - 0/28
+Linux Privilege Escalation - 10/28 Privileged Groups
