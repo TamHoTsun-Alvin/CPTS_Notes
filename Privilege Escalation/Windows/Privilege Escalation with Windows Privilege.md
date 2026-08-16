@@ -30,8 +30,10 @@ Below is a list of some User Rights:
 |SeTcbPrivilege|[Act as part of the operating system](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/act-as-part-of-the-operating-system)|Administrators, Local Service, Network Service, Service|This security setting determines whether a process can assume the identity of any user and, through this, obtain access to resources that the targeted user is permitted to access (impersonation). This may be assigned to antivirus or backup tools that need the ability to access all system files for scans or backups. This privilege should be reserved for service accounts requiring this access for legitimate activities.|
 Sometimes, accounts are assigned privileges but comes in disabled state, it means we are indeed assigned such privileges but can't directly use it, we can use the following script https://github.com/fashionproof/EnableAllTokenPrivs to enable all privileges assigned to us
 
-Privilege Escalation with SeImpersonate:
+Privilege Escalation with SeImpersonate and SeAssignPrimaryToken:
 
-SeImpersonate privileges allows a process to utilize the token of the account that is running the process, often this privilege will be found on SQL service accounts, if we are able to gain RCE on accounts like this, we can obtain a reverse shell and catch it with metasploit, then utilize metesploit getsystem, we can also manually exploit respective potato attack module.
+SeImpersonate privileges allows a process to pretend itself to be another account after authentication, often this privilege will be found on SQL service accounts, if we are able to gain RCE on accounts like this, we can obtain a reverse shell and catch it with metasploit, then utilize metesploit getsystem, we can also manually exploit respective potato attack module.
 
-An example that does not require metasploit is also available at https://academy.hackthebox.com/app/module/67/section/607, but it requ
+An example that does not require metasploit is also available at https://academy.hackthebox.com/app/module/67/section/607, but it requires xp_cmdshell and file dropping as we need to transfer https://github.com/ohpe/juicy-potato/releases and nc to target machine, another example of PrintSpoofer and RoguePotato is also available https://academy.hackthebox.com/app/module/67/section/607
+
+Privilege Escalation with SeDebugPrivilege:
