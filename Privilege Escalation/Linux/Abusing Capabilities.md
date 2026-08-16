@@ -1,0 +1,1 @@
+Linux Capabilities are security feature that allows a specific privileges to be granted to processes, allowing them to perform action that would be restricted otherwise
