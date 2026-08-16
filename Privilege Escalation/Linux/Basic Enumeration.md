@@ -90,4 +90,5 @@ ls -l /tmp /var/tmp /dev/shm
 
 Internal and Service Enumeration:
 
-We can enumerate who's logged in alongside us and user's last login time to see what we have 
+We can enumerate who's logged in alongside us and user's last login time to provide information on who's worth enumeration:
+
