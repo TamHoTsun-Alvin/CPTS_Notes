@@ -66,3 +66,5 @@ mimikatz # sekurlsa::logonpasswords
 Opening : 'lsass.dmp' file for minidump...
 <snip>
 ```
+
+We can also archive RCE with SeDebugPrivilege, using https://github.com/decoder-it/psgetsystem, we first find process PID which is run as NT AUTHORITY\SYSTEM, then we can input command and args, this would allow us to run command as SYSTEM, we could use it to spawn a cmd (start cmd) or execute other code
