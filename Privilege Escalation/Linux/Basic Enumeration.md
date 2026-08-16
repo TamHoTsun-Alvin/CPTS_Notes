@@ -106,3 +106,19 @@ We can find history files using the following command:
 ```
 find / -type f \( -name *_hist -o -name *_history \) -exec ls -l {} \; 2>/dev/null
 ```
+
+We can also check installed packages to see if any outdated packages is installed and contain vulnerability we can use:
+```
+apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list
+```
+
+We can check if any of the installed packages contains can be abused to perform gtfo elevation (need transfer installed_pkgs.list to our host first):
+```
+for i in $(curl -s https://gtfobins.org/api.json | jq -r '.executables | keys[]'); do if grep -q "$i" installed_pkgs.list; then echo "Check for GTFO: $i";fi; done
+```
+
+We can search for any config files or scripts to look for interesting information:
+```
+find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null
+find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
+```

@@ -1,0 +1,1 @@
+We should actively look for configuration files, scripts, bash history, backup files or 
