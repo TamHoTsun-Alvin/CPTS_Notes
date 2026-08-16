@@ -1,0 +1,1 @@
+The first step towards privilege escalation in Linux is to first enumerate our environment, automated tools and scripts will be moved towards a seperate session, this session will focus on 
