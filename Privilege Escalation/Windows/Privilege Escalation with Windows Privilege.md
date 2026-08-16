@@ -68,3 +68,7 @@ Opening : 'lsass.dmp' file for minidump...
 ```
 
 We can also archive RCE with SeDebugPrivilege, using https://github.com/decoder-it/psgetsystem, we first find process PID which is run as NT AUTHORITY\SYSTEM, then we can input command and args, this would allow us to run command as SYSTEM, we could use it to spawn a cmd (start cmd) or execute other code
+
+Privilege Escalatio with SeTakeOwnershipPrivilege:
+
+SeTakeOwnershipPrivileges allows a user to take ownership of any securable objects, from AD objects, files, folders, regkeys or even service and process, we often won't be encountering standard user account with this privilege, but the service account that's running for backup jobs and VSS snapshots would probably be assigned this privilege, a combination of SeBackupPrivilege, SeRestorePrivilege, and `SeSecurityPrivilege`
