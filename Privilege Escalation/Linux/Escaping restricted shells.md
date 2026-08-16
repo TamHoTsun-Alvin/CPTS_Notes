@@ -29,3 +29,16 @@ Shell Functions:
 
 If we can define shell functions, we might be able to execute command that is restricted by shell by calling the shell function we defined
 
+De-restricting Setup:
+
+When using ssh to connect, we sometimes can escape restricted shell by using the --noprofile or --norc flags, which skip loading user profile startup scripts or avoid initialization of files like .bashrc
+```
+ssh -t user@target "bash --noprofile"
+ssh -t user@target "bash --norc"
+```
+
+Spawning Normal shell:
+
+We can pass alternative binaries directly during connection, or if the target allows us to use things like python or vim, we can have them spawn a shell for us or escape shell environment with vim then spawn a shell again.
+
+SSH: ``
