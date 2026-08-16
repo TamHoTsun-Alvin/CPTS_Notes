@@ -42,3 +42,5 @@ lsblk
 ```
 
 We can enumerate `lpstat` to find printer information, we maybe could find sensitive data in /etc/fstab by performing a simple word search for password, username etc.
+
+If the machine is domain joined, it would be nice to check `/etc/resolv.conf` for internal DNS record to gain a starting point to query AD (Knowing which ip the DC sits on etc.)
