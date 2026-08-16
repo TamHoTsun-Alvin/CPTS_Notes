@@ -22,6 +22,12 @@ csmith@NIX02:~$ sudo -l
 Matching Defaults entries for sysadm on NIX02:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
-User sysadm may run the following commands on NIX02:
-    (root) NOPASSWD: /usr/sbin/tcpdump
+User csmith may run the following commands on NIX02:
+    (root) NOPASSWD: ls
+```
+
+The above permission is granted in a very lax way, combined with the technique to add current directory to PATH mentioned at [[Abusing built-in functionality]], we can create a reverse shell named ls and simply run:
+
+```
+sudo ls
 ```
