@@ -7,6 +7,7 @@ The first thing when we land onto a host is to first know what we are dealing wi
 - `hostname` - what is the server named, can we gather anything from the naming convention?
 - `ifconfig` or `ip a` - what subnet did we land in, does the host have additional NICs in other subnets? (See if it contains other NIC to visit other networks)
 - `route` or `netstat -rn` - what route does the server have to other networks?
+- `cat /etc/hosts` - what host were given a internal DNS record?
 - `sudo -l` - can our user run anything with sudo (as another user as root) without needing a password? This can sometimes be the easiest win and we can do something like `sudo su` and drop right into a root shell.
 - `df -h` - check for mounted file systems
 
@@ -86,3 +87,7 @@ find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep <username>
 find / -type d -name ".*" -ls 2>/dev/null
 ls -l /tmp /var/tmp /dev/shm
 ```
+
+Internal and Service Enumeration:
+
+We can enumerate several 
