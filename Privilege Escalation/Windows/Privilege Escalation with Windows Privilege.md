@@ -82,4 +82,11 @@ Example:
 takeown /f 'C:\Department Shares\Private\IT\cred.txt'
 ```
 
-After taking ownership, we can modify the file ACL, which we can now give oursleves
+After taking ownership, we can modify the file ACL, which we can now give ourselves full access:
+```
+icalcs '<pathtofile>' /grant <username>:F
+#Example:
+icacls 'C:\Department Shares\Private\IT\cred.txt' /grant htb-student:F
+```
+
+Below is a list of file of interest to utilize such:
