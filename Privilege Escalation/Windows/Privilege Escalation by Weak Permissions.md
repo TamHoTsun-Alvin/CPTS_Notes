@@ -2,4 +2,33 @@ Sometimes for some files in window system the permission is configured in a way 
 
 Checking service binaries that has Weak Permission:
 
-After we gain access to a systemm,
+After we gain access to the system, we can use SharpUp https://github.com/GhostPack/SharpUp/from GhostPack Suite to check for service binaries with weak ACL:
+```
+PS C:\htb> .\SharpUp.exe audit
+
+=== SharpUp: Running Privilege Escalation Checks ===
+
+
+=== Modifiable Service Binaries ===
+
+  Name             : SecurityService
+  ...
+  PathName         : "C:\Program Files (x86)\PCProtect\SecurityService.exe"
+  <snip>
+```
+
+We noticed that we can modify this SecurityService binaries, we first need to verify whether we can really modify it before taking action:
+```
+PS C:\htb> icacls "C:\Program Files (x86)\PCProtect\SecurityService.exe"
+
+C:\Program Files (x86)\PCProtect\SecurityService.exe BUILTIN\Users:(I)(F)
+                                                     Everyone:(I)(F)
+                                                     NT AUTHORITY\SYSTEM:(I)(F)
+                                                     BUILTIN\Administrators:(I)(F)
+                                                     APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES:(I)(RX)
+                                                     APPLICATION PACKAGE AUTHORITY\ALL RESTRICTED APPLICATION PACKAGES:(I)(RX)
+
+Successfully processed 1 files; Failed processing 0 files
+```
+
+We confirmed that everyone have 
