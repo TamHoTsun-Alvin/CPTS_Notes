@@ -153,3 +153,9 @@ If the patch date is prior to Match 2020, it might worth to try the method at ht
 Privilege Escalation via Print Operators:
 
 Escalating Privilege via Print Operators require one to compile a malicious payload utilizing the capcom dll, refer to  https://academy.hackthebox.com/app/module/67/section/605 if really need to carry out
+
+Privilege Escalation via Server Operators:
+
+Server Operator Groups allow users to administer different window server without the need of domain / enterprise admin. by default such users are permitted to login locally to different servers including DCs.
+
+This group contains the powerful SeBackupPrivilege and SeRestorePrivilege along with other ability to control local services
