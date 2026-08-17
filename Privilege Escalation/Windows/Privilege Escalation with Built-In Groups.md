@@ -1,5 +1,11 @@
-Sometimes, we can utilize account with specific Built-In Groups to archive privilege escalation or as opener to path towards other account.
+Sometimes, we can utilize account with specific Built-In Groups to archive privilege escalation or as opener to path towards other account. Below is some groups we should lookout for:
 
+|                                                                                                                                                                           |                                                                                                                                                                 |                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Backup Operators](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-backupoperators)            | [Event Log Readers](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-eventlogreaders) | [DnsAdmins](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-dnsadmins)              |
+| [Hyper-V Administrators](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-hypervadministrators) | [Print Operators](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-printoperators)    | [Server Operators](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators) |
+
+Privilege Escalation with BackUp Operators:
 One Example would be the Backup Operators Account, we first run whoami /priv to confirm we have respective privilege, we afterward need to load https://github.com/giuliano108/SeBackupPrivilege this tools over to target.
 
 We import them both in PS, then enable privilege by following:
@@ -54,7 +60,9 @@ Copied 16777216 bytes
 ```
 
 Or, we can use built in robocopy utility:
-
+```
+C:\htb> robocopy /B E:\Windows\NTDS .\ntds ntds.dit
+```
 
 Next, we use reg save to dump SAM, SYSTEM and SECURITY (if we need local ac as well):
 ```
