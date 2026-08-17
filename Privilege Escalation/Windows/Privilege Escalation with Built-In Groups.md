@@ -146,4 +146,8 @@ For cleaning up or utilizing DnsAdmin to add a WPAD Record, refer to https://aca
 
 Privilege Escalation via Hyper-V Administrators:
 
-If the Domain Controllers are hypervised, 
+If the Domain Controllers are hypervised, then Hyper-V admin == Domain Admin, we could create a clone of the live DC and mount the vdisk offline to obtain the NTDS.dit file
+
+If the patch date is prior to Match 2020, it might worth to try the method at https://academy.hackthebox.com/app/module/67/section/604
+
+Privilege Escalation via Print Operators:
