@@ -101,4 +101,5 @@ Str0ng3ncryptedP@ss!
 
 Searching Passwords in sticky notes:
 
-Sometimes, people use sticky notes to save password and other information however that's 
+Sometimes, people use sticky notes to save password and other information however that's just simply a sqlite DB file which is located at `C:\Users\<user>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite`
+
