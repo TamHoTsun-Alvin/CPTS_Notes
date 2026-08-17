@@ -113,3 +113,7 @@ CommandLine
 -----------
 net use T: \\fs01\backups /user:tim MyStr0ngP@ssword
 ```
+
+Privilege Escalation with DnsAdmin:
+
+If we found ourselves in possession of credential of account belongs to the DnsAdmin Group, we can use it to 
