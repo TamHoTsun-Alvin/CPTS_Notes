@@ -1,0 +1,20 @@
+### Web Fuzzing / Discovery (primarily with ffuf / gobuster)
+
+- **web-extensions.txt** Used for determining page extensions (e.g. fuzzing indexFUZZ). Typical location: SecLists → Discovery/Web-Content/web-extensions.txt Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt)
+- **directory-list-2.3** (and variants such as directory-list-2.3-medium / small) Used for directory and page fuzzing after extension is known. Typical location: SecLists / dirbuster wordlists.
+- **subdomains-top1million-5000.txt** Used for subdomain and vhost fuzzing. Path in notes: /opt/useful/seclists/Discovery/DNS/subdomains-top1million-5000.txt Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt)
+- **subdomains-top1million-110000.txt** Larger subdomain/vhost list (used with gobuster vhost). Path example in notes: ~/Desktop/seclists/Discovery/DNS/subdomains-top1million-110000.txt Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt)
+- **burp-parameter-names.txt** Used for parameter name fuzzing (GET/POST). Path in notes: /opt/useful/seclists/Discovery/Web-Content/burp-parameter-names.txt Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/burp-parameter-names.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/burp-parameter-names.txt)
+- **LFI-Jhaddix.txt** Used for LFI payload / path fuzzing. Link: [https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt](https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt)
+- **default-web-root-directory-linux.txt** Used for discovering Linux web roots via LFI-style traversal. Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt)
+- **default-web-root-directory-windows.txt** Used for discovering Windows web roots via LFI-style traversal. Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-windows.txt)
+- **LFI-WordList-Linux** (DragonJAR) Alternative/additional LFI wordlist for Linux logs/configs. Link: [https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux](https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux)
+- **LFI-WordList-Windows** (DragonJAR) Alternative/additional LFI wordlist for Windows logs/configs. Link: [https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Windows](https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Windows)
+- **web-all-content-types.txt** Used when fuzzing Content-Type headers (file upload attacks). Link: [https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt)
+- **ids.txt** (custom / small) Used for value / ID fuzzing in POST requests (example in notes).
+### Username / Password lists (cracking, spraying, enum)
+
+- **Generic usernamelist** (precompiled, e.g. jsmith / jsmith2 style) Used with kerbrute for username enumeration. Notes mention preparing or using a ready-made list of possible usernames.
+- rockyou.txt: In seclist, use as first round of quick attack
+- hashmob.net_2025.medium: 2nd Round of attack https://weakpass.com/wordlists/hashmob.net_2025.medium.found
+- 
