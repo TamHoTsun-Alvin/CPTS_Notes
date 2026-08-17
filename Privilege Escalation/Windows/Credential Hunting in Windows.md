@@ -46,3 +46,12 @@ We can first confirm History Save Path:
 PS C:\htb> (Get-PSReadLineOption).HistorySavePath
 ```
 
+Then we can attempt to read it:
+```
+PS C:\htb> gc (Get-PSReadLineOption).HistorySavePath
+```
+
+This one liner allows us to retrieve the content of all PowerShell History Files:
+```
+foreach($user in ((ls C:\users).fullname)){cat "$user\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt" -ErrorAction SilentlyContinue}
+```
