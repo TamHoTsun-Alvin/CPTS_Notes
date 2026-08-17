@@ -15,6 +15,21 @@ findstr /si password *.xml *.ini *.txt *.config
 
 We can replace password with other keyword as well, like pass, admin or other keyword we wish to find
 
+We can also search with powershell:
+```
+PS C:\htb> select-string -Path C:\Users\htb-student\Documents\*.txt -Pattern password
+```
+```
+dir /S /B *pass*.txt == *pass*.xml == *pass*.ini == *cred* == *vnc* == *.config*
+```
+```
+where /R C:\ *.config
+```
+Search all files end in specific extension with powershell:
+```
+Get-ChildItem C:\ -Recurse -Include *.rdp, *.config, *.vnc, *.cred -ErrorAction Ignore
+```
+
 Dictionary Files and Unattended installation Files:
 
 Sometimes, a user may accidentally add a password to Dictionary or intentionally to avoid the red underlines, also credentials are likely to be included in the unattended installation xml files:
@@ -82,3 +97,8 @@ PS C:\htb> $credential.GetNetworkCredential().password
 
 Str0ng3ncryptedP@ss!
 ```
+
+
+Searching Passwords in sticky notes:
+
+Sometimes, people use sticky notes to save password and other information however that's 
