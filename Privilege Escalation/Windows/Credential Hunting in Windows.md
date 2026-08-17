@@ -17,7 +17,7 @@ PS C:\htb> gc 'C:\Users\htb-student\AppData\Local\Google\Chrome\User Data\Defaul
 ```
 
 ```
-
+#Example Unattended.xml
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend">
     <settings pass="specialize">
@@ -35,3 +35,7 @@ PS C:\htb> gc 'C:\Users\htb-student\AppData\Local\Google\Chrome\User Data\Defaul
         </component>
     </settings>
 ```
+
+Enumerate PowerShell History:
+
+Many PS commands allows user to pass credentials on the command line, starting with Powershell 5.0 powershells start store 
