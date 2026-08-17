@@ -2,4 +2,9 @@ During testing, whenever we have access to a system, we maybe able to get oursel
 
 Searching credentials in file:
 
-Often we can find passwords or credentials stored in cleartext config files or note file, sometimes this might be the doing of an installed application or a user that afraid he/she forgets the password, we can use findstr to search for the 
+Often we can find passwords or credentials stored in cleartext config files or note file, sometimes this might be the doing of an installed application or a user that afraid he/she forgets the password, we can use findstr to search for such sensitive information:
+```
+findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml
+```
+
+We can replace password with other keyword as well, like pass, admin or other keyword we wish to find
