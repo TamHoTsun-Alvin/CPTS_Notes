@@ -77,6 +77,27 @@ Privilege Escalation with Scheduled Task:
 
 Like abusing cronjobs, sometimes we maybe able to find scheduled task sitting in a directory that give us permission to modify it, we enumerate schedule task first:
 
+With cmd:
 ```
 C:\htb>  schtasks /query /fo LIST /v
 ```
+
+With PS:
+```
+PS C:\htb> Get-ScheduledTask | select TaskName,State
+```
+
+We can use accesschk64.exe to enumerate directory privilege like in the following example:
+```
+C:\htb> .\accesschk64.exe /accepteula -s -d C:\Scripts\
+ 
+Accesschk v6.13 - Reports effective permissions for securable objects
+Copyright ⌐ 2006-2020 Mark Russinovich
+Sysinternals - www.sysinternals.com
+ 
+C:\Scripts
+  RW BUILTIN\Users
+  RW NT AUTHORITY\SYSTEM
+  RW BUILTIN\Administrators
+```
+

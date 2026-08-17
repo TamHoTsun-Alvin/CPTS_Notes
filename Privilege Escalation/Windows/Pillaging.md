@@ -49,6 +49,41 @@ Then, we use https://raw.githubusercontent.com/juliourena/plaintext/master/Scrip
 python3 cookieextractor.py --dbpath "/home/plaintext/cookies.sqlite" --host slack --cookie d
 ```
 
+Finding User Credential in Description field:
+
+Sometimes, sysadmin may store account details in a computer or user account's description field, we can enumerate them using the Get-LocalUser cmdlet in PowerShell:
+```
+PS C:\htb> Get-LocalUser
+ 
+Name            Enabled Description
+----            ------- -----------
+Administrator   True    Built-in account for administering the computer/domain
+DefaultAccount  False   A user account managed by the system.
+Guest           False   Built-in account for guest access to the computer/domain
+helpdesk        True
+htb-student     True
+htb-student_adm True
+jordan          True
+logger          True
+sarah           True
+sccm_svc        True
+secsvc          True    Network scanner - do not change password: 6e148516kex!
+sql_dev         True
+```
+
+Using Get-WmiObject, we can get Computer Description Field:
+```
+PS C:\htb> Get-WmiObject -Class Win32_OperatingSystem | select Description
+ 
+Description
+-----------
+The most vulnerable box ever!
+```
+
+Information Hunting by Mounting VHDX / VMDK:
+
+`.vhd`, `.vhdx`, and `.vmdk` are virtual harddisk files, if the
+
 
 The following Parts are skipped, however if we encounter the same item we it might be of our interest to visit https://academy.hackthebox.com/app/module/67/section/1637 again for more information: mRemoteNG, restic, slack
 
