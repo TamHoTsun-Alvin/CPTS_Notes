@@ -103,3 +103,20 @@ Searching Passwords in sticky notes:
 
 Sometimes, people use sticky notes to save password and other information however that's just simply a sqlite DB file which is located at `C:\Users\<user>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState\plum.sqlite`
 
+```
+PS C:\htb> ls
+ 
+ 
+    Directory: C:\Users\htb-student\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState
+ 
+ 
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         5/25/2021  11:59 AM          20480 15cbbc93e90a4d56bf8d9a29305b8981.storage.session
+-a----         5/25/2021  11:59 AM            982 Ecs.dat
+-a----         5/25/2021  11:59 AM           4096 plum.sqlite
+-a----         5/25/2021  11:59 AM          32768 plum.sqlite-shm
+-a----         5/25/2021  12:00 PM         197792 plum.sqlite-wal
+```
+
+We need to copy the all three plum.sqlite file to our system and use something like DB Browser for SQLite, alternatively we can use https://github.com/RamblingCookieMonster/PSSQLite this module to view the data inside.
