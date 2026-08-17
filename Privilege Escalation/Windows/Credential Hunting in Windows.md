@@ -167,3 +167,16 @@ The following directory contains interesting file:
 C:\ProgramData\Configs\*
 C:\Program Files\Windows PowerShell\*
 ```
+
+Enumerating saved credentials:
+
+We can use cmdkey command to evaluate passwords that is stored locally for other hosts, this allow us to connect to a remote host with RDP without the need to enter a password, this would allow us to gain the context of another user without knowing there password:
+```
+C:\htb> cmdkey /list
+
+    Target: LegacyGeneric:target=TERMSRV/SQL01
+    Type: Generic
+    User: inlanefreight\bob
+```
+
+We can see that 
