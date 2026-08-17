@@ -11,4 +11,3 @@ We can also have it's output redirected to a file:
 ```
 winPEAS.exe cmd > output.txt
 ```
-
