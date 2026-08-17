@@ -1,1 +1,3 @@
 DLL Injection is a technique to inject coding in DLL structure into running process, this is mostly used for software debugging or hot patching without the need to actually restart the process, for us, this could be utilized to inject malicious code into trusted processes
+
+If DLL Injection is needed, we can refer to https://academy.hackthebox.com/app/module/67/section/910, notice that no example or exploit is provided, so it might be a difficult attack for us
