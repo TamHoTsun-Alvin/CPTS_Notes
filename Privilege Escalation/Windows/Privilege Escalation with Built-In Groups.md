@@ -220,4 +220,7 @@ The service did not respond to the start or control request in a timely fashion.
 
 Notice that we kinda just screwed this service as we modified it's binPath, in actual engagement environment we need to confirm if it is okay for us to carry out this attack
 
-The service is screwed, however the command payload we added to it indeed got executed, the above payload add the user server_adm into administrators group, which if we 
+The service is screwed, however the command payload we added to it indeed got executed, the above payload add the user server_adm into administrators group, which if we perform this on a domain controller, it means domain breach and now we can perform different attacks like dc-sync:
+```
+secretsdump.py server_adm@10.129.43.9 -just-dc-user administrator
+```
