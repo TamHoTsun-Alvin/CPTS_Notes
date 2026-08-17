@@ -8,3 +8,30 @@ findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml
 ```
 
 We can replace password with other keyword as well, like pass, admin or other keyword we wish to find
+
+Dictionary Files and Unattended installation Files:
+
+Sometimes, a user may accidentally add a password to Dictionary or intentionally to avoid the red underlines, also credentials are likely to be included in the unattended installation xml files:
+```
+PS C:\htb> gc 'C:\Users\htb-student\AppData\Local\Google\Chrome\User Data\Default\Custom Dictionary.txt' | Select-String password
+```
+
+```
+
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <AutoLogon>
+                <Password>
+                    <Value>local_4dmin_p@ss</Value>
+                    <PlainText>true</PlainText>
+                </Password>
+                <Enabled>true</Enabled>
+                <LogonCount>2</LogonCount>
+                <Username>Administrator</Username>
+            </AutoLogon>
+            <ComputerName>*</ComputerName>
+        </component>
+    </settings>
+```
