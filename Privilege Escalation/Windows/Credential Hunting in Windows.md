@@ -6,6 +6,12 @@ Often we can find passwords or credentials stored in cleartext config files or n
 ```
 findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml
 ```
+```
+findstr /spin "password" *.*
+```
+```
+findstr /si password *.xml *.ini *.txt *.config
+```
 
 We can replace password with other keyword as well, like pass, admin or other keyword we wish to find
 
@@ -54,4 +60,25 @@ PS C:\htb> gc (Get-PSReadLineOption).HistorySavePath
 This one liner allows us to retrieve the content of all PowerShell History Files:
 ```
 foreach($user in ((ls C:\users).fullname)){cat "$user\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt" -ErrorAction SilentlyContinue}
+```
+
+Sometimes, powershell credentials are stored in a way that is encrypted, such credentials are usually protected using DPAPI, we we gained access to the specific user created that encrypted file or command execution on that user's syntax, we can decrypt such password:
+```
+# Connect-VC.ps1
+# Get-Credential | Export-Clixml -Path 'C:\scripts\pass.xml'
+$encryptedPassword = Import-Clixml -Path 'C:\scripts\pass.xml'
+$decryptedPassword = $encryptedPassword.GetNetworkCredential().Password
+Connect-VIServer -Server 'VC-01' -User 'bob_adm' -Password $decryptedPassword
+```
+
+```
+PS C:\htb> $credential = Import-Clixml -Path 'C:\scripts\pass.xml'
+PS C:\htb> $credential.GetNetworkCredential().username
+
+bob
+
+
+PS C:\htb> $credential.GetNetworkCredential().password
+
+Str0ng3ncryptedP@ss!
 ```
