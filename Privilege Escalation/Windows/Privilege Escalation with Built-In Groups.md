@@ -142,4 +142,4 @@ sc start dns
 
 Sometimes, the user may not have permission to perform restart, then we would have to wait for it to somehow be restarted.
 
-For cleaning up or utilizing DnsAdmin to add a WPAD
+For cleaning up or utilizing DnsAdmin to add a WPAD Record, refer to https://academy.hackthebox.com/app/module/67/section/603
