@@ -17,4 +17,4 @@
 - **Generic usernamelist** (precompiled, e.g. jsmith / jsmith2 style) Used with kerbrute for username enumeration. Notes mention preparing or using a ready-made list of possible usernames.
 - rockyou.txt: In seclist, use as first round of quick attack
 - hashmob.net_2025.medium: 2nd Round of attack https://weakpass.com/wordlists/hashmob.net_2025.medium.found
-- 
+- all-h.txt: Final Round of attack, very big, use cautiously https://weakpass.com/wordlists/all_h.txt
