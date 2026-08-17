@@ -38,4 +38,11 @@ PS C:\htb> gc 'C:\Users\htb-student\AppData\Local\Google\Chrome\User Data\Defaul
 
 Enumerate PowerShell History:
 
-Many PS commands allows user to pass credentials on the command line, starting with Powershell 5.0 powershells start store 
+Many PS commands allows user to pass credentials on the command line, starting with Powershell 5.0 powershells start store command history at 
+`C:\Users\<username>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt`
+
+We can first confirm History Save Path:
+```
+PS C:\htb> (Get-PSReadLineOption).HistorySavePath
+```
+
