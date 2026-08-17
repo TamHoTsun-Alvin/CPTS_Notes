@@ -1,0 +1,1 @@
+If we encounter a lock-down desktop like a citrix, we can refer to https://academy.hackthebox.com/app/module/67/section/2502 for more info, however the basic meth
