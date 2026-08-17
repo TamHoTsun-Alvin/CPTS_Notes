@@ -159,3 +159,49 @@ Privilege Escalation via Server Operators:
 Server Operator Groups allow users to administer different window server without the need of domain / enterprise admin. by default such users are permitted to login locally to different servers including DCs.
 
 This group contains the powerful SeBackupPrivilege and SeRestorePrivilege along with other ability to control local services
+
+Aside from following the path of SeBackupPrivilege, We can instead change services and have it execute payload that give us higher permission
+
+We first use PsService of Sysinternal Suite to confirm readiness and whether we have full control over a service, we can first run Get-Service to confirm what service we have then use PsService, below is an example:
+```
+C:\htb> c:\Tools\PsService.exe security AppReadiness
+
+PsService v2.25 - Service information and configuration utility
+Copyright (C) 2001-2010 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+SERVICE_NAME: AppReadiness
+DISPLAY_NAME: App Readiness
+        ACCOUNT: LocalSystem
+        SECURITY:
+        [ALLOW] NT AUTHORITY\SYSTEM
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                Pause/Resume
+                Start
+                Stop
+                User-Defined Control
+                Read Permissions
+        [ALLOW] BUILTIN\Administrators
+                All
+        [ALLOW] NT AUTHORITY\INTERACTIVE
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                User-Defined Control
+                Read Permissions
+        [ALLOW] NT AUTHORITY\SERVICE
+                Query status
+                Query Config
+                Interrogate
+                Enumerate Dependents
+                User-Defined Control
+                Read Permissions
+        [ALLOW] BUILTIN\Server Operators
+                All
+```
+
+It is confirmed that Server Operators have A
