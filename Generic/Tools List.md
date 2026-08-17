@@ -60,16 +60,15 @@
 
 ### 3a. To Windows host
 
-|Tool|Purpose|Acquisition|
-|---|---|---|
-|(See §1 for WinPEAS, SharpUp, LaZagne, PowerHuntShares, PSUpload, accesschk/pipelist/PsService/procdump, SeBackupPrivilege, EnableAllTokenPrivs, psgetsystem, dnSpy — all also used for Windows PE / pillaging.)|||
-|ligolo-ng (agent.exe)|Pivoting agent on Windows victim|[https://github.com/nicocha30/ligolo-ng/releases](https://github.com/nicocha30/ligolo-ng/releases)|
-|chisel (chisel.exe)|SOCKS5 pivot (backup if ligolo fails)|[https://github.com/jpillora/chisel/releases](https://github.com/jpillora/chisel/releases)|
-|JuicyPotato|SeImpersonate → SYSTEM (pre-Server 2019)|[https://github.com/ohpe/juicy-potato/releases](https://github.com/ohpe/juicy-potato/releases)|
-|PrintSpoofer / RoguePotato|SeImpersonate → SYSTEM (newer builds)|[https://github.com/itm4n/PrintSpoofer](https://github.com/itm4n/PrintSpoofer) / [https://github.com/antonioCoco/RoguePotato](https://github.com/antonioCoco/RoguePotato)|
-|nc.exe|netcat for Windows (reverse shells / binpath payloads)|[https://github.com/int0x33/nc.exe/](https://github.com/int0x33/nc.exe/) (or seclists)|
-|adduser.dll (msfvenom)|DnsAdmin DLL to add domain admin / exec|generated via `msfvenom -f dll` (Metasploit)|
-|aie.msi (msfvenom)|AlwaysInstallElevated .msi payload|generated via `msfvenom -f msi` (Metasploit)|
+| Tool                                                                                                                                                                                                             | Purpose                                                | Acquisition                                                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (See §1 for WinPEAS, SharpUp, LaZagne, PowerHuntShares, PSUpload, accesschk/pipelist/PsService/procdump, SeBackupPrivilege, EnableAllTokenPrivs, psgetsystem, dnSpy — all also used for Windows PE / pillaging.) |                                                        |                                                                                                                                                                           |
+| ligolo-ng (agent.exe)                                                                                                                                                                                            | Pivoting agent on Windows victim                       | [https://github.com/nicocha30/ligolo-ng/releases](https://github.com/nicocha30/ligolo-ng/releases)                                                                        |
+| chisel (chisel.exe)                                                                                                                                                                                              | SOCKS5 pivot (backup if ligolo fails)                  | [https://github.com/jpillora/chisel/releases](https://github.com/jpillora/chisel/releases)                                                                                |
+| JuicyPotato                                                                                                                                                                                                      | SeImpersonate → SYSTEM (pre-Server 2019)               | [https://github.com/ohpe/juicy-potato/releases](https://github.com/ohpe/juicy-potato/releases)                                                                            |
+| PrintSpoofer / RoguePotato                                                                                                                                                                                       | SeImpersonate → SYSTEM (newer builds)                  | [https://github.com/itm4n/PrintSpoofer](https://github.com/itm4n/PrintSpoofer) / [https://github.com/antonioCoco/RoguePotato](https://github.com/antonioCoco/RoguePotato) |
+| nc.exe                                                                                                                                                                                                           | netcat for Windows (reverse shells / binpath payloads) | [https://github.com/int0x33/nc.exe/](https://github.com/int0x33/nc.exe/) (or seclists)                                                                                    |
+
 
 ### 3b. To Linux host
 
