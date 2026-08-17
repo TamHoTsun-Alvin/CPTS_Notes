@@ -82,7 +82,19 @@ The most vulnerable box ever!
 
 Information Hunting by Mounting VHDX / VMDK:
 
-`.vhd`, `.vhdx`, and `.vmdk` are virtual harddisk files, if the
+`.vhd`, `.vhdx`, and `.vmdk` are virtual harddisk files, if they are found during our operation, we can mount them on our system to enumerate information:
+
+On Linux (VMDK):
+```
+Avalon112@htb[/htb]$ guestmount -a SQL01-disk1.vmdk -i --ro /mnt/vmdk
+```
+
+On Linux (VHD/VHDX):
+```
+Avalon112@htb[/htb]$ guestmount --add WEBSRV10.vhdx  --ro /mnt/vhdx/ -m /dev/sda1
+```
+
+On windows, we can simply right click the file and select mount or use the Disk Management utility, or use Mount-VHD cmdlet, if the VHD/VHDX/VMDK file we found is backup of a live system, this could lead to a easy win as now we can directly dump hashes using secretsdump
 
 
 The following Parts are skipped, however if we encounter the same item we it might be of our interest to visit https://academy.hackthebox.com/app/module/67/section/1637 again for more information: mRemoteNG, restic, slack
