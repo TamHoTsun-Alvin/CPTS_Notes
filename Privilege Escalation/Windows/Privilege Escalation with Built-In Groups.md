@@ -152,4 +152,4 @@ If the patch date is prior to Match 2020, it might worth to try the method at ht
 
 Privilege Escalation via Print Operators:
 
-Escalating Privilege via Print Operators require one to compile a dll, 
+Escalating Privilege via Print Operators require one to compile a malicious payload utilizing the capcom dll, refer to  https://academy.hackthebox.com/app/module/67/section/605 if really need to carry out
