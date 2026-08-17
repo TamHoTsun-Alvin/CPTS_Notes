@@ -151,3 +151,5 @@ If the Domain Controllers are hypervised, then Hyper-V admin == Domain Admin, we
 If the patch date is prior to Match 2020, it might worth to try the method at https://academy.hackthebox.com/app/module/67/section/604
 
 Privilege Escalation via Print Operators:
+
+Escalating Privilege via Print Operators require one to compile a dll, 
