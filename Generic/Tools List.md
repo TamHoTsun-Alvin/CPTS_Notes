@@ -88,29 +88,29 @@
 
 ### 4a. Recon / discovery / web
 
-|Tool|Purpose|Acquisition|
-|---|---|---|
-|nmap|Port/service/script scan; ping sweep; FTP bounce; mssql/mysql/rdp scripts|[https://nmap.org/](https://nmap.org/) (`apt install nmap`)|
-|gobuster|dir / vhost fuzzing|[https://github.com/OJ/gobuster](https://github.com/OJ/gobuster)|
-|ffuf|dir/page/vhost/param/value/subdomain fuzzing|[https://github.com/ffuf/ffuf](https://github.com/ffuf/ffuf)|
-|seclists (wordlists)|web-extensions, subdomains-top1million, burp-parameter-names, etc.|[https://github.com/danielmiessler/SecLists](https://github.com/danielmiessler/SecLists)|
-|wpscan|WordPress enum + bruteforce + vuln (api-token)|[https://github.com/wpscanteam/wpscan](https://github.com/wpscanteam/wpscan)|
-|droopescan|Drupal/Joomla enum|[https://github.com/SamJoan/droopescan](https://github.com/SamJoan/droopescan)|
-|eyewitness|Web screenshot / tomcat discovery|[https://github.com/FortyNorthSecurity/EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness)|
-|wafw00f|WAF detection|[https://github.com/EnableSecurity/wafw00f](https://github.com/EnableSecurity/wafw00f)|
-|whois|Domain WHOIS|`apt install whois`|
-|curl / jq (crt.sh)|CT log subdomain enum|`apt install curl jq`|
-|sqlmap|Automated SQLi (all DBMS, all injection types)|[https://github.com/sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)|
-|XSStrike|Automated XSS discovery|[https://github.com/s0md3v/XSStrike](https://github.com/s0md3v/XSStrike)|
-|XXEinjector|Automated OOB XXE exfil|[https://github.com/enjoiz/XXEinjector](https://github.com/enjoiz/XXEinjector)|
-|IIS-ShortName-Scanner|IIS 8.3 short-name enumeration|[https://github.com/irsdl/IIS-ShortName-Scanner](https://github.com/irsdl/IIS-ShortName-Scanner) (needs java)|
-|Burp Suite (CE)|Proxy / Repeater / Intruder / Decoder / match&replace|[https://portswigger.net/burp/releases](https://portswigger.net/burp/releases)|
-|ZAP Scanner|Active web scan (CE Burp lacks one)|[https://www.zaproxy.org/](https://www.zaproxy.org/)|
-|Wappalyzer|Tech-stack fingerprint|[https://www.wappalyzer.com/](https://www.wappalyzer.com/) (browser ext)|
-|PayloadsAllTheThings|XSS/Upload/XXE payload refs|[https://github.com/swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)|
-|cookieextractor.py|Extract Firefox cookies from cookies.sqlite|[https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/cookieextractor.py](https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/cookieextractor.py)|
-|gitlab_13_10_2_rce.py|GitLab ≤13.10.2 auth RCE|ExploitDB 49951 — [https://www.exploit-db.com/exploits/49951](https://www.exploit-db.com/exploits/49951)|
-|searchsploit|ExploitDB local search (ColdFusion/Druva/etc.)|`apt install exploitdb`|
+| Tool                  | Purpose                                                                   | Acquisition                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| nmap                  | Port/service/script scan; ping sweep; FTP bounce; mssql/mysql/rdp scripts | [https://nmap.org/](https://nmap.org/) (`apt install nmap`)                                                                                                                          |
+| gobuster              | dir / vhost fuzzing                                                       | [https://github.com/OJ/gobuster](https://github.com/OJ/gobuster)                                                                                                                     |
+| ffuf                  | dir/page/vhost/param/value/subdomain fuzzing                              | [https://github.com/ffuf/ffuf](https://github.com/ffuf/ffuf)                                                                                                                         |
+| seclists (wordlists)  | web-extensions, subdomains-top1million, burp-parameter-names, etc.        | [https://github.com/danielmiessler/SecLists](https://github.com/danielmiessler/SecLists)                                                                                             |
+| wpscan                | WordPress enum + bruteforce + vuln (api-token)                            | [https://github.com/wpscanteam/wpscan](https://github.com/wpscanteam/wpscan)                                                                                                         |
+| droopescan            | Drupal/Joomla enum                                                        | [https://github.com/SamJoan/droopescan](https://github.com/SamJoan/droopescan)                                                                                                       |
+| eyewitness            | Web screenshot / tomcat discovery                                         | [https://github.com/FortyNorthSecurity/EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness)                                                                                 |
+| wafw00f               | WAF detection                                                             | [https://github.com/EnableSecurity/wafw00f](https://github.com/EnableSecurity/wafw00f)                                                                                               |
+| whois                 | Domain WHOIS                                                              | `apt install whois`                                                                                                                                                                  |
+| curl / jq (crt.sh)    | CT log subdomain enum                                                     | `apt install curl jq`                                                                                                                                                                |
+| sqlmap                | Automated SQLi (all DBMS, all injection types)                            | [https://github.com/sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)                                                                                                   |
+| XSStrike              | Automated XSS discovery                                                   | [https://github.com/s0md3v/XSStrike](https://github.com/s0md3v/XSStrike)                                                                                                             |
+| XXEinjector           | Automated OOB XXE exfil                                                   | [https://github.com/enjoiz/XXEinjector](https://github.com/enjoiz/XXEinjector)                                                                                                       |
+| IIS-ShortName-Scanner | IIS 8.3 short-name enumeration                                            | [https://github.com/irsdl/IIS-ShortName-Scanner](https://github.com/irsdl/IIS-ShortName-Scanner) (needs java)                                                                        |
+| Burp Suite (CE)       | Proxy / Repeater / Intruder / Decoder / match&replace                     | [https://portswigger.net/burp/releases](https://portswigger.net/burp/releases)                                                                                                       |
+| ZAP Scanner           | Active web scan (CE Burp lacks one)                                       | [https://www.zaproxy.org/](https://www.zaproxy.org/)                                                                                                                                 |
+| Wappalyzer            | Tech-stack fingerprint                                                    | [https://www.wappalyzer.com/](https://www.wappalyzer.com/) (browser ext)                                                                                                             |
+| PayloadsAllTheThings  | XSS/Upload/XXE payload refs                                               | [https://github.com/swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)                                                                           |
+| cookieextractor.py    | Extract Firefox cookies from cookies.sqlite                               | [https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/cookieextractor.py](https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/cookieextractor.py) |
+| gitlab_13_10_2_rce.py | GitLab ≤13.10.2 auth RCE                                                  | ExploitDB 49951 — [https://www.exploit-db.com/exploits/49951](https://www.exploit-db.com/exploits/49951)                                                                             |
+| searchsploit          | ExploitDB local search (ColdFusion/Druva/etc.)                            | `apt install exploitdb`                                                                                                                                                              |
 
 ### 4b. Service / protocol enumeration & attack
 
