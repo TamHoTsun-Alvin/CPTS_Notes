@@ -114,34 +114,34 @@
 
 ### 4b. Service / protocol enumeration & attack
 
-|Tool|Purpose|Acquisition|
-|---|---|---|
-|enum4linux / enum4linux-ng|SMB/rpcclient/LDAP auto-enum; password policy anon|[https://github.com/cddmp/enum4linux-ng](https://github.com/cddmp/enum4linux-ng)|
-|smbmap|List/browse/read/upload SMB shares|[https://github.com/ShawnDEvans/smbmap](https://github.com/ShawnDEvans/smbmap)|
-|smbclient|List/access SMB shares|`apt install smbclient` (samba)|
-|rpcclient|Null session; enumdomusers/srvinfo/querydominfo|`apt install samba`|
-|dig|DNS SOA/NS/AXFR/any/CH version|`apt install dnsutils`|
-|dnsenum|Subdomain bruteforce + zone xfer|`apt install dnsenum`|
-|subfinder|Passive subdomain enum|[https://github.com/projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)|
-|fierce|DNS enum + zone xfer|[https://github.com/mschwager/fierce](https://github.com/mschwager/fierce)|
-|smtp-user-enum|SMTP VRFY/EXPN/RCPT user enum|[https://github.com/pentestmonkey/smtp-user-enum](https://github.com/pentestmonkey/smtp-user-enum)|
-|o365spray|O365 validate/enum/spray|[https://github.com/0xZDH/o365spray](https://github.com/0xZDH/o365spray)|
-|telnet / openssl s_client|SMTP/IMAP/POP3 raw interaction|`apt install telnet openssl`|
-|onesixtyone|SNMP community-string bruteforce|[https://github.com/trailofbits/onesixtyone](https://github.com/trailofbits/onesixtyone)|
-|snmpwalk|SNMP OID walk|`apt install snmp` (net-snmp)|
-|braa|Mass SNMP OID bruteforce|[https://github.com/mteg/braa](https://github.com/mteg/braa)|
-|showmount / mount -t nfs|NFS share enum + mount|`apt install nfs-common`|
-|mysql (client)|MySQL login + SELECT/OUTFILE/LOAD_FILE|`apt install default-mysql-client`|
-|sqsh|MSSQL client (alt to impacket)|`apt install sqsh`|
-|ODAT|Oracle TNS auto-scan + utlfile upload|[https://github.com/quentinhardy/odat](https://github.com/quentinhardy/odat)|
-|sqlplus|Oracle TNS login|Oracle Instant Client ([https://www.oracle.com/…](https://www.oracle.com/%E2%80%A6))|
-|xfreerdp / rdesktop / remmina|RDP session (incl. PTH via xfreerdp /pth:)|`apt install freerdp2-x11 rdesktop remmina`|
-|rdp-sec-check|RDP security audit|[https://github.com/CiscoCXSecurity/rdp-sec-check](https://github.com/CiscoCXSecurity/rdp-sec-check)|
-|hydra|Multi-protocol bruteforce/spray|[https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)|
-|medusa|Multi-protocol bruteforce (FTP/etc.)|[https://github.com/jmk-foofus/medusa](https://github.com/jmk-foofus/medusa)|
-|Metasploit (msfconsole/msfvenom)|smb_login, mssql_ping, ipmi_*, smb_delivery, tomcat_mgr_login, jenkins_script_console, wp_admin_shell_upload, multi/handler|[https://github.com/rapid7/metasploit-framework](https://github.com/rapid7/metasploit-framework)|
-|kubeletctl|K8s pod enum/RCE/token+cert extraction|[https://github.com/cyberark/KubeletCTL](https://github.com/cyberark/KubeletCTL)|
-|kubectl|K8s API auth can-i / apply privesc pod|[https://github.com/kubernetes/kubectl](https://github.com/kubernetes/kubectl)|
+| Tool                             | Purpose                                                                                                                     | Acquisition                                                                                          |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| enum4linux / enum4linux-ng       | SMB/rpcclient/LDAP auto-enum; password policy anon                                                                          | [https://github.com/cddmp/enum4linux-ng](https://github.com/cddmp/enum4linux-ng)                     |
+| smbmap                           | List/browse/read/upload SMB shares                                                                                          | [https://github.com/ShawnDEvans/smbmap](https://github.com/ShawnDEvans/smbmap)                       |
+| smbclient                        | List/access SMB shares                                                                                                      | `apt install smbclient` (samba)                                                                      |
+| rpcclient                        | Null session; enumdomusers/srvinfo/querydominfo                                                                             | `apt install samba`                                                                                  |
+| dig                              | DNS SOA/NS/AXFR/any/CH version                                                                                              | `apt install dnsutils`                                                                               |
+| dnsenum                          | Subdomain bruteforce + zone xfer                                                                                            | `apt install dnsenum`                                                                                |
+| subfinder                        | Passive subdomain enum                                                                                                      | [https://github.com/projectdiscovery/subfinder](https://github.com/projectdiscovery/subfinder)       |
+| fierce                           | DNS enum + zone xfer                                                                                                        | [https://github.com/mschwager/fierce](https://github.com/mschwager/fierce)                           |
+| smtp-user-enum                   | SMTP VRFY/EXPN/RCPT user enum                                                                                               | [https://github.com/pentestmonkey/smtp-user-enum](https://github.com/pentestmonkey/smtp-user-enum)   |
+| o365spray                        | O365 validate/enum/spray                                                                                                    | [https://github.com/0xZDH/o365spray](https://github.com/0xZDH/o365spray)                             |
+| telnet / openssl s_client        | SMTP/IMAP/POP3 raw interaction                                                                                              | `apt install telnet openssl`                                                                         |
+| onesixtyone                      | SNMP community-string bruteforce                                                                                            | [https://github.com/trailofbits/onesixtyone](https://github.com/trailofbits/onesixtyone)             |
+| snmpwalk                         | SNMP OID walk                                                                                                               | `apt install snmp` (net-snmp)                                                                        |
+| braa                             | Mass SNMP OID bruteforce                                                                                                    | [https://github.com/mteg/braa](https://github.com/mteg/braa)                                         |
+| showmount / mount -t nfs         | NFS share enum + mount                                                                                                      | `apt install nfs-common`                                                                             |
+| mysql (client)                   | MySQL login + SELECT/OUTFILE/LOAD_FILE                                                                                      | `apt install default-mysql-client`                                                                   |
+| sqsh                             | MSSQL client (alt to impacket)                                                                                              | `apt install sqsh`                                                                                   |
+| ODAT                             | Oracle TNS auto-scan + utlfile upload                                                                                       | [https://github.com/quentinhardy/odat](https://github.com/quentinhardy/odat)                         |
+| sqlplus                          | Oracle TNS login                                                                                                            | Oracle Instant Client ([https://www.oracle.com/…](https://www.oracle.com/%E2%80%A6))                 |
+| xfreerdp / rdesktop / remmina    | RDP session (incl. PTH via xfreerdp /pth:)                                                                                  | `apt install freerdp2-x11 rdesktop remmina`                                                          |
+| rdp-sec-check                    | RDP security audit                                                                                                          | [https://github.com/CiscoCXSecurity/rdp-sec-check](https://github.com/CiscoCXSecurity/rdp-sec-check) |
+| hydra                            | Multi-protocol bruteforce/spray                                                                                             | [https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)             |
+| medusa                           | Multi-protocol bruteforce (FTP/etc.)                                                                                        | [https://github.com/jmk-foofus/medusa](https://github.com/jmk-foofus/medusa)                         |
+| Metasploit (msfconsole/msfvenom) | smb_login, mssql_ping, ipmi_*, smb_delivery, tomcat_mgr_login, jenkins_script_console, wp_admin_shell_upload, multi/handler | [https://github.com/rapid7/metasploit-framework](https://github.com/rapid7/metasploit-framework)     |
+| kubeletctl                       | K8s pod enum/RCE/token+cert extraction                                                                                      | [https://github.com/cyberark/KubeletCTL](https://github.com/cyberark/KubeletCTL)                     |
+| kubectl                          | K8s API auth can-i / apply privesc pod                                                                                      | [https://github.com/kubernetes/kubectl](https://github.com/kubernetes/kubectl)                       |
 
 ### 4c. Hash cracking / post-processing
 
