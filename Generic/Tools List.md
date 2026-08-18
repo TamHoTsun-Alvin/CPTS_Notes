@@ -72,16 +72,15 @@
 
 ### 3b. To Linux host
 
-|Tool|Purpose|Acquisition|
-|---|---|---|
-|linpeas.sh|Automated Linux PE enumeration|[https://github.com/peass-ng/PEASS-ng/releases](https://github.com/peass-ng/PEASS-ng/releases) (linPEAS)|
-|pspy|Enumerate running cronjobs/processes without root|[https://github.com/DominicBreuker/pspy/releases](https://github.com/DominicBreuker/pspy/releases)|
-|ligolo-ng (agent)|Pivoting agent on Linux victim|[https://github.com/nicocha30/ligolo-ng/releases](https://github.com/nicocha30/ligolo-ng/releases)|
-|chisel|SOCKS5 pivot (Linux build)|[https://github.com/jpillora/chisel/releases](https://github.com/jpillora/chisel/releases)|
-|LaZagne (laZagne.py)|Pull stored creds (python2.7, needs admin)|[https://github.com/AlessandroZ/LaZagne](https://github.com/AlessandroZ/LaZagne)|
-|minipenguin.py|Dump Linux user passwords (admin req)|[https://github.com/huntergregal/minipenguin](https://github.com/huntergregal/minipenguin)|
-|shell.c / root.so (gcc)|LD_PRELOAD / shared-object hijack / NFS-setuid payloads|compiled locally with `gcc` (no external dl)|
-|root.sh (tar wildcard)|Cron wildcard abuse payload (echo-generated)|inline `echo` payload — no download|
+| Tool                    | Purpose                                                 | Acquisition                                                                                              |
+| ----------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| linpeas.sh              | Automated Linux PE enumeration                          | [https://github.com/peass-ng/PEASS-ng/releases](https://github.com/peass-ng/PEASS-ng/releases) (linPEAS) |
+| pspy                    | Enumerate running cronjobs/processes without root       | [https://github.com/DominicBreuker/pspy/releases](https://github.com/DominicBreuker/pspy/releases)       |
+| ligolo-ng (agent)       | Pivoting agent on Linux victim                          | [https://github.com/nicocha30/ligolo-ng/releases](https://github.com/nicocha30/ligolo-ng/releases)       |
+| chisel                  | SOCKS5 pivot (Linux build)                              | [https://github.com/jpillora/chisel/releases](https://github.com/jpillora/chisel/releases)               |
+| LaZagne (laZagne.py)    | Pull stored creds (python2.7, needs admin)              | [https://github.com/AlessandroZ/LaZagne](https://github.com/AlessandroZ/LaZagne)                         |
+| minipenguin.py          | Dump Linux user passwords (admin req)                   | [https://github.com/huntergregal/minipenguin](https://github.com/huntergregal/minipenguin)               |
+
 
 ---
 
