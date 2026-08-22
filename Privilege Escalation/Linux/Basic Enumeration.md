@@ -97,7 +97,7 @@ lastlog
 who
 ```
 
-We can check the command history for our currently logged in user by command `history`, we maybe able to enumerate for cleartext credentials
+We can check the command history for our currently logged in user by command `history`, we maybe able to enumerate for cleartext **scredentials**
 ```
 history
 ```
