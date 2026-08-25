@@ -12,4 +12,7 @@ ls ~/.ssh
 id_rsa  id_rsa.pub  known_hosts
 ```
 
-If we are in the adm group, we can also try checking for interesting logs, 
+If we are in the adm group, we can also try checking for interesting logs, if the target has aureport installed, we can simply get a summarized output by 
+```
+aureport --tty | less
+```
