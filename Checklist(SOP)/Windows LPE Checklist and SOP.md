@@ -14,7 +14,7 @@
 
 **Windows Privesc SOP**
 
-1. Basic enum (whoami, systeminfo, net*, privileges, services, scheduled tasks).
+1. Basic enum (whoami, systeminfo, net*, privileges, services, scheduled tasks, programs).
 2. Run WinPEAS → prioritise red/yellow findings.
 3. Check AlwaysInstallElevated, unquoted paths, weak service perms, writable binaries.
 4. Credential hunting (files, registry, DPAPI, autologon).
