@@ -13,6 +13,18 @@ $sid = <sidfrompreviousquery>
 Get-ObjectAcl "DC=<domainname>,DC=<domainname>" -ResolveGUIDs | ? { ($_.ObjectAceType -match 'Replication-Get')} | ?{$_.SecurityIdentifier -match $sid} |select AceQualifier, ObjectDN, ActiveDirectoryRights,SecurityIdentifier,ObjectAceType | fl
 ```
 
+We can also check whether a group that a user belong have replication rights:
+```
+$gsid=<groupsid>
+Get-ObjectAcl -ResolveGUIDs -Identity "DC=<dc>,DC=<dc>" | 
+    Where-Object { 
+        $_.SecurityIdentifier -eq $gsid -and 
+        $_.ObjectAceType -match "Replication|Get-Changes" 
+    }
+    
+    
+```
+
 If we possess credential of someone with WriteDacl, we can add the required privilege to a user under our control
 
 Extracting AD password Database using impacket-secretsdump:
