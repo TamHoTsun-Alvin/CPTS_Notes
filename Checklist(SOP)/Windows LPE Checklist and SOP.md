@@ -1,6 +1,12 @@
 ### Windows Privilege Escalation Checklist
 
 - Low-priv shell → whoami /priv, whoami /groups, systeminfo, Get-Hotfix, net localgroup, net user, tasklist /svc, netstat -ano, ipconfig /all, arp -a, route print.
+- Use the following to check for installed application:
+```
+PS C:\htb> $INSTALLED = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |  Select-Object DisplayName, DisplayVersion, InstallLocation
+PS C:\htb> $INSTALLED += Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion, InstallLocation
+PS C:\htb> $INSTALLED | ?{ $_.DisplayName -ne $null } | sort-object -Property DisplayName -Unique | Format-Table -AutoSize
+```
 - AlwaysInstallElevated = 1 → msfvenom .msi → SYSTEM.
 - Unquoted service path / weak service permissions / writable service binary → replace binary or reconfigure → SYSTEM.
 - Weak file/folder permissions on service binaries, scheduled tasks, or autorun locations → overwrite → SYSTEM.
