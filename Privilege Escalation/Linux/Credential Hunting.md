@@ -11,3 +11,5 @@ ls ~/.ssh
 
 id_rsa  id_rsa.pub  known_hosts
 ```
+
+If we are in the adm group, we can also try checking for interesting logs, 
