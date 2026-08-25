@@ -94,6 +94,7 @@ On Linux (VHD/VHDX):
 Avalon112@htb[/htb]$ guestmount --add WEBSRV10.vhdx  --ro /mnt/vhdx/ -m /dev/sda1
 ```
 
+
 On windows, we can simply right click the file and select mount or use the Disk Management utility, or use Mount-VHD cmdlet, if the VHD/VHDX/VMDK file we found is backup of a live system, this could lead to a easy win as now we can directly dump hashes using secretsdump
 
 
