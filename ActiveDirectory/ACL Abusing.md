@@ -28,5 +28,20 @@ $groupsid = Convert-NameToSid "<group"
 Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $groupsid} -Verbose
 ```
 
+Adding SPN to an account:
+
+With ACLs like WriteSPN / GenericWrite or equivelent, we can write an SPN to an account then attempt to kerberoast it, below is a few way to add SPN to a specific account
+
+-Using setspn (powershell native):
+```
+setspn -s <SPN> <accountname>
+#Example:
+setspn -s Utility/DAWG gammons.local\kclammons
+```
+
+-Using PowerView:
+```
+
+```
 An Example of Abuse path can be found at https://academy.hackthebox.com/app/module/143/section/1486 
 
