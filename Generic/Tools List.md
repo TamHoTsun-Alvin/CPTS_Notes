@@ -53,7 +53,7 @@
 | impacket-samrdump (samrdump.py)       | SAMR user/SID enumeration                                    | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
 | impacket-mssqlclient (mssqlclient.py) | MSSQL login + xp_cmdshell/impersonation/linked               | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
 | KeyTabExtract (keytabextract.py)      | Extract hashes from keytab files (Linux domain-joined)       | [https://github.com/sosdave/KeyTabExtract](https://github.com/sosdave/KeyTabExtract)          |
-| bloodyAD                              | E                                                            |                                                                                               |
+| bloodyAD                              | Generic AD privesc / enum tool                               | https://github.com/CravateRouge/bloodyAD                                                      |
 
 ---
 
