@@ -7,3 +7,5 @@ Tricks: smtp mail poisoning / nopasswd sudo abuse / racing with cronjobs
 Postman: Redis Add pub ssh key to authorized / CVE for open-source payroll system / no shame in msf
 
 POV: IIS Viewstate deserialization (YsoSerial), SeDebugPrivilege RCE (incl. CPTS Path), evil-winrm == full context
+
+TombWatcher: ACL Abuse, ESC15, Reanimating 
