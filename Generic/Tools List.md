@@ -29,30 +29,31 @@
 
 ## 2. AD Tools — Do NOT Require Transfer (run from Linux attack host)
 
-|Tool|Purpose|Acquisition|
-|---|---|---|
-|Responder|LLMNR/NBT-NS/mDNS poisoning; fake SMB/HTTP/SQL; hash capture|[https://github.com/lgandx/Responder](https://github.com/lgandx/Responder)|
-|Kerbrute (linux_amd64)|AD username enum + password spray via Kerberos preauth|[https://github.com/ropnop/kerbrute/releases](https://github.com/ropnop/kerbrute/releases)|
-|windapsearch|LDAP-based AD user/group/privileged-user enumeration|[https://github.com/ropnop/windapsearch](https://github.com/ropnop/windapsearch)|
-|bloodhound-python|BloodHound collector from Linux (use w/ creds, no RDP)|[https://github.com/fox-it/BloodHound.py](https://github.com/fox-it/BloodHound.py)|
-|BloodHound (GUI)|Analyse AD attack paths / custom cypher queries|[https://github.com/BloodHoundAD/BloodHound](https://github.com/BloodHoundAD/BloodHound)|
-|ldapsearch|Query password policy / check anon LDAP bind|`apt install ldap-utils` (openldap clients)|
-|NetExec (nxc)|SMB/LDAP/SSH/etc enum, spraying, NTDS/SAM/LSA dump, exec|[https://github.com/Pennyw0rth/NetExec](https://github.com/Pennyw0rth/NetExec) (formerly CME)|
-|Evil-WinRM|WinRM shell; PTH supported; upload/download|[https://github.com/Hackplayers/evil-winrm](https://github.com/Hackplayers/evil-winrm)|
-|impacket-secretsdump (secretsdump.py)|Dump NTDS/SAM/LSA hashes (DCSync `-just-dc`, LOCAL)|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-getuserspns (GetUserSPNs.py)|Kerberoast / ASREPRoast from Linux|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-psexec|PTH → interactive shell (SMB)|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-wmiexec (wmiexec.py)|PTH command exec via WMI (135)|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-atexec|PTH command exec via atsvc/scheduler|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-smbexec|PTH command exec via SMB|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-smbclient (smbclient.py)|SMB shell; PTH supported|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-ntlmrelayx|NTLM relay (SMB/HTTP)|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-ticketer (ticketer.py)|Forge golden/extra-sid TGT ccache|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-raisechild|Automated child→parent ExtraSids escalation|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-lookupsid (lookupsid.py)|SID brute → domain SID / EA SID|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-samrdump (samrdump.py)|SAMR user/SID enumeration|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|impacket-mssqlclient (mssqlclient.py)|MSSQL login + xp_cmdshell/impersonation/linked|[https://github.com/fortra/impacket](https://github.com/fortra/impacket)|
-|KeyTabExtract (keytabextract.py)|Extract hashes from keytab files (Linux domain-joined)|[https://github.com/sosdave/KeyTabExtract](https://github.com/sosdave/KeyTabExtract)|
+| Tool                                  | Purpose                                                      | Acquisition                                                                                   |
+| ------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| Responder                             | LLMNR/NBT-NS/mDNS poisoning; fake SMB/HTTP/SQL; hash capture | [https://github.com/lgandx/Responder](https://github.com/lgandx/Responder)                    |
+| Kerbrute (linux_amd64)                | AD username enum + password spray via Kerberos preauth       | [https://github.com/ropnop/kerbrute/releases](https://github.com/ropnop/kerbrute/releases)    |
+| windapsearch                          | LDAP-based AD user/group/privileged-user enumeration         | [https://github.com/ropnop/windapsearch](https://github.com/ropnop/windapsearch)              |
+| bloodhound-python                     | BloodHound collector from Linux (use w/ creds, no RDP)       | [https://github.com/fox-it/BloodHound.py](https://github.com/fox-it/BloodHound.py)            |
+| BloodHound (GUI)                      | Analyse AD attack paths / custom cypher queries              | [https://github.com/BloodHoundAD/BloodHound](https://github.com/BloodHoundAD/BloodHound)      |
+| ldapsearch                            | Query password policy / check anon LDAP bind                 | `apt install ldap-utils` (openldap clients)                                                   |
+| NetExec (nxc)                         | SMB/LDAP/SSH/etc enum, spraying, NTDS/SAM/LSA dump, exec     | [https://github.com/Pennyw0rth/NetExec](https://github.com/Pennyw0rth/NetExec) (formerly CME) |
+| Evil-WinRM                            | WinRM shell; PTH supported; upload/download                  | [https://github.com/Hackplayers/evil-winrm](https://github.com/Hackplayers/evil-winrm)        |
+| impacket-secretsdump (secretsdump.py) | Dump NTDS/SAM/LSA hashes (DCSync `-just-dc`, LOCAL)          | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-getuserspns (GetUserSPNs.py) | Kerberoast / ASREPRoast from Linux                           | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-psexec                       | PTH → interactive shell (SMB)                                | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-wmiexec (wmiexec.py)         | PTH command exec via WMI (135)                               | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-atexec                       | PTH command exec via atsvc/scheduler                         | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-smbexec                      | PTH command exec via SMB                                     | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-smbclient (smbclient.py)     | SMB shell; PTH supported                                     | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-ntlmrelayx                   | NTLM relay (SMB/HTTP)                                        | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-ticketer (ticketer.py)       | Forge golden/extra-sid TGT ccache                            | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-raisechild                   | Automated child→parent ExtraSids escalation                  | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-lookupsid (lookupsid.py)     | SID brute → domain SID / EA SID                              | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-samrdump (samrdump.py)       | SAMR user/SID enumeration                                    | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| impacket-mssqlclient (mssqlclient.py) | MSSQL login + xp_cmdshell/impersonation/linked               | [https://github.com/fortra/impacket](https://github.com/fortra/impacket)                      |
+| KeyTabExtract (keytabextract.py)      | Extract hashes from keytab files (Linux domain-joined)       | [https://github.com/sosdave/KeyTabExtract](https://github.com/sosdave/KeyTabExtract)          |
+| bloodyAD                              | E                                                            |                                                                                               |
 
 ---
 
