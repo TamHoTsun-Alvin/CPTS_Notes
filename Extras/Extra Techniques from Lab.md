@@ -8,6 +8,6 @@ Postman: Redis Add pub ssh key to authorized / CVE for open-source payroll syste
 
 POV: IIS Viewstate deserialization (YsoSerial), SeDebugPrivilege RCE (incl. CPTS Path), evil-winrm == full context
 
-TombWatcher: ACL Abuse, ESC15, Reanimate Tombstones from deleted objec
+TombWatcher: ACL Abuse, ESC15, Reanimate Tombstones from deleted object
 
 Media: Window Media Player NTLM hash leaking, SeTcbPrivilege abuse, abusing windows file junction link to gain RCE in directory
