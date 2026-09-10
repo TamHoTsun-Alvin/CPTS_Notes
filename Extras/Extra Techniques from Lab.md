@@ -11,3 +11,5 @@ POV: IIS Viewstate deserialization (YsoSerial), SeDebugPrivilege RCE (incl. CPTS
 TombWatcher: ACL Abuse, ESC15, Reanimate Tombstones from deleted object
 
 Media: Window Media Player NTLM hash leaking, SeTcbPrivilege abuse, abusing windows file junction link to gain RCE in directory
+
+VulnCicada: NFS Credential discovery(no root squash), AD CS ESC8 Attack (relay)
