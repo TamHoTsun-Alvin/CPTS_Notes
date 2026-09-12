@@ -74,6 +74,17 @@ rpcclient -U'%' <ip>
 enumdomuusers #Ref: https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html
 ```
 
+Manual Interaction / Enumeration:
+
+-List SMB Share anonymously with smbclient:
+```
+smbclient -N -L //<ip>
+```
+
+-Attempt to interact anonymously with a share with smbclient:
+```
+smbclient -N //<ip>/<sharename> 
+```
 Automated Tooling:
 
 Enum4linux-ng (info enumeration):
