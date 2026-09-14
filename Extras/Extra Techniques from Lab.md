@@ -15,3 +15,9 @@ Media: Window Media Player NTLM hash leaking, SeTcbPrivilege abuse, abusing wind
 VulnCicada: NFS Credential discovery(no root squash), AD CS ESC8 Attack (relay)
 
 streamio: Manual SQL Injection, data exfiltration with phpwrapper, winPEAs, firefox credential decrypt, password reuse, ACL Abuse, LAPS password read
+
+Voleur: AD ACL Abuse, WSL /mnt Abuse as root, impacket-secretsdump
+
+Administrator: AD ACL Abuse, FTP Enumeration, DCSync
+
+Authority: SMB Anonymous Enumeration, AD CS ESC1 Attack, certipy-ad ldap-shell change password (Alternative path with PassTheCert and impacket-getST https://offsec.almond.consulting/authenticating-with-certificates-when-pkinit-is-not-supported.html)
