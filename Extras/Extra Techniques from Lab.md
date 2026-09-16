@@ -21,3 +21,7 @@ Voleur: AD ACL Abuse, WSL /mnt Abuse as root, impacket-secretsdump
 Administrator: AD ACL Abuse, FTP Enumeration, DCSync
 
 Authority: SMB Anonymous Enumeration, AD CS ESC1 Attack, certipy-ad ldap-shell change password (Alternative path with PassTheCert and impacket-getST https://offsec.almond.consulting/authenticating-with-certificates-when-pkinit-is-not-supported.html)
+
+Craft: Customized WebApp and API analysis, RestAPI interaction, OS Command Injection (Python), Interacting with MySQL, logging in as root via otp (HashiCorp Vault)
+
+Redelegate: FTP Enumeration, KeePass Decryption, username enumeration via MSSQL
