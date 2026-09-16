@@ -28,4 +28,10 @@ Redelegate: FTP Enumeration, KeePass Decryption, username enumeration via MSSQL,
 
 Forest: Unauthenticated LDAP Binding / Enumeration, AS-REP Roasting, ACL Abuse (WriteDACL), DCSync Attack
 
-Union: Manual SQL Injection Attack (Union Injection), Command Injection via Heade
+Union: Manual SQL Injection Attack (Union Injection), Command Injection via Header (X-FORWARDED-FOR)
+
+Soccer: Directory / Page Fuzzing, Default Credential Login, vhost discovery via config file, WebSocket SQL Injection, doas abuse, GTFO (dstat)
+
+Active: Anonymous SMB Share Enumeration, GPP Password decryption ()
+
+
