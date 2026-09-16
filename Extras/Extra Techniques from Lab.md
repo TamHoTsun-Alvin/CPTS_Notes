@@ -32,6 +32,6 @@ Union: Manual SQL Injection Attack (Union Injection), Command Injection via Head
 
 Soccer: Directory / Page Fuzzing, Default Credential Login, vhost discovery via config file, WebSocket SQL Injection, doas abuse, GTFO (dstat)
 
-Active: Anonymous SMB Share Enumeration, GPP Password decryption ()
+Active: Anonymous SMB Share Enumeration, GPP Password decryption (MS14-025), SMB Desktop Enumeration, Kerberoasting
 
 
