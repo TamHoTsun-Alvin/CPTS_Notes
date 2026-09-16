@@ -24,4 +24,8 @@ Authority: SMB Anonymous Enumeration, AD CS ESC1 Attack, certipy-ad ldap-shell c
 
 Craft: Customized WebApp and API analysis, RestAPI interaction, OS Command Injection (Python), Interacting with MySQL, logging in as root via otp (HashiCorp Vault)
 
-Redelegate: FTP Enumeration, KeePass Decryption, username enumeration via MSSQL, password reuse, ACL Abuse, User Privilege abuse (SeEnableDelegationPrivilege)
+Redelegate: FTP Enumeration, KeePass Decryption, username enumeration via MSSQL, password reuse, ACL Abuse, User Privilege abuse (SeEnableDelegationPrivilege), modify `msDS-AllowedToDelegateTo` for changing password of computer object, Constrained Delegation Attack
+
+Forest: Unauthenticated LDAP Binding / Enumeration, AS-REP Roasting, ACL Abuse (WriteDACL), DCSync Attack
+
+Union: Manual SQL Injection Attack (Union Injection), Command Injection via Heade
