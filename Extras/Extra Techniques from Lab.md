@@ -38,4 +38,4 @@ Delivery: Using OsTicket to gain valid internal email, Mattermost self registrat
 
 Remote: Unauthenticated NFS Share, Exploiting Umbraco CVE, Exploiting TeamViewer 7 CVE
 
-MetaTwo: WordPress CVE Exploit (XXE Injection), WordPress 
+MetaTwo: WordPress Plugin CVE Exploit (XXE Injection), WordPress CVE Exploit (SQL Injection), Local File Inclusion, Passpie decryption
