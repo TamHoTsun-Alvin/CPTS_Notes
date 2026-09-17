@@ -37,3 +37,5 @@ Active: Anonymous SMB Share Enumeration, GPP Password decryption (MS14-025), SMB
 Delivery: Using OsTicket to gain valid internal email, Mattermost self registration, pillaging config files, cracking root password using hashcat rules (best66)
 
 Remote: Unauthenticated NFS Share, Exploiting Umbraco CVE, Exploiting TeamViewer 7 CVE
+
+MetaTwo: WordPress CVE Exploit (XXE Injection), WordPress 
