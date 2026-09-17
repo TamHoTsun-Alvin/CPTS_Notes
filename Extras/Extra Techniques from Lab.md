@@ -34,4 +34,6 @@ Soccer: Directory / Page Fuzzing, Default Credential Login, vhost discovery via 
 
 Active: Anonymous SMB Share Enumeration, GPP Password decryption (MS14-025), SMB Desktop Enumeration, Kerberoasting
 
+Delivery: Using OsTicket to gain valid internal email, Mattermost self registration, pillaging config files, cracking root password using hashcat rules (best66)
 
+Remote: 
