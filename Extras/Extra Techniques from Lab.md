@@ -39,3 +39,6 @@ Delivery: Using OsTicket to gain valid internal email, Mattermost self registrat
 Remote: Unauthenticated NFS Share, Exploiting Umbraco CVE, Exploiting TeamViewer 7 CVE
 
 MetaTwo: WordPress Plugin CVE Exploit (XXE Injection), WordPress CVE Exploit (SQL Injection), Local File Inclusion, Passpie decryption
+
+Access: Abusing Anonymous FTP, Password reuse, Converting .mdb file to .csv file, recovering mail to evolution using readpst from .pst file, executing reverse shell in another user context utilizing runas with stored cmdkey password (Optional Exercise, extract Administrator's actual password from cmdkey)
+
