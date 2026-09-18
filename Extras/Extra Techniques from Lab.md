@@ -43,3 +43,5 @@ MetaTwo: WordPress Plugin CVE Exploit (XXE Injection), WordPress CVE Exploit (SQ
 Access: Abusing Anonymous FTP, Password reuse, Converting .mdb file to .csv file, recovering mail to evolution using readpst from .pst file, executing reverse shell in another user context utilizing runas with stored cmdkey password (Optional Exercise, extract Administrator's actual password from cmdkey)
 
 Driver: SCF NTLM Hash stealing with responder, cracking ntlmv2 hash, enumerating powershell history file, generating reverse shell with msfvenom, exploiting CVE-2019-19363 (Ricoh PCL6 Universal Driver v4.23)
+
+Shoppy: NoSQL Injection, vhost / subdomain discovery with ffuf, simple reverse enginerring
