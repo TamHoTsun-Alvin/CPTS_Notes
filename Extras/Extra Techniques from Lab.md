@@ -44,4 +44,4 @@ Access: Abusing Anonymous FTP, Password reuse, Converting .mdb file to .csv file
 
 Driver: SCF NTLM Hash stealing with responder, cracking ntlmv2 hash, enumerating powershell history file, generating reverse shell with msfvenom, exploiting CVE-2019-19363 (Ricoh PCL6 Universal Driver v4.23)
 
-Shoppy: NoSQL Injection, vhost / subdomain discovery with ffuf, simple reverse enginerring
+Shoppy: NoSQL Injection, vhost / subdomain discovery with ffuf, simple reverse engineering with Ghidra, custom password manager, mounting host fs to docker instance, privilege escalation with docker
