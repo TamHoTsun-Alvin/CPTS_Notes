@@ -47,3 +47,5 @@ Driver: SCF NTLM Hash stealing with responder, cracking ntlmv2 hash, enumerating
 Shoppy: NoSQL Injection, vhost / subdomain discovery with ffuf, simple reverse engineering with Ghidra, custom password manager, mounting host fs to docker instance, privilege escalation with docker
 
 Manager: SMB Anonymous session, RID Cycling, Password Spraying (username=password), exploring FS with xp_dirtree, Enumerating Website backup with hidden file, Exploiting ESC7
+
+Agile: LFI via Parameter Tempering, exposing flask app.py, gathering necessary info for debugpin using LFI, crashing application and acquire python interactive shell, replacing it with reverse shell, getting a 
