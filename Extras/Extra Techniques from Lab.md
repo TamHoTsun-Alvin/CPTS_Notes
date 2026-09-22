@@ -49,3 +49,5 @@ Shoppy: NoSQL Injection, vhost / subdomain discovery with ffuf, simple reverse e
 Manager: SMB Anonymous session, RID Cycling, Password Spraying (username=password), exploring FS with xp_dirtree, Enumerating Website backup with hidden file, Exploiting ESC7
 
 Agile: LFI via Parameter Tempering, exposing flask app.py, gathering necessary info for debugpin using LFI, crashing application and acquire python interactive shell, replacing it with reverse shell, visiting chrome debug port for credentials, utilize CVE-2023-22809 to obtain a copy of bash with setuid bit set
+
+Hospital: Fuzzing for directories, Fuzzing for allowed file extention, Exploiting CVE-2023-35001 (kernel), credential reuse, exploiting CVE-2023-36664, using msfvenom, using metasploit keyscan
