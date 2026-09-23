@@ -89,6 +89,7 @@ SamAccountName: Administrator
 <...snip...>
 ```
 
+Alternatively, if we have already mounted an smb drive to it, we can
 Searching Logs with Event Log Reader:
 
 With Event Log Reader Permission, we can read logs from local machine using wevutil or Get-WinEvent cmdlet, sometimes we might be able to find plaintext credentials or other usable material in the logs:
